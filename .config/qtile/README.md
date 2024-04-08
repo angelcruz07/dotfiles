@@ -90,10 +90,46 @@ cd .config/Qtile
 
 # Config
 
+Escoje la terminal predeterminada en el caso actual
+qtile reconocera la mejor votada instalada y la eligira
+en mi caso uso Alacritty.
+Deberia verse asi
+
 ```python
-
-
+terminal =  guess_terminal()
 ```
 
-menu de teclado
+Menu de teclado
+
+```bash
 sudo pacman -S rofi
+```
+
+Configuracion
+
+```bash
+Key([mod], "m", lazy.spawn("rofi -show drun"))
+Key([mod], "shift", "m", lazy.spawn("rofi -show"))
+```
+
+Instala sed en caso de que no lo tengas
+
+```bash
+sudo pacman -S sed
+
+#Install which
+sudo pacman -S which
+```
+
+Ejecuta el siguiente comando para ejecutar el tema de rofi
+
+```bash
+rofi-theme-selector
+```
+
+En mi caso uso el
+
+- android_notification by Rasi
+
+Apagar el pc
+shutdown now

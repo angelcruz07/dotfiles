@@ -8,4 +8,25 @@ This guide will walk you through the process of building a desktop environment s
 
 ## Arch Installation
 
-## Basic config Qlite
+The starting point of this guide is a right after a complete clean Arch based distro installation.
+
+## Basic Qtile configuration
+
+Now that you're in Qtile, you should know some of the default keybindings.
+
+## Audio
+
+```bash
+sudo pacman -S pulseaudio
+
+# Install
+sudo pacman -S pavucontrol
+```
+
+## Brightness
+
+Add config in #pending
+
+```bash
+sudo pacman -S brightnessctl
+```
