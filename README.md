@@ -30,3 +30,24 @@ Add config in #pending
 ```bash
 sudo pacman -S brightnessctl
 ```
+
+# Apps
+
+| Software  | Utility           |
+| --------- | ----------------- |
+| Alacritty | Terminal emulator |
+| Celda4    | Celda5            |
+
+# Software
+
+| Software  | Utility           |
+| --------- | ----------------- |
+| Alacritty | Terminal emulator |
+| Celda4    | Celda5            |
+
+## Apps
+
+| Software  | Utility           |
+| --------- | ----------------- |
+| Alacritty | Terminal emulator |
+| Celda4    | Celda5            |
