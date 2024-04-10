@@ -10,6 +10,14 @@ This guide will walk you through the process of building a desktop environment s
 
 The starting point of this guide is a right after a complete clean Arch based distro installation.
 
+## Login and window manager
+
+First, we need to be able to login and open some programs like a browser and a terminal, so we'll start by installing lighdm and qtile. Lightdm will not work unless we install a greeter. We also need xterm because that's the terminal emulator qtile will open by default, until we change the config file. Then, a text editor is necessary for editing config files, you can use vscode or jump straight into neovim if you have previous experience, otherwise I wouldn't suggest it. Last but not least, we need a browser.
+
+```bash
+sudo pacman -S lightdm lightdm-gtk-greeter qtile xterm code firefox
+```
+
 ## Basic Qtile configuration
 
 Now that you're in Qtile, you should know some of the default keybindings.
@@ -30,6 +38,8 @@ Add config in #pending
 ```bash
 sudo pacman -S brightnessctl
 ```
+
+## YAY INSTALL
 
 # Apps
 
