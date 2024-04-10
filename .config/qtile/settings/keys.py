@@ -62,6 +62,6 @@ keys = [
    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
    #Todo: Scroll wheel button
        # Brightness
-    ([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
-    ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+   Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
+   Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
 ]

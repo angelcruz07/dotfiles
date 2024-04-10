@@ -34,15 +34,8 @@ reboot
 
 You will have a terminal, it is not a big deal but it is useful
 
-It would be advisable to install firefox if you don't have it yet you can verify with the following command
-
-```
-firefox
-```
-
-Otherwise
-
 ```bash
+# Install browser
 sudo pacman -S firefox
 
 #start
@@ -97,19 +90,6 @@ Deberia verse asi
 
 ```python
 terminal =  guess_terminal()
-```
-
-Menu de teclado
-
-```bash
-sudo pacman -S rofi
-```
-
-Configuracion
-
-```bash
-Key([mod], "m", lazy.spawn("rofi -show drun"))
-Key([mod], "shift", "m", lazy.spawn("rofi -show"))
 ```
 
 Instala sed en caso de que no lo tengas
