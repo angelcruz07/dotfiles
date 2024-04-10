@@ -33,12 +33,28 @@ sudo pacman -S brightnessctl
 
 # Apps
 
-| Software  | Utility           |
-| --------- | ----------------- |
-| Alacritty | Terminal emulator |
-| Celda4    | Celda5            |
+| Key             | Action                      |
+| --------------- | --------------------------- |
+| mod + m         | Launch rofi                 |
+| mod + shift + m | Window nav (rofi)           |
+| mod + b         | Lunch Browser(Firefox)      |
+| mod + e         | Lunch File explores(thunar) |
+| mod + return    | Luch Terminal (Alacritty)   |
+| mod + r         | Redshift                    |
+| mod + shift + r | Stop redshift               |
+| mod + s         | screenshot (scrot)          |
 
 # Software
+
+## Basic utilities
+
+| Software       | Utility           | Pacman                        |
+| -------------- | ----------------- | ----------------------------- |
+| Networkmanager | Self explanatory  | sudo pacman -S networkmanager |
+| Alacritty      | Terminal emulator | sudo pacman -S alacritty      |
+| Celda4         | Celda5            |
+
+## Fonts, theming and GTK
 
 | Software  | Utility           |
 | --------- | ----------------- |
@@ -47,7 +63,12 @@ sudo pacman -S brightnessctl
 
 ## Apps
 
-| Software  | Utility           |
-| --------- | ----------------- |
-| Alacritty | Terminal emulator |
-| Celda4    | Celda5            |
+| Software  | Utility                 |
+| --------- | ----------------------- |
+| Alacritty | Terminal emulator       |
+| Thunar    | Graphical file explorer |
+| ranger    | Terminal based explorer |
+| scrot     | Screenshot              |
+| neovim    | Terminal based editor   |
+| rofi      | Take care of yout eyes  |
+| trayer    | Systray                 |
