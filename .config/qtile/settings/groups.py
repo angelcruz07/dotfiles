@@ -2,9 +2,16 @@ from libqtile.config import Key, Group
 from libqtile.command import lazy
 from .keys import mod, keys
 
+# Icons https://www.nerdfonts.com/cheat-sheet
+# Arch - nf-md-arch
+# Code - nf-cod-code
+# Terminal - nf-otc-termininal
+# Web - nf-fa-firefox
+# Miselaneos - nf-fa-cube
+
 #  Groups
 groups = [Group(i) for i in [
-    "   ", "   " ," 󰖟  ", "   "
+   " 󰣇  ", "   ", "   " ,"   ", "   "
 ]]
 
 
