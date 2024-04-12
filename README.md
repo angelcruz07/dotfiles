@@ -1,14 +1,31 @@
 # Dotfiles & Configs Arch Linux
 
+![Qtile](./.screenshots/desktop.png)
+
 # Table of contents
+
+- [Dotfiles \& Configs Arch Linux](#dotfiles--configs-arch-linux)
+- [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Arch Installation](#arch-installation)
+  - [Login and window manager](#login-and-window-manager)
+- [Basic Software](#basic-software)
+  - [Window manager \& browser \& terminal](#window-manager--browser--terminal)
+  - [Audio](#audio)
+  - [Basic Qtile configuration](#basic-qtile-configuration)
+  - [Brightness](#brightness)
+  - [Wallapaper](#wallapaper)
+  - [Displays](#displays)
+  - [YAY INSTALL](#yay-install)
+- [Apps](#apps)
+- [Software](#software)
+  - [Basic utilities](#basic-utilities)
+  - [Fonts, theming and GTK](#fonts-theming-and-gtk)
+  - [Apps](#apps-1)
 
 ## Overview
 
 This guide will walk you through the process of building a desktop environment starting with a fresh Arch based installation. I will assume that you are comfortable with Linux based operating systems and command line interfaces. Because you are reading this, I will also assume that you've looked through some "tiling window manager" videos on Youtube, because that's where the rabbit hole starts. You can pick any window managers you want, but I'm going to use Qtile as a first tiling window manager because that's what I started with. This is basically a description of how I made my desktop environment from scratch.
-
-## Qtile
-
-![Qtile](.config/qtile/img/desktop.png)
 
 ## Arch Installation
 
