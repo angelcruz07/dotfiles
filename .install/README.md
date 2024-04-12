@@ -1,20 +1,27 @@
 # Arch Installation
 
-Conectarse a internet
+Esta es una guia para una instalacion limpia de arch linux
+
+- 1. Introduce el archivo ISO Y arrcanca desde el grub
+
+Antes de comenzar deberiamos verificar si tenemos internet
 
 ```bash
 # Promt
 iwctl
-
 device list
 station wlan0 scan  # El nombre sale del comando anterior
 station wlan0 get-networks
 station wlan0 connect NOMBRE_ROUTER
 exit
 timedatectl set-ntp true
+```
 
-# Crear particiones
-Ver discos
+Despues vamos a continuar creando las particiones necesarias para la instalacion de nuestro sistema.
+
+```bash
+
+#Listar los  discos
 lsblk
 #Formatear las particiones
 cfdisk
@@ -32,7 +39,10 @@ mkdir /mnt/home
 mount /dev/sda6 /mnt/home
 mkdir /mnt/boot
 mount /dev/sda2 /mnt/boot
+
 ```
+
+Bien una vez echas las particiones podemos proceder a instalar el sistema en software.
 
 ```bash
 # Install system
@@ -74,5 +84,3 @@ umount -R /mnt
 shutdown now
 # Sacar USB y arrancar PC
 ```
-
-admin

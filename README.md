@@ -6,6 +6,10 @@
 
 This guide will walk you through the process of building a desktop environment starting with a fresh Arch based installation. I will assume that you are comfortable with Linux based operating systems and command line interfaces. Because you are reading this, I will also assume that you've looked through some "tiling window manager" videos on Youtube, because that's where the rabbit hole starts. You can pick any window managers you want, but I'm going to use Qtile as a first tiling window manager because that's what I started with. This is basically a description of how I made my desktop environment from scratch.
 
+## Qtile
+
+![Qtile](.config/qtile/img/desktop.png)
+
 ## Arch Installation
 
 The starting point of this guide is a right after a complete clean Arch based distro installation.
@@ -16,7 +20,7 @@ First, we need to be able to login and open some programs like a browser and a t
 
 # Basic Software
 
-## Window manager & browser
+## Window manager & browser & terminal
 
 ```bash
 sudo pacman -S lightdm lightdm-gtk-greeter qtile xterm code firefox
@@ -50,6 +54,16 @@ sudo pacman -S feh
 feh --bg-scale /path/to/image.jpg
 ```
 
+## Displays
+
+Manejar mas de un monitor
+
+```bash
+sudo pacman -S arandr
+```
+
+Poner el comando en **xprofile** despues de configurar el monitor
+
 ## YAY INSTALL
 
 # Apps
@@ -69,11 +83,29 @@ feh --bg-scale /path/to/image.jpg
 
 ## Basic utilities
 
-| Software       | Utility           | Pacman                        |
-| -------------- | ----------------- | ----------------------------- |
-| Networkmanager | Self explanatory  | sudo pacman -S networkmanager |
-| Alacritty      | Terminal emulator | sudo pacman -S alacritty      |
-| Celda4         | Celda5            |
+| Software               | Utility                 | Pacman                                |
+| ---------------------- | ----------------------- | ------------------------------------- |
+| Networkmanager         | Self explanatory        | sudo pacman -S networkmanager         |
+| Alacritty              | Terminal emulator       | sudo pacman -S alacritty              |
+| Pulse Audio            | Audio                   | Sudo pacman -S pulseaudio             |
+| Vlc                    | Show VIdeo              | Sudo pacman -S vlc                    |
+| imv                    | Show images             | sudo pacman -S imv                    |
+| scrot                  | Screenshots             | Sudo pacman -S scrot                  |
+| thunar                 | Graphical file explorer | sudo pacman -S thunar                 |
+| Unzip                  | Descomprimir file       | sudo pacman -S unzip                  |
+| xappearance            | Change theme            | sudo pacman -S lxappearance           |
+| xcb-util-cursor        | Change theme cursor     | sudo pacman -S xcb-util-cursor        |
+| network-manager-applet | Wifi icon               | sudo pacman -S network-manager-applet |
+| cbattion               | Baterry Icon            | sudo pacman -S cbattion               |
+| notification deamon    | Notification            | sudo pacman -S notification-daemon    |
+| lib notify             | Recibir notificaciones  | sudo pacman -S libnotify              |
+
+Super comand for install all
+yay -Qe
+
+```bash
+sudo pacman -S
+```
 
 ## Fonts, theming and GTK
 

@@ -1,1 +1,3 @@
-window.opacity = 0.95
+window.opacity = 0.8
+colors.primary.background = "#0E0F1B"
+font.normal = { family = "UbuntuMono Nerd Font", style = "regular" }

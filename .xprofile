@@ -1,0 +1,25 @@
+#Composer 
+picom &
+
+#Wallpaper
+# feh --bg-scale Wallpapers/minimal.png &
+# feh --bg-scale Wallpapers/ocean.png &
+# feh --bg-scale Wallpapers/forest.jpg &
+feh --bg-scale Wallpapers/forestnight.png &
+
+# Audio
+# pulseaudio &
+
+# Icon wifi
+nm-applet &
+
+#Baterry Icon
+cbatticon &
+
+#Volumen
+volumeicon &
+
+# Mount usb
+udiskie -t & 
+
+#More info [Wiki Arch]('https://wiki.archlinux.org/title/Xprofile')

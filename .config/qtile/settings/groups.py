@@ -1,20 +1,12 @@
-# Angel Cruz
-# Qtile workspaces
-
 from libqtile.config import Key, Group
 from libqtile.command import lazy
 from .keys import mod, keys
 
-
-# Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
-# Icons: 
-
-
-# " ", "  ", " " 
-
+#  Groups
 groups = [Group(i) for i in [
     "   ", "   " ," 󰖟  ", "   "
 ]]
+
 
 for i, group in enumerate(groups):
     actual_key = str(i + 1)
