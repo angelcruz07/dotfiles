@@ -1,14 +1,24 @@
+# Screens 
+
+# Supported laptop + 1 Monitor
+hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
+
+if [ "$hdmi" = "HDMI-1" ]; then
+  xrandr --output eDP-1 --mode 1920x1080 --pos 0x1080 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output DP-2 --off
+else 
+  xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output DP-2 --off
+fi
+
+#Supported desktop + 2 monitores
+
 #Composer 
 picom &
 
-#Wallpaper
-# feh --bg-scale Wallpapers/minimal.png &
-# feh --bg-scale Wallpapers/ocean.png &
-# feh --bg-scale Wallpapers/forest.jpg &
-feh --bg-scale Wallpapers/forestnight.png &
-
-# Audio
-# pulseaudio &
+#Wallpapers
+# feh --bg-scale .Wallpapers/minimal.png &
+feh --bg-scale .Wallpapers/ocean.png &
+# feh --bg-scale .Wallpapers/forest.jpg &
+# feh --bg-scale .Wallpapers/forestnight.png &
 
 # Icon wifi
 nm-applet &

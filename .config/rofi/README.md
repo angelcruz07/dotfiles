@@ -1,12 +1,10 @@
 ## Menu rofi
 
-Menu de teclado
-
 ```bash
 sudo pacman -S rofi
 ```
 
-Configuracion
+Configuration
 
 ```bash
 Key([mod], "m", lazy.spawn("rofi -show drun"))

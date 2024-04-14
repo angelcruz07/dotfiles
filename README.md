@@ -1,23 +1,31 @@
 # Dotfiles & Configs Arch Linux
 
-![Qtile](./.screenshots/desktop.png)
+## Qtile
+
+![Qtile](./.screenshots/terminal.png)
+
+## Rofi
+
+![Rofi](./.screenshots/rofi.png)
 
 # Table of contents
 
 - [Dotfiles \& Configs Arch Linux](#dotfiles--configs-arch-linux)
+  - [Qtile](#qtile)
+  - [Rofi](#rofi)
 - [Table of contents](#table-of-contents)
   - [Overview](#overview)
   - [Arch Installation](#arch-installation)
   - [Login and window manager](#login-and-window-manager)
-- [Basic Software](#basic-software)
-  - [Window manager \& browser \& terminal](#window-manager--browser--terminal)
+- [Install](#install)
+  - [Window manager, Login Manager, Browser, Terminal, Text editor, Menu](#window-manager-login-manager-browser-terminal-text-editor-menu)
   - [Audio](#audio)
-  - [Basic Qtile configuration](#basic-qtile-configuration)
   - [Brightness](#brightness)
   - [Wallapaper](#wallapaper)
-  - [Displays](#displays)
-  - [YAY INSTALL](#yay-install)
-- [Apps](#apps)
+  - [Monitors](#monitors)
+- [Keybindings](#keybindings)
+  - [Window](#window)
+  - [Apps](#apps)
 - [Software](#software)
   - [Basic utilities](#basic-utilities)
   - [Fonts, theming and GTK](#fonts-theming-and-gtk)
@@ -31,16 +39,20 @@ This guide will walk you through the process of building a desktop environment s
 
 The starting point of this guide is a right after a complete clean Arch based distro installation.
 
+More info [Installation](/.install/README.md)...
+
 ## Login and window manager
 
 First, we need to be able to login and open some programs like a browser and a terminal, so we'll start by installing lighdm and qtile. Lightdm will not work unless we install a greeter. We also need xterm because that's the terminal emulator qtile will open by default, until we change the config file. Then, a text editor is necessary for editing config files, you can use vscode or jump straight into neovim if you have previous experience, otherwise I wouldn't suggest it. Last but not least, we need a browser.
 
-# Basic Software
+# Install
 
-## Window manager & browser & terminal
+## Window manager, Login Manager, Browser, Terminal, Text editor, Menu
 
 ```bash
-sudo pacman -S lightdm lightdm-gtk-greeter qtile xterm code firefox
+sudo pacman -S lightdm  lightdm-webkit2-greeter qtile xterm code firefox rofi
+#Basic config to lightdm
+# lightdm-gtk-greeter
 ```
 
 ## Audio
@@ -48,10 +60,6 @@ sudo pacman -S lightdm lightdm-gtk-greeter qtile xterm code firefox
 ```bash
 sudo pacman -S pulseaudio pavucontrol
 ```
-
-## Basic Qtile configuration
-
-Now that you're in Qtile, you should know some of the default keybindings.
 
 ## Brightness
 
@@ -71,19 +79,47 @@ sudo pacman -S feh
 feh --bg-scale /path/to/image.jpg
 ```
 
-## Displays
+## Monitors
 
-Manejar mas de un monitor
+Install graphic software for managing monitors
 
 ```bash
 sudo pacman -S arandr
 ```
 
-Poner el comando en **xprofile** despues de configurar el monitor
+Check the config in [xprofile](/.xprofile)
 
-## YAY INSTALL
+# Keybindings
 
-# Apps
+These are common keybindings to all my window managers.
+
+## Window
+
+| Key                 | Action                           |
+| ------------------- | -------------------------------- |
+| mod + j             | next window (down)               |
+| mod + k             | next window (up)                 |
+| mod + shift + h     | decrease master                  |
+| mod + shift + l     | increase master                  |
+| mod + shift + j     | move window down                 |
+| mod + shift + k     | move window up                   |
+| mod + shift + f     | toggle floating                  |
+| mod + tab           | change layout                    |
+| mod + [1-9]         | Switch to workspace N (1-9)      |
+| mod + shift + [1-9] | Send Window to workspace N (1-9) |
+| mod + period        | Focus next monitor               |
+| mod + comma         | Focus previous monitor           |
+| mod + w             | kill window                      |
+| mod + ctrl + r      | restart wm                       |
+| mod + ctrl + q      | quit termina la tabla            |
+
+The following keybindings will only work if you install all programs needed:
+
+```bash
+sudo pacman -S rofi thunar firefox alacritty redshift scrot
+```
+
+## Apps
 
 | Key             | Action                      |
 | --------------- | --------------------------- |
@@ -100,25 +136,24 @@ Poner el comando en **xprofile** despues de configurar el monitor
 
 ## Basic utilities
 
-| Software               | Utility                 | Pacman                                |
-| ---------------------- | ----------------------- | ------------------------------------- |
-| Networkmanager         | Self explanatory        | sudo pacman -S networkmanager         |
-| Alacritty              | Terminal emulator       | sudo pacman -S alacritty              |
-| Pulse Audio            | Audio                   | Sudo pacman -S pulseaudio             |
-| Vlc                    | Show VIdeo              | Sudo pacman -S vlc                    |
-| imv                    | Show images             | sudo pacman -S imv                    |
-| scrot                  | Screenshots             | Sudo pacman -S scrot                  |
-| thunar                 | Graphical file explorer | sudo pacman -S thunar                 |
-| Unzip                  | Descomprimir file       | sudo pacman -S unzip                  |
-| xappearance            | Change theme            | sudo pacman -S lxappearance           |
-| xcb-util-cursor        | Change theme cursor     | sudo pacman -S xcb-util-cursor        |
-| network-manager-applet | Wifi icon               | sudo pacman -S network-manager-applet |
-| cbattion               | Baterry Icon            | sudo pacman -S cbattion               |
-| notification deamon    | Notification            | sudo pacman -S notification-daemon    |
-| lib notify             | Recibir notificaciones  | sudo pacman -S libnotify              |
-
-Super comand for install all
-yay -Qe
+| Software               | Utility                       | Pacman                                |
+| ---------------------- | ----------------------------- | ------------------------------------- |
+| Networkmanager         | Self explanatory              | sudo pacman -S networkmanager         |
+| Alacritty              | Terminal emulator             | sudo pacman -S alacritty              |
+| Pulse Audio            | Audio                         | Sudo pacman -S pulseaudio             |
+| Vlc                    | Show VIdeo                    | sudo pacman -S vlc                    |
+| Qeeqie                 | Show images                   | sudo pacman -S geeqie                 |
+| scrot                  | Screenshots                   | Sudo pacman -S scrot                  |
+| thunar                 | Graphical file explorer       | sudo pacman -S thunar                 |
+| Unzip                  | Descomprimir file             | sudo pacman -S unzip                  |
+| xappearance            | Change theme                  | sudo pacman -S lxappearance           |
+| xcb-util-cursor        | Change theme cursor           | sudo pacman -S xcb-util-cursor        |
+| network-manager-applet | Wifi icon                     | sudo pacman -S network-manager-applet |
+| cbattion               | Baterry Icon                  | sudo pacman -S cbattion               |
+| notification deamon    | Notification                  | sudo pacman -S notification-daemon    |
+| lib notify             | Recibir notificaciones        | sudo pacman -S libnotify              |
+| ntfs                   | Leer usb nomtados en wiundows | sudo pacman -S ntfs-3g                |
+| neovim                 | Text Editor                   | sudo pacman -S neovim                 |
 
 ```bash
 sudo pacman -S
@@ -126,10 +161,14 @@ sudo pacman -S
 
 ## Fonts, theming and GTK
 
-| Software  | Utility           |
-| --------- | ----------------- |
-| Alacritty | Terminal emulator |
-| Celda4    | Celda5            |
+| Software              | Utility           |
+| --------------------- | ----------------- |
+| Alacritty             | Terminal emulator |
+| Exa                   | Pager             |
+| Bat                   | Pager             |
+| UbuntuMono Nerd Fonts | Font              |
+| Cascadia Code         | Font              |
+|                       |                   |
 
 ## Apps
 
@@ -142,3 +181,6 @@ sudo pacman -S
 | neovim    | Terminal based editor   |
 | rofi      | Take care of yout eyes  |
 | trayer    | Systray                 |
+
+Testing your window manager
+[Xephyr](https://wiki.archlinux.org/title/Xephyr)
