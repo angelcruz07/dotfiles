@@ -1,12 +1,14 @@
 # Arch Installation
 
-Esta es una guia para una instalacion limpia de arch linux
+Esta es una guia para una instalacion limpia de Arch linux
+[Mas Info](https://wiki.archlinux.org/)
 
 - 1. Introduce el archivo ISO Y arrcanca desde el grub
 
 Antes de comenzar deberiamos verificar si tenemos internet
 
 ```bash
+
 # Promt
 iwctl
 device list
@@ -15,32 +17,51 @@ station wlan0 get-networks
 station wlan0 connect NOMBRE_ROUTER
 exit
 timedatectl set-ntp true
+
 ```
 
-Despues vamos a continuar creando las particiones necesarias para la instalacion de nuestro sistema.
+- 2. Particionar los discos
+
+En lo personal me gusta crear las particiones de la siguiente manera
+
+1-. Espacio para el sistema
+Tamaño 50G
+
+2-. Swap
+Tamaño 8G
+
+3-. Resto del espacio al sistema
+
+En dado caso de no tener la participacion UEFI darle 150mb
 
 ```bash
-
 #Listar los  discos
 lsblk
+
 #Formatear las particiones
 cfdisk
+
 # 50g
 mkfs.ext4 /dev/nmve0n1p1
+
 # Resto al sistema
 mkfs.ext4 /dev/nmve0n1p3
+
 # 8g Swap
 mkswap /dev/nmve0n1p2
 swapon /dev/nmve0n1p2
+
 mkfs.vfat -F32 /dev/nmve0n1p4
-# Montar particiones
+
+# Montar nuestras particiones
 mount /dev/sda5 /mnt
 mkdir /mnt/home
 mount /dev/sda6 /mnt/home
 mkdir /mnt/boot
 mount /dev/sda2 /mnt/boot
-
 ```
+
+- 3.  Instalar Arch Linux
 
 Bien una vez echas las particiones podemos proceder a instalar el sistema en software.
 
@@ -51,21 +72,27 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 # System configuration
 arch-chroot /mnt
+
+# Zona horaria
 ln -sf /usr/share/zoneinfo/America/Mexico_City /etc/localtime
 hwclock --systohc
+
+# Install nano
 pacman -S nano
 nano /etc/locale.gen  # Buscar en_US.UTF-8 UTF-8 y es_ES.UTF-8 UTF-8
 locale-gen
+
 echo "LANG=es_ES.UTF-8" > /etc/locale.conf
 echo "KEYMAP=es" > /etc/vconsole.conf
 echo "asus" > /etc/hostname
 
+# Configuracion de los host
 nano /etc/hosts
 127.0.0.1     localhost
 ::1           localhost
 127.0.1.1   	myhostname.localhost	myhostname
 
-
+# Conexion a internet
 passwd
 pacman -S networkmanager
 systemctl enable NetworkManager
@@ -82,5 +109,10 @@ nano /etc/sudoers # descomentar el  %wheel ALL=(ALL) ALL
 exit
 umount -R /mnt
 shutdown now
+
 # Sacar USB y arrancar PC
 ```
+
+Bien estos son los comandos basicos para tener una instalacion de Arch linux limpia
+pero no tenemos entorno de escritorio puedes instalar alguno popular, crear el tuyo
+o copiar mi entorno.

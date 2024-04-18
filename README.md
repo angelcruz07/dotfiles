@@ -1,18 +1,26 @@
 # Dotfiles & Configs Arch Linux
 
-## Qtile
+Este es mi entorno de escritorio en arch linux actualmente esta configuracion tiene soporte en
+una laptop
+NoteBook Msi Amd Ryzen 5- 75 30u
+y dentro de mi escritorio personal con soporte para dos monitores 24 y 26 pulgadas.
+
+# Overview of the enviroment
+
+## Window Manager - Qtile
 
 ![Qtile](./.screenshots/terminal.png)
 
-## Rofi
+## Menu - Rofi
 
 ![Rofi](./.screenshots/rofi.png)
 
 # Table of contents
 
 - [Dotfiles \& Configs Arch Linux](#dotfiles--configs-arch-linux)
-  - [Qtile](#qtile)
-  - [Rofi](#rofi)
+- [Overview of the enviroment](#overview-of-the-enviroment)
+  - [Window Manager - Qtile](#window-manager---qtile)
+  - [Menu - Rofi](#menu---rofi)
 - [Table of contents](#table-of-contents)
   - [Overview](#overview)
   - [Arch Installation](#arch-installation)
@@ -51,6 +59,7 @@ First, we need to be able to login and open some programs like a browser and a t
 
 ```bash
 sudo pacman -S lightdm  lightdm-webkit2-greeter qtile xterm code firefox rofi
+
 #Basic config to lightdm
 # lightdm-gtk-greeter
 ```
@@ -154,10 +163,6 @@ sudo pacman -S rofi thunar firefox alacritty redshift scrot
 | lib notify             | Recibir notificaciones        | sudo pacman -S libnotify              |
 | ntfs                   | Leer usb nomtados en wiundows | sudo pacman -S ntfs-3g                |
 | neovim                 | Text Editor                   | sudo pacman -S neovim                 |
-
-```bash
-sudo pacman -S
-```
 
 ## Fonts, theming and GTK
 
