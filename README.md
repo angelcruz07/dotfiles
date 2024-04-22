@@ -10,6 +10,7 @@ y dentro de mi escritorio personal con soporte para dos monitores 24 y 26 pulgad
 ## Window Manager - Qtile
 
 ![Qtile](./.screenshots/terminal.png)
+![Qtile](./.screenshots/desktop.png)
 
 ## Menu - Rofi
 
@@ -64,10 +65,10 @@ sudo pacman -S xorg
 ## Window manager, Login Manager, Browser, Terminal, Text editor, Menu, neofetch
 
 ```bash
-sudo pacman -S lightdm  lightdm-webkit2-greeter qtile alacritty code firefox rofi neofetch
+sudo pacman -S lightdm lightdm-gtk-greeter lightdm-webkit2-greeter qtile alacritty code firefox rofi neofetch htop
 
-#Basic config to lightdm
-# lightdm-gtk-greeter
+sudo systemctl enable lightdm
+
 ```
 
 Use AUR
@@ -187,17 +188,20 @@ sudo pacman -S rofi thunar firefox alacritty redshift scrot
 | lib notify             | Recibir notificaciones        | sudo pacman -S libnotify              |
 | ntfs                   | Leer usb nomtados en wiundows | sudo pacman -S ntfs-3g                |
 | neovim                 | Text Editor                   | sudo pacman -S neovim                 |
+| exa                    |                               | sudo pacman -S exa                    |
+| picom                  | Composer                      | sudo pacman -S picom                  |
+| pip                    |                               | sudo pacman -s python-pip             |
 
 ## Fonts, theming and GTK
 
-| Software              | Utility           |
-| --------------------- | ----------------- |
-| Alacritty             | Terminal emulator |
-| Exa                   | Pager             |
-| Bat                   | Pager             |
-| UbuntuMono Nerd Fonts | Font              |
-| Cascadia Code         | Font              |
-|                       |                   |
+| Software              | Utility                                                             |
+| --------------------- | ------------------------------------------------------------------- |
+| Alacritty             | Terminal emulator                                                   |
+| Exa                   | Pager                                                               |
+| Bat                   | Pager                                                               |
+| UbuntuMono Nerd Fonts | Font                                                                |
+| Cascadia Code         | [Font](https://archlinux.org/packages/extra/any/ttf-cascadia-code/) |
+|                       |                                                                     |
 
 ## Apps
 
