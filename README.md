@@ -191,17 +191,18 @@ sudo pacman -S rofi thunar firefox alacritty redshift scrot
 | exa                    |                               | sudo pacman -S exa                    |
 | picom                  | Composer                      | sudo pacman -S picom                  |
 | pip                    |                               | sudo pacman -s python-pip             |
+| volumen icon           | Icon audio                    | sudo pacman -S volumeicom             |
 
 ## Fonts, theming and GTK
 
-| Software              | Utility                                                             |
-| --------------------- | ------------------------------------------------------------------- |
-| Alacritty             | Terminal emulator                                                   |
-| Exa                   | Pager                                                               |
-| Bat                   | Pager                                                               |
-| UbuntuMono Nerd Fonts | Font                                                                |
-| Cascadia Code         | [Font](https://archlinux.org/packages/extra/any/ttf-cascadia-code/) |
-|                       |                                                                     |
+| Software              | Utility                                                                |
+| --------------------- | ---------------------------------------------------------------------- |
+| Alacritty             | Terminal emulator                                                      |
+| Exa                   | Pager                                                                  |
+| Bat                   | Pager                                                                  |
+| UbuntuMono Nerd Fonts | [Font](https://archlinux.org/packages/extra/any/ttf-ubuntu-mono-nerd/) |
+| Cascadia Code         | [Font](https://archlinux.org/packages/extra/any/ttf-cascadia-code/)    |
+|                       |                                                                        |
 
 ## Apps
 
