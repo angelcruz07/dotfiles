@@ -12,7 +12,6 @@ Antes de comenzar deberiamos verificar si tenemos internet
 # Promt
 iwctl
 device list
-station wlan0 scan  # El nombre sale del comando anterior
 station wlan0 get-networks
 station wlan0 connect NOMBRE_ROUTER
 exit
@@ -51,12 +50,13 @@ mkfs.ext4 /dev/nmve0n1p3
 mkswap /dev/nmve0n1p2
 swapon /dev/nmve0n1p2
 
+#Formatear la particion UEFI
 mkfs.vfat -F32 /dev/nmve0n1p4
 
 # Montar nuestras particiones
-mount /dev/sda5 /mnt
+mount /dev/sistema /mnt
 mkdir /mnt/home
-mount /dev/sda6 /mnt/home
+mount /dev/particion/resto /mnt/home
 mkdir /mnt/boot
 mount /dev/sda2 /mnt/boot
 ```
@@ -116,3 +116,12 @@ shutdown now
 Bien estos son los comandos basicos para tener una instalacion de Arch linux limpia
 pero no tenemos entorno de escritorio puedes instalar alguno popular, crear el tuyo
 o copiar mi entorno.
+
+Ahora si has echo una particion para tener Arch junto a windows, por lo que debemos de configurar el grub para
+poder arrancar a windows
+
+```bash
+sudo pacman -S os-prober
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```

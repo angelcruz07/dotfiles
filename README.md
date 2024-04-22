@@ -26,7 +26,7 @@ y dentro de mi escritorio personal con soporte para dos monitores 24 y 26 pulgad
   - [Arch Installation](#arch-installation)
   - [Login and window manager](#login-and-window-manager)
 - [Install](#install)
-  - [Window manager, Login Manager, Browser, Terminal, Text editor, Menu](#window-manager-login-manager-browser-terminal-text-editor-menu)
+  - [Window manager, Login Manager, Browser, Terminal, Text editor, Menu, neofetch](#window-manager-login-manager-browser-terminal-text-editor-menu-neofetch)
   - [Audio](#audio)
   - [Brightness](#brightness)
   - [Wallapaper](#wallapaper)
@@ -55,13 +55,37 @@ First, we need to be able to login and open some programs like a browser and a t
 
 # Install
 
-## Window manager, Login Manager, Browser, Terminal, Text editor, Menu
+Antes de continuar deberias de tener xorg instalado
 
 ```bash
-sudo pacman -S lightdm  lightdm-webkit2-greeter qtile xterm code firefox rofi
+sudo pacman -S xorg
+```
+
+## Window manager, Login Manager, Browser, Terminal, Text editor, Menu, neofetch
+
+```bash
+sudo pacman -S lightdm  lightdm-webkit2-greeter qtile alacritty code firefox rofi neofetch
 
 #Basic config to lightdm
 # lightdm-gtk-greeter
+```
+
+Use AUR
+
+```bash
+sudo pacman -S git
+
+sudo git clone https:aur.archlinux.org/yay-git.git
+
+sudo chown -R youruser:youruser ./yay-git
+
+cd yay-git
+
+sudo pacman -S base-devel
+
+makepkg -si
+
+
 ```
 
 ## Audio
