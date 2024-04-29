@@ -1,9 +1,6 @@
 # Dotfiles & Configs Arch Linux
 
-Este es mi entorno de escritorio en arch linux actualmente esta configuracion tiene soporte en
-una laptop
-NoteBook Msi Amd Ryzen 5- 75 30u
-y dentro de mi escritorio personal con soporte para dos monitores 24 y 26 pulgadas.
+This is my desktop environment on Arch Linux. Currently, this setup is supported on a laptop, an MSI Notebook with an AMD Ryzen 5-7530U processor, and within my personal desktop with support for two monitors, 24 and 26 inches respectively.
 
 # Overview of the enviroment
 

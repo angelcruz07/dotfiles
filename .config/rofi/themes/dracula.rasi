@@ -7,9 +7,9 @@ configuration {
 
 * {
     font:                           "Cascadia Code 11";
-    foreground:                     #c5c9de;
-    background-color:               #131111;
-    active-background:              #e0ffad;
+    foreground:                     #f8f8f2;
+    background-color:               #282a36;
+    active-background:              #BD93F9;
     urgent-background:              #ff5555;
     urgent-foreground:              #282a36;
     selected-background:            @active-background;
