@@ -5,13 +5,16 @@ This is my desktop environment on Arch Linux. Currently, this setup is supported
 # Overview of the enviroment
 
 ## Window Manager - Qtile
+![Dracula theme](./.screenshots/dracula.jpg)
 
-![Qtile](./.screenshots/terminal.png)
-![Qtile](./.screenshots/desktop.png)
 
 ## Menu - Rofi
 
 ![Rofi](./.screenshots/rofi.png)
+
+## Themes
+- Dracula
+![Dracula theme](./.screenshots/dracula.jpg)
 
 # Table of contents
 
@@ -51,15 +54,14 @@ More info [Installation](/.install/README.md)...
 
 First, we need to be able to login and open some programs like a browser and a terminal, so we'll start by installing lighdm and qtile. Lightdm will not work unless we install a greeter. We also need xterm because that's the terminal emulator qtile will open by default, until we change the config file. Then, a text editor is necessary for editing config files, you can use vscode or jump straight into neovim if you have previous experience, otherwise I wouldn't suggest it. Last but not least, we need a browser.
 
-# Install
-
-Antes de continuar deberias de tener xorg instalado
+## Install Xorg
+Before proceeding, you should have Xorg installed
 
 ```bash
 sudo pacman -S xorg
 ```
 
-## Window manager, Login Manager, Browser, Terminal, Text editor, Menu, neofetch
+## Window manager, Login Manager, Browser, Terminal, Text editor, Menu, neofetch, htop
 
 ```bash
 sudo pacman -S lightdm lightdm-gtk-greeter lightdm-webkit2-greeter qtile alacritty code firefox rofi neofetch htop
@@ -68,7 +70,7 @@ sudo systemctl enable lightdm
 
 ```
 
-Use AUR
+## Install AUR
 
 ```bash
 sudo pacman -S git
@@ -199,7 +201,7 @@ sudo pacman -S rofi thunar firefox alacritty redshift scrot
 | Bat                   | Pager                                                                  |
 | UbuntuMono Nerd Fonts | [Font](https://archlinux.org/packages/extra/any/ttf-ubuntu-mono-nerd/) |
 | Cascadia Code         | [Font](https://archlinux.org/packages/extra/any/ttf-cascadia-code/)    |
-|                       |                                                                        |
+| Theme                 | [Iconst](https://www.gnome-look.org/p/1333360) [Theme](https://www.gnome-look.org/p/1316887)         |
 
 ## Apps
 
