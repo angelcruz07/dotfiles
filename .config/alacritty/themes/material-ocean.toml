@@ -19,5 +19,11 @@ white = "#bfd5de"
 yellow = "#ffd47e"
 
 [colors.primary]
-background = "#0f101a"
+background = "#131111"
 foreground = "#c5c9de"
+
+[window]
+opacity = 0.46
+
+[font]
+normal = { family = "Cascadia Code", style = "regular" }

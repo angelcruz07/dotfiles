@@ -10,6 +10,8 @@ else
 fi
 
 #Supported desktop + 2 monitores
+# xrandr --output DP-1 --off --output HDMI-1 --off --output HDMI-2 --mode 1920x1200 --pos 1920x0 --rotate normal --output HDMI-3 --mode 1920x1080 --pos 0x120 --rotate normal
+
 
 #Composer 
 picom &
@@ -17,8 +19,13 @@ picom &
 #Wallpapers
 # feh --bg-scale .wallpapers/minimal.png &
 feh --bg-scale .wallpapers/ocean.png &
+# feh --bg-scale .wallpapers/asusrog.png &
+# feh --bg-scale .wallpapers/rog.jpg &
+# feh --bg-scale .wallpapers/asus.jpg &
+# feh --bg-scale .wallpapers/dracula.png &
 # feh --bg-scale .wallpapers/forest.jpg &
 # feh --bg-scale .wallpapers/forestnight.png &
+# feh --bg-scale .wallpapers/firewatch.jpg &
 
 # Icon wifi
 nm-applet &
