@@ -21,9 +21,3 @@ yellow = "#ffd47e"
 [colors.primary]
 background = "#0f101a"
 foreground = "#c5c9de"
-
-[window]
-opacity = 0.96
-
-[font]
-normal = { family = "Cascadia Code", style = "regular" }
