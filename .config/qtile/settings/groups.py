@@ -11,7 +11,7 @@ from .keys import mod, keys
 
 #  Groups
 groups = [Group(i) for i in [
-   " 󰣇  ", "   ", "   " ,"   ", "   "
+   " 󰣇 ", "  ", "  " ,"  ", "  "
 ]]
 
 
