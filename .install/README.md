@@ -1,6 +1,6 @@
 # Arch Installation
 
-Esta es una guia para una instalacion limpia de Arch linux
+Esta es una guia para una instalacion limpia de Arch linux.
 [Mas Info](https://wiki.archlinux.org/)
 
 - 1. Introduce el archivo ISO Y arrcanca desde el grub
@@ -19,19 +19,21 @@ timedatectl set-ntp true
 
 ```
 
-- 2. Particionar los discos
+1. Particionar los discos
 
 En lo personal me gusta crear las particiones de la siguiente manera
 
-1-. Espacio para el sistema
-Tamaño 50G
+1. Espacio para el sistema
+   Tamaño 50G
 
-2-. Swap
-Tamaño 8G
+2. Swap
+   Tamaño 8G
 
-3-. Resto del espacio al sistema
+3. Resto del espacio al sistema
 
-En dado caso de no tener la participacion UEFI darle 150mb
+4. Participacion UEFI darle 150mb
+
+## Formatear particiones
 
 ```bash
 #Listar los  discos
@@ -52,8 +54,11 @@ swapon /dev/nmve0n1p2
 
 #Formatear la particion UEFI
 mkfs.vfat -F32 /dev/nmve0n1p4
+```
 
 # Montar nuestras particiones
+
+```bash
 mount /dev/sistema /mnt
 mkdir /mnt/home
 mount /dev/particion/resto /mnt/home
@@ -61,7 +66,7 @@ mkdir /mnt/boot
 mount /dev/sda2 /mnt/boot
 ```
 
-- 3.  Instalar Arch Linux
+## Instalar Arch Linux
 
 Bien una vez echas las particiones podemos proceder a instalar el sistema en software.
 
@@ -99,7 +104,12 @@ systemctl enable NetworkManager
 pacman -S grub efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/boot
 grub-mkconfig -o /boot/grub/grub.cfg
+```
 
+Con lo anterior debemos tener completada nuestra instalacion de Arch linux
+el siguiente paso seria crear nuestro usuario.
+
+```bash
 # Add User
 useradd -m usuario
 passwd usuario
@@ -108,17 +118,16 @@ pacman -S sudo
 nano /etc/sudoers # descomentar el  %wheel ALL=(ALL) ALL
 exit
 umount -R /mnt
+# Despues del proximo comando sacar USB y arrancar PC
 shutdown now
-
-# Sacar USB y arrancar PC
 ```
 
 Bien estos son los comandos basicos para tener una instalacion de Arch linux limpia
 pero no tenemos entorno de escritorio puedes instalar alguno popular, crear el tuyo
 o copiar mi entorno.
 
-Ahora si has echo una particion para tener Arch junto a windows, por lo que debemos de configurar el grub para
-poder arrancar a windows
+Ahora si has elegido crear un DualBoot para tener Arch junto a windows, por lo que debemos de configurar el grub para
+poder arrancar a windows.
 
 ```bash
 sudo pacman -S os-prober

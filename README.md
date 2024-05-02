@@ -5,16 +5,17 @@ This is my desktop environment on Arch Linux. Currently, this setup is supported
 # Overview of the enviroment
 
 ## Window Manager - Qtile
-![Dracula theme](./.screenshots/dracula.jpg)
 
+![Dracula theme](./.screenshots/dracula.jpg)
 
 ## Menu - Rofi
 
 ![Rofi](./.screenshots/rofi.png)
 
 ## Themes
+
 - Dracula
-![Dracula theme](./.screenshots/dracula.jpg)
+  ![Dracula theme](./.screenshots/dracula.jpg)
 
 # Table of contents
 
@@ -22,12 +23,14 @@ This is my desktop environment on Arch Linux. Currently, this setup is supported
 - [Overview of the enviroment](#overview-of-the-enviroment)
   - [Window Manager - Qtile](#window-manager---qtile)
   - [Menu - Rofi](#menu---rofi)
+  - [Themes](#themes)
 - [Table of contents](#table-of-contents)
   - [Overview](#overview)
   - [Arch Installation](#arch-installation)
   - [Login and window manager](#login-and-window-manager)
-- [Install](#install)
-  - [Window manager, Login Manager, Browser, Terminal, Text editor, Menu, neofetch](#window-manager-login-manager-browser-terminal-text-editor-menu-neofetch)
+  - [Install Xorg](#install-xorg)
+  - [Window manager, Login Manager, Browser, Terminal, Text editor, Menu, neofetch, htop](#window-manager-login-manager-browser-terminal-text-editor-menu-neofetch-htop)
+  - [Install AUR](#install-aur)
   - [Audio](#audio)
   - [Brightness](#brightness)
   - [Wallapaper](#wallapaper)
@@ -37,6 +40,11 @@ This is my desktop environment on Arch Linux. Currently, this setup is supported
   - [Apps](#apps)
 - [Software](#software)
   - [Basic utilities](#basic-utilities)
+  - [Audio](#audio-1)
+  - [Video \& Images](#video--images)
+  - [Terminal](#terminal)
+  - [Text editor](#text-editor)
+  - [Additional features](#additional-features)
   - [Fonts, theming and GTK](#fonts-theming-and-gtk)
   - [Apps](#apps-1)
 
@@ -55,6 +63,7 @@ More info [Installation](/.install/README.md)...
 First, we need to be able to login and open some programs like a browser and a terminal, so we'll start by installing lighdm and qtile. Lightdm will not work unless we install a greeter. We also need xterm because that's the terminal emulator qtile will open by default, until we change the config file. Then, a text editor is necessary for editing config files, you can use vscode or jump straight into neovim if you have previous experience, otherwise I wouldn't suggest it. Last but not least, we need a browser.
 
 ## Install Xorg
+
 Before proceeding, you should have Xorg installed
 
 ```bash
@@ -169,39 +178,66 @@ sudo pacman -S rofi thunar firefox alacritty redshift scrot
 
 ## Basic utilities
 
-| Software               | Utility                       | Pacman                                |
-| ---------------------- | ----------------------------- | ------------------------------------- |
-| Networkmanager         | Self explanatory              | sudo pacman -S networkmanager         |
-| Alacritty              | Terminal emulator             | sudo pacman -S alacritty              |
-| Pulse Audio            | Audio                         | Sudo pacman -S pulseaudio             |
-| Vlc                    | Show VIdeo                    | sudo pacman -S vlc                    |
-| Qeeqie                 | Show images                   | sudo pacman -S geeqie                 |
-| scrot                  | Screenshots                   | Sudo pacman -S scrot                  |
-| thunar                 | Graphical file explorer       | sudo pacman -S thunar                 |
-| Unzip                  | Descomprimir file             | sudo pacman -S unzip                  |
-| xappearance            | Change theme                  | sudo pacman -S lxappearance           |
-| xcb-util-cursor        | Change theme cursor           | sudo pacman -S xcb-util-cursor        |
-| network-manager-applet | Wifi icon                     | sudo pacman -S network-manager-applet |
-| cbattion               | Baterry Icon                  | sudo pacman -S cbattion               |
-| notification deamon    | Notification                  | sudo pacman -S notification-daemon    |
-| lib notify             | Recibir notificaciones        | sudo pacman -S libnotify              |
-| ntfs                   | Leer usb nomtados en wiundows | sudo pacman -S ntfs-3g                |
-| neovim                 | Text Editor                   | sudo pacman -S neovim                 |
-| exa                    |                               | sudo pacman -S exa                    |
-| picom                  | Composer                      | sudo pacman -S picom                  |
-| pip                    |                               | sudo pacman -s python-pip             |
-| volumen icon           | Icon audio                    | sudo pacman -S volumeicom             |
+| Software               | Utility                      | Pacman                                |
+| ---------------------- | ---------------------------- | ------------------------------------- |
+| networkmanager         | Self explanatory             | sudo pacman -S networkmanager         |
+| ntfs                   | Leer usb nomtados en windows | sudo pacman -S ntfs-3g                |
+| thunar                 | Graphical file explorer      | sudo pacman -S thunar                 |
+| Unzip                  | Uzip files                   | sudo pacman -S unzip                  |
+| xappearance            | Change theme                 | sudo pacman -S lxappearance           |
+| xcb-util-cursor        | Change theme cursor          | sudo pacman -S xcb-util-cursor        |
+| network-manager-applet | Wifi icon                    | sudo pacman -S network-manager-applet |
+| cbattion               | Baterry Icon                 | sudo pacman -S cbattion               |
+| notification deamon    | Notification                 | sudo pacman -S notification-daemon    |
+| lib notify             | Recibir notificaciones       | sudo pacman -S libnotify              |
+| exa                    | List files visually          | sudo pacman -S exa                    |
+| picom                  | Composer                     | sudo pacman -S picom                  |
+| pip                    | Python package manager       | sudo pacman -s python-pip             |
+
+## Audio
+
+| Software     | Utility       | Pacman                    |
+| ------------ | ------------- | ------------------------- |
+| Pulse Audio  | Audio control | sudo pacman -S pulseaudio |
+| volumen icon | Icon audio    | sudo pacman -S volumeicom |
+
+## Video & Images
+
+| Software | Utility     | Pacman                |
+| -------- | ----------- | --------------------- |
+| Vlc      | Show Video  | sudo pacman -S vlc    |
+| Qeeqie   | Show images | sudo pacman -S geeqie |
+| scrot    | Screenshots | Sudo pacman -S scrot  |
+
+## Terminal
+
+| Software  | Utility           | Pacman                   |
+| --------- | ----------------- | ------------------------ |
+| Alacritty | Terminal emulator | sudo pacman -S alacritty |
+
+## Text editor
+
+| Software    | Utility     | Pacman                |
+| ----------- | ----------- | --------------------- |
+| neovim      | Text editor | sudo pacman -S neovim |
+| visual code | Text editor | sudo pacman -S code   |
+
+## Additional features
+
+| Software | Utility | Pacman                |
+| -------- | ------- | --------------------- |
+| ArandDR  |         | sudo pacman -S arandr |
 
 ## Fonts, theming and GTK
 
-| Software              | Utility                                                                |
-| --------------------- | ---------------------------------------------------------------------- |
-| Alacritty             | Terminal emulator                                                      |
-| Exa                   | Pager                                                                  |
-| Bat                   | Pager                                                                  |
-| UbuntuMono Nerd Fonts | [Font](https://archlinux.org/packages/extra/any/ttf-ubuntu-mono-nerd/) |
-| Cascadia Code         | [Font](https://archlinux.org/packages/extra/any/ttf-cascadia-code/)    |
-| Theme                 | [Iconst](https://www.gnome-look.org/p/1333360) [Theme](https://www.gnome-look.org/p/1316887)         |
+| Software              | Utility                                                                                      |
+| --------------------- | -------------------------------------------------------------------------------------------- |
+| Alacritty             | Terminal emulator                                                                            |
+| Exa                   | Pager                                                                                        |
+| Bat                   | Pager                                                                                        |
+| UbuntuMono Nerd Fonts | [Font](https://archlinux.org/packages/extra/any/ttf-ubuntu-mono-nerd/)                       |
+| Cascadia Code         | [Font](https://archlinux.org/packages/extra/any/ttf-cascadia-code/)                          |
+| Theme                 | [Iconst](https://www.gnome-look.org/p/1333360) [Theme](https://www.gnome-look.org/p/1316887) |
 
 ## Apps
 
