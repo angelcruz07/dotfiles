@@ -46,7 +46,6 @@ This is my desktop environment on Arch Linux. Currently, this setup is supported
   - [Text editor](#text-editor)
   - [Additional features](#additional-features)
   - [Fonts, theming and GTK](#fonts-theming-and-gtk)
-  - [Apps](#apps-1)
 
 ## Overview
 
@@ -173,26 +172,25 @@ sudo pacman -S rofi thunar firefox alacritty redshift scrot
 | mod + r         | Redshift                    |
 | mod + shift + r | Stop redshift               |
 | mod + s         | screenshot (scrot)          |
+| mod + c         | Launch VsCode               |
 
 # Software
 
+List of software used in the desktop environment
+
 ## Basic utilities
 
-| Software               | Utility                      | Pacman                                |
-| ---------------------- | ---------------------------- | ------------------------------------- |
-| networkmanager         | Self explanatory             | sudo pacman -S networkmanager         |
-| ntfs                   | Leer usb nomtados en windows | sudo pacman -S ntfs-3g                |
-| thunar                 | Graphical file explorer      | sudo pacman -S thunar                 |
-| Unzip                  | Uzip files                   | sudo pacman -S unzip                  |
-| xappearance            | Change theme                 | sudo pacman -S lxappearance           |
-| xcb-util-cursor        | Change theme cursor          | sudo pacman -S xcb-util-cursor        |
-| network-manager-applet | Wifi icon                    | sudo pacman -S network-manager-applet |
-| cbattion               | Baterry Icon                 | sudo pacman -S cbattion               |
-| notification deamon    | Notification                 | sudo pacman -S notification-daemon    |
-| lib notify             | Recibir notificaciones       | sudo pacman -S libnotify              |
-| exa                    | List files visually          | sudo pacman -S exa                    |
-| picom                  | Composer                     | sudo pacman -S picom                  |
-| pip                    | Python package manager       | sudo pacman -s python-pip             |
+| Software               | Utility                     | Pacman                                |
+| ---------------------- | --------------------------- | ------------------------------------- |
+| networkmanager         | Self explanatory            | sudo pacman -S networkmanager         |
+| ntfs                   | Read mounted usb in windows | sudo pacman -S ntfs-3g                |
+| thunar                 | Graphical file explorer     | sudo pacman -S thunar                 |
+| unzip                  | Uzip files                  | sudo pacman -S unzip                  |
+| network-manager-applet | Wifi icon                   | sudo pacman -S network-manager-applet |
+| cbattion               | Baterry Icon                | sudo pacman -S cbattion               |
+| notification deamon    | Notification                | sudo pacman -S notification-daemon    |
+| lib notify             | Recibir notificaciones      | sudo pacman -S libnotify              |
+| picom                  | Composer                    | sudo pacman -S picom                  |
 
 ## Audio
 
@@ -224,9 +222,13 @@ sudo pacman -S rofi thunar firefox alacritty redshift scrot
 
 ## Additional features
 
-| Software | Utility | Pacman                |
-| -------- | ------- | --------------------- |
-| ArandDR  |         | sudo pacman -S arandr |
+| Software        | Utility                 | Pacman                         |
+| --------------- | ----------------------- | ------------------------------ |
+| ArandDR         | Manage multiple screens | sudo pacman -S arandr          |
+| xappearance     | Change theme            | sudo pacman -S lxappearance    |
+| pip             | Python package manager  | sudo pacman -s python-pip      |
+| exa             | List files visually     | sudo pacman -S exa             |
+| xcb-util-cursor | Change theme cursor     | sudo pacman -S xcb-util-cursor |
 
 ## Fonts, theming and GTK
 
@@ -237,19 +239,7 @@ sudo pacman -S rofi thunar firefox alacritty redshift scrot
 | Bat                   | Pager                                                                                        |
 | UbuntuMono Nerd Fonts | [Font](https://archlinux.org/packages/extra/any/ttf-ubuntu-mono-nerd/)                       |
 | Cascadia Code         | [Font](https://archlinux.org/packages/extra/any/ttf-cascadia-code/)                          |
-| Theme                 | [Iconst](https://www.gnome-look.org/p/1333360) [Theme](https://www.gnome-look.org/p/1316887) |
-
-## Apps
-
-| Software  | Utility                 |
-| --------- | ----------------------- |
-| Alacritty | Terminal emulator       |
-| Thunar    | Graphical file explorer |
-| ranger    | Terminal based explorer |
-| scrot     | Screenshot              |
-| neovim    | Terminal based editor   |
-| rofi      | Take care of yout eyes  |
-| trayer    | Systray                 |
+| Theme GTK             | [Iconst](https://www.gnome-look.org/p/1333360) [Theme](https://www.gnome-look.org/p/1316887) |
 
 Testing your window manager
 [Xephyr](https://wiki.archlinux.org/title/Xephyr)
