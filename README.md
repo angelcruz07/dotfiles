@@ -232,6 +232,8 @@ List of software used in the desktop environment
 | the_silver_search |           | sudo pacman -S the_silver_searcher |
 | prettier          | Formater  | sudo pacman -S prettier            |
 
+More info [Neovim](https://neovim.io/)
+
 ## Additional features
 
 | Software        | Utility                 | Pacman                         |
