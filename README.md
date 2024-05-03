@@ -44,6 +44,7 @@ This is my desktop environment on Arch Linux. Currently, this setup is supported
   - [Video \& Images](#video--images)
   - [Terminal](#terminal)
   - [Text editor](#text-editor)
+  - [Neovim](#neovim)
   - [Additional features](#additional-features)
   - [Fonts, theming and GTK](#fonts-theming-and-gtk)
 
@@ -219,6 +220,17 @@ List of software used in the desktop environment
 | ----------- | ----------- | --------------------- |
 | neovim      | Text editor | sudo pacman -S neovim |
 | visual code | Text editor | sudo pacman -S code   |
+
+## Neovim
+
+| Software          | Utility   | Pacman                             |
+| ----------------- | --------- | ---------------------------------- |
+| xsel              | Clipboard | sudo pacman -S xsel                |
+| fzf               | Finder    | sudo pacman -S fzf                 |
+| ripgrep           | Finder    | sudo pacman -S ripgrep             |
+| fd                | Finder    | sudo pacman -S fd                  |
+| the_silver_search |           | sudo pacman -S the_silver_searcher |
+| prettier          | Formater  | sudo pacman -S prettier            |
 
 ## Additional features
 
