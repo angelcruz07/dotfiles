@@ -9,14 +9,14 @@ else
   xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output DP-2 --off
 fi
 
-#Supported desktop + 2 monitores
+# Supported desktop 2 monitores
 # xrandr --output DP-1 --off --output HDMI-1 --off --output HDMI-2 --mode 1920x1200 --pos 1920x0 --rotate normal --output HDMI-3 --mode 1920x1080 --pos 0x120 --rotate normal
 
 
-#Composer 
+# Composer 
 picom &
 
-#Wallpapers
+# Wallpapers
 # feh --bg-scale .wallpapers/minimal.png &
 feh --bg-scale .wallpapers/ocean.png &
 # feh --bg-scale .wallpapers/asusrog.png &
@@ -39,4 +39,4 @@ volumeicon &
 # Mount usb
 udiskie -t & 
 
-#More info [Wiki Arch]('https://wiki.archlinux.org/title/Xprofile')
+# More info [Wiki Arch]('https://wiki.archlinux.org/title/Xprofile')

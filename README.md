@@ -1,42 +1,52 @@
-# Dotfiles & Configs Arch Linux
+# **Dotfiles & Configs Arch Linux**
 
 This is my desktop environment on Arch Linux. Currently, this setup is supported on a laptop, an MSI Notebook with an AMD Ryzen 5-7530U processor, and within my personal desktop with support for two monitors, 24 and 26 inches respectively.
 
-# Overview of the enviroment
+# **Overview of the enviroment**
 
-## Window Manager - Qtile
+## **Window Manager - Qtile**
 
 ![Dracula theme](./.screenshots/dracula.jpg)
 
-## Menu - Rofi
+## **Menu - Rofi**
 
 ![Rofi](./.screenshots/rofi.png)
 
-## Themes
+## **Theme**
 
 - Dracula
   ![Dracula theme](./.screenshots/dracula.jpg)
 
-# Table of contents
+## **Avaible themes**
 
-- [Dotfiles \& Configs Arch Linux](#dotfiles--configs-arch-linux)
-- [Overview of the enviroment](#overview-of-the-enviroment)
-  - [Window Manager - Qtile](#window-manager---qtile)
-  - [Menu - Rofi](#menu---rofi)
-  - [Themes](#themes)
-- [Table of contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Arch Installation](#arch-installation)
-  - [Login and window manager](#login-and-window-manager)
-  - [Install Xorg](#install-xorg)
+- King
+- Dark-grey
+- Material-darker
+- Material-ocean
+- Monokai-pro
+- Nord-wave
+- Nord
+
+# **Table of contents**
+
+- [**Dotfiles \& Configs Arch Linux**](#dotfiles--configs-arch-linux)
+- [**Overview of the enviroment**](#overview-of-the-enviroment)
+  - [**Window Manager - Qtile**](#window-manager---qtile)
+  - [**Menu - Rofi**](#menu---rofi)
+  - [**Theme**](#theme)
+  - [**Avaible themes**](#avaible-themes)
+- [**Table of contents**](#table-of-contents)
+  - [**Overview**](#overview)
+  - [**Arch Installation**](#arch-installation)
+  - [**Install Xorg**](#install-xorg)
+  - [**Login and window manager**](#login-and-window-manager)
   - [Window manager, Login Manager, Browser, Terminal, Text editor, Menu, neofetch, htop](#window-manager-login-manager-browser-terminal-text-editor-menu-neofetch-htop)
-  - [Install AUR](#install-aur)
-  - [Audio](#audio)
-  - [Brightness](#brightness)
-  - [Wallapaper](#wallapaper)
-  - [Monitors](#monitors)
-- [Keybindings](#keybindings)
-  - [Window](#window)
+  - [Install Arch User Repository (AUR)](#install-arch-user-repository-aur)
+  - [**Audio**](#audio)
+  - [**Brightness**](#brightness)
+  - [**Wallapaper**](#wallapaper)
+  - [**Monitors**](#monitors)
+- [**Keybindings**](#keybindings)
   - [Apps](#apps)
 - [Software](#software)
   - [Basic utilities](#basic-utilities)
@@ -48,62 +58,81 @@ This is my desktop environment on Arch Linux. Currently, this setup is supported
   - [Additional features](#additional-features)
   - [Fonts, theming and GTK](#fonts-theming-and-gtk)
 
-## Overview
+## **Overview**
 
 This guide will walk you through the process of building a desktop environment starting with a fresh Arch based installation. I will assume that you are comfortable with Linux based operating systems and command line interfaces. Because you are reading this, I will also assume that you've looked through some "tiling window manager" videos on Youtube, because that's where the rabbit hole starts. You can pick any window managers you want, but I'm going to use Qtile as a first tiling window manager because that's what I started with. This is basically a description of how I made my desktop environment from scratch.
 
-## Arch Installation
+## **Arch Installation**
 
 The starting point of this guide is a right after a complete clean Arch based distro installation.
 
-More info [Installation](/.install/README.md)...
+Wiki [arch](https://wiki.archlinux.org/title/installation_guide)
 
-## Login and window manager
+My recomendations [Installation](/.install/README.md)
 
-First, we need to be able to login and open some programs like a browser and a terminal, so we'll start by installing lighdm and qtile. Lightdm will not work unless we install a greeter. We also need xterm because that's the terminal emulator qtile will open by default, until we change the config file. Then, a text editor is necessary for editing config files, you can use vscode or jump straight into neovim if you have previous experience, otherwise I wouldn't suggest it. Last but not least, we need a browser.
-
-## Install Xorg
+## **Install Xorg**
 
 Before proceeding, you should have Xorg installed
 
 ```bash
+
 sudo pacman -S xorg
+
 ```
+
+## **Login and window manager**
+
+First, we need to be able to login and open some programs like a browser and a terminal, so we'll start by installing lighdm and qtile. Lightdm will not work unless we install a greeter. We also need xterm because that's the terminal emulator qtile will open by default, until we change the config file. Then, a text editor is necessary for editing config files, you can use vscode or jump straight into neovim if you have previous experience, otherwise I wouldn't suggest it. Last but not least, we need a browser.
 
 ## Window manager, Login Manager, Browser, Terminal, Text editor, Menu, neofetch, htop
 
-```bash
-sudo pacman -S lightdm lightdm-gtk-greeter lightdm-webkit2-greeter qtile alacritty code firefox rofi neofetch htop
+Note: This comand will install the next
+sotfware:
 
+- lightdm
+- Qtile
+- Alacritty
+- Vs Code
+- Firefox
+- Rofi
+- Neofetch
+- Base devel
+
+you can modify it your way.
+
+```bash
+sudo pacman -S lightdm lightdm-gtk-greeter lightdm-webkit2-greeter qtile alacritty code firefox rofi neofetch htop base-devel
+
+# Enable login manager
 sudo systemctl enable lightdm
 
 ```
 
-## Install AUR
+## Install Arch User Repository (AUR)
 
 ```bash
+# Verify if you have git installed
 sudo pacman -S git
 
+# Clone repository
 sudo git clone https:aur.archlinux.org/yay-git.git
 
+# Install yay
 sudo chown -R youruser:youruser ./yay-git
 
 cd yay-git
 
-sudo pacman -S base-devel
-
 makepkg -si
-
 
 ```
 
-## Audio
+## **Audio**
 
 ```bash
 sudo pacman -S pulseaudio pavucontrol
 ```
 
-## Brightness
+## **Brightness**
 
 Config keys laptop of brightness.
 
@@ -111,17 +140,20 @@ Config keys laptop of brightness.
 sudo pacman -S brightnessctl
 ```
 
-## Wallapaper
+## **Wallapaper**
 
 Install the software feh to set the wallpaper
 Configure your **.xprofile** file to set your background when you boot your PC
 
 ```bash
+# Install feh
 sudo pacman -S feh
+
+# Set wallpaper in your file .xprofile
 feh --bg-scale /path/to/image.jpg
 ```
 
-## Monitors
+## **Monitors**
 
 Install graphic software for managing monitors
 
@@ -129,13 +161,9 @@ Install graphic software for managing monitors
 sudo pacman -S arandr
 ```
 
-Check the config in [xprofile](/.xprofile)
+Check my config in [xprofile](/.xprofile)
 
-# Keybindings
-
-These are common keybindings to all my window managers.
-
-## Window
+# **Keybindings**
 
 | Key                 | Action                           |
 | ------------------- | -------------------------------- |
@@ -153,7 +181,7 @@ These are common keybindings to all my window managers.
 | mod + comma         | Focus previous monitor           |
 | mod + w             | kill window                      |
 | mod + ctrl + r      | restart wm                       |
-| mod + ctrl + q      | quit termina la tabla            |
+| mod + ctrl + q      | quit window                      |
 
 The following keybindings will only work if you install all programs needed:
 
