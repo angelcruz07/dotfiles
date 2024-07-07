@@ -72,6 +72,7 @@ keys = [
     #Screenshot
     Key([], "Print", lazy.spawn("scrot /home/angel/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"), desc="Take Screenshot"),
     Key([mod], "Print", lazy.spawn("scrot -s /home/angel/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"), desc="Take Screenshot custom"),
+    Key([mod], "s", lazy.spawn("flameshot"), desc="Take Screenshot custom"),
 
     #Browser
     Key([mod], "b", lazy.spawn("firefox"), desc="Open browser"), 
@@ -81,6 +82,10 @@ keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")),
     Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
     Key([], "XF86TouchpadToggle", lazy.spawn("xinput disable ELAN0307:00 04F3:3282 toggle")),
+
+    #Editors
+    Key([mod], "i", lazy.spawn("idea"), desc="Open intellij"),
+    Key([mod], "c", lazy.spawn("code"), desc="Open vscode"),
   
    #Brightness
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),

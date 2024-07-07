@@ -220,6 +220,7 @@ List of software used in the desktop environment
 | notification deamon    | Notification                | sudo pacman -S notification-daemon    |
 | lib notify             | Recibir notificaciones      | sudo pacman -S libnotify              |
 | picom                  | Composer                    | sudo pacman -S picom                  |
+| flameshot              | Screenshot                  | sudo pacman -S flameshot              |
 
 ## Audio
 
