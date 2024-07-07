@@ -47,6 +47,7 @@ This is my desktop environment on Arch Linux. Currently, this setup is supported
   - [**Wallapaper**](#wallapaper)
   - [**Monitors**](#monitors)
 - [**Keybindings**](#keybindings)
+  - [Extras](#extras)
   - [Apps](#apps)
 - [Software](#software)
   - [Basic utilities](#basic-utilities)
@@ -187,6 +188,21 @@ The following keybindings will only work if you install all programs needed:
 
 ```bash
 sudo pacman -S rofi thunar firefox alacritty redshift scrot
+```
+
+## Extras
+
+In my case I require the dual configuration of my keyboard between the English and Spanish languages, if you still require it, follow the following steps
+
+```bash
+
+sudo localectl set-x11-keymap us,es
+
+# Add the lines in keys.py
+Key([mod], "u", lazy.spawn("setxkbmap us")),
+# Switch to ES keyboard layout
+Key([mod], "e", lazy.spawn("setxkbmap es")),
+
 ```
 
 ## Apps
