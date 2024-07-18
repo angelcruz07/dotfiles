@@ -196,12 +196,19 @@ In my case I require the dual configuration of my keyboard between the English a
 
 ```bash
 
-sudo localectl set-x11-keymap us,es
+# config layout keyboard US-intl
+setxkbmap -layout us -variant intl
 
-# Add the lines in keys.py
-Key([mod], "u", lazy.spawn("setxkbmap us")),
-# Switch to ES keyboard layout
-Key([mod], "e", lazy.spawn("setxkbmap es")),
+# Update the next file
+sudo nano /etc/X11/xorg.conf.d/00-keyboard.conf
+
+# Add this lines
+Section "InputClass"
+    Identifier "system-keyboard"
+    MatchIsKeyboard "on"
+    Option "XkbLayout" "us"
+    Option "XkbVariant" "intl"
+EndSection
 
 ```
 
