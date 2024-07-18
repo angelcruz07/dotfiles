@@ -6,16 +6,16 @@ This is my desktop environment on Arch Linux. Currently, this setup is supported
 
 ## **Window Manager - Qtile**
 
-![Dracula theme](./.screenshots/dracula.jpg)
+![Dracula theme](./assets/screenshots/dracula.jpg)
 
 ## **Menu - Rofi**
 
-![Rofi](./.screenshots/rofi.png)
+![Rofi](./assets/screenshots/rofi.png)
 
 ## **Theme**
 
 - Dracula
-  ![Dracula theme](./.screenshots/dracula.jpg)
+  ![Dracula theme](./assets/screenshots/dracula.jpg)
 
 ## **Avaible themes**
 
