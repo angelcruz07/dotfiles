@@ -69,7 +69,7 @@ The starting point of this guide is a right after a complete clean Arch based di
 
 Wiki [arch](https://wiki.archlinux.org/title/installation_guide)
 
-My recomendations [Installation](/.install/README.md)
+My recomendations [Installation](/install/README.md)
 
 ## **Install Xorg**
 
