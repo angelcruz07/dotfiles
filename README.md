@@ -46,7 +46,7 @@ This is my desktop environment on Arch Linux. Currently, this setup is supported
   - [**Brightness**](#brightness)
   - [**Wallapaper**](#wallapaper)
   - [**Monitors**](#monitors)
-- [**Keybindings**](#keybindings)
+  - [**Keybindings**](#keybindings)
   - [Extras](#extras)
   - [Apps](#apps)
 - [Software](#software)
@@ -98,15 +98,20 @@ sotfware:
 - Rofi
 - Neofetch
 - Base devel
+- Exa
 
 you can modify it your way.
 
 ```bash
-sudo pacman -S lightdm lightdm-gtk-greeter lightdm-webkit2-greeter qtile alacritty code firefox rofi neofetch htop base-devel
+sudo pacman -S lightdm lighdm-gtk-greeter lightdm-webkit2-greeter
+qtile alacritty code firefox rofi neofetch htop base-devel exa neovim
+flameshot unzip thunari alacritty code firefox rofi neofetch htop
+base-devel exa neovim flameshot unzip thunar
+```
 
+```bash
 # Enable login manager
 sudo systemctl enable lightdm
-
 ```
 
 ## Install Arch User Repository (AUR)
@@ -164,7 +169,7 @@ sudo pacman -S arandr
 
 Check my config in [xprofile](/.xprofile)
 
-# **Keybindings**
+## **Keybindings**
 
 | Key                 | Action                           |
 | ------------------- | -------------------------------- |
@@ -239,7 +244,7 @@ List of software used in the desktop environment
 | thunar                 | Graphical file explorer     | sudo pacman -S thunar                 |
 | unzip                  | Uzip files                  | sudo pacman -S unzip                  |
 | network-manager-applet | Wifi icon                   | sudo pacman -S network-manager-applet |
-| cbattion               | Baterry Icon                | sudo pacman -S cbattion               |
+| cbattion               | Baterry Icon                | sudo pacman -S cbatticon              |
 | notification deamon    | Notification                | sudo pacman -S notification-daemon    |
 | lib notify             | Recibir notificaciones      | sudo pacman -S libnotify              |
 | picom                  | Composer                    | sudo pacman -S picom                  |
@@ -250,7 +255,7 @@ List of software used in the desktop environment
 | Software     | Utility       | Pacman                    |
 | ------------ | ------------- | ------------------------- |
 | Pulse Audio  | Audio control | sudo pacman -S pulseaudio |
-| volumen icon | Icon audio    | sudo pacman -S volumeicom |
+| volumen icon | Icon audio    | sudo pacman -S volumeicon |
 
 ## Video & Images
 
