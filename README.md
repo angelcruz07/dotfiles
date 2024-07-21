@@ -1,33 +1,17 @@
 # **Dotfiles & Configs Arch Linux**
 
-This is my desktop environment on Arch Linux. Currently, this setup is supported on a laptop, an MSI Notebook with an AMD Ryzen 5-7530U processor, and within my personal desktop with support for two monitors, 24 and 26 inches respectively.
+This is my desktop environment on Arch Linux. Currently, this setup
+is supported on a laptop, an MSI Notebook with an AMD Ryzen 5-7530U
+processor, and within my personal desktop with support for two monitors,
+24 and 26 inches respectively.
 
-# **Overview of the enviroment**
+## **Overview of the enviroment**
 
 ## **Window Manager - Qtile**
 
 ![Dracula theme](./assets/screenshots/dracula.jpg)
 
-## **Menu - Rofi**
-
-![Rofi](./assets/screenshots/rofi.png)
-
-## **Theme**
-
-- Dracula
-  ![Dracula theme](./assets/screenshots/dracula.jpg)
-
-## **Avaible themes**
-
-- King
-- Dark-grey
-- Material-darker
-- Material-ocean
-- Monokai-pro
-- Nord-wave
-- Nord
-
-# **Table of contents**
+## **Table of contents**
 
 - [**Dotfiles \& Configs Arch Linux**](#dotfiles--configs-arch-linux)
 - [**Overview of the enviroment**](#overview-of-the-enviroment)
@@ -76,9 +60,7 @@ My recomendations [Installation](/install/README.md)
 Before proceeding, you should have Xorg installed
 
 ```bash
-
 sudo pacman -S xorg
-
 ```
 
 ## **Login and window manager**
@@ -98,19 +80,29 @@ sotfware:
 - Rofi
 - Neofetch
 - Base devel
-- Exa
+- exa
+- unzip
+- Thunar
+- Flameshot
+- Htop
+- NeoVim
+- Picom
 
 you can modify it your way.
 
-```bash
-sudo pacman -S lightdm lighdm-gtk-greeter lightdm-webkit2-greeter
-qtile alacritty code firefox rofi neofetch htop base-devel exa neovim
-flameshot unzip thunari alacritty code firefox rofi neofetch htop
-base-devel exa neovim flameshot unzip thunar
-```
+1. Install basis software
 
 ```bash
-# Enable login manager
+sudo pacman -S lightdm lighdm-gtk-greeter lightdm-webkit2-greeter
+qtile alacritty code firefox rofi neofetch htop rofi neofetch htop
+base-devel exa neovim flameshot unzip thunar picom
+```
+
+Info about this software in [Software](#software)
+
+2. Enable login manager
+
+```bash
 sudo systemctl enable lightdm
 ```
 
@@ -195,6 +187,40 @@ The following keybindings will only work if you install all programs needed:
 sudo pacman -S rofi thunar firefox alacritty redshift scrot
 ```
 
+## Apps
+
+| Key             | Action                      |
+| --------------- | --------------------------- |
+| mod + m         | Launch rofi                 |
+| mod + shift + m | Window nav (rofi)           |
+| mod + b         | Lunch Browser(Firefox)      |
+| mod + e         | Lunch File explores(thunar) |
+| mod + return    | Luch Terminal (Alacritty)   |
+| mod + r         | Redshift                    |
+| mod + shift + r | Stop redshift               |
+| mod + s         | screenshot (scrot)          |
+| mod + c         | Launch VsCode               |
+
+## **Gallery**
+
+My setup has the followig themes
+avaible.
+
+### Qtile
+
+- Dracula
+  ![Dracula theme](./assets/screenshots/dracula.jpg)
+
+- Tokyo night
+  ![Tokyo Night](./assets/screenshots/tokyo-night.png)
+- King
+- Dark-grey
+- Material-darker
+- Material-ocean
+- Monokai-pro
+- Nord-wave
+- Nord
+
 ## Extras
 
 In my case I require the dual configuration of my keyboard between the English and Spanish languages, if you still require it, follow the following steps
@@ -217,21 +243,7 @@ EndSection
 
 ```
 
-## Apps
-
-| Key             | Action                      |
-| --------------- | --------------------------- |
-| mod + m         | Launch rofi                 |
-| mod + shift + m | Window nav (rofi)           |
-| mod + b         | Lunch Browser(Firefox)      |
-| mod + e         | Lunch File explores(thunar) |
-| mod + return    | Luch Terminal (Alacritty)   |
-| mod + r         | Redshift                    |
-| mod + shift + r | Stop redshift               |
-| mod + s         | screenshot (scrot)          |
-| mod + c         | Launch VsCode               |
-
-# Software
+## Software
 
 List of software used in the desktop environment
 
@@ -314,3 +326,46 @@ More info [Neovim](https://neovim.io/)
 
 Testing your window manager
 [Xephyr](https://wiki.archlinux.org/title/Xephyr)
+
+## How to use my setup
+
+After a clean installation of Archlinux
+
+1. Installl software
+
+```bash
+sudo pacman -S lightdm lighdm-gtk-greeter lightdm-webkit2-greeter
+qtile alacritty code firefox rofi neofetch htop rofi neofetch htop
+base-devel exa neovim flameshot unzip thunar pulseaudio pavucontrol
+brightnessctl feh arandr picom
+```
+
+Before continuing, it is recommended to restart the PC.
+
+2. Clone this repository
+
+```bash
+https://github.com/angelcruz07/dotfiles.git
+```
+
+3. Copy my .config
+
+```bash
+cp -r ~/dotfiles/.config/ ~/
+```
+
+4. Copy .bashrc
+
+```bash
+cp -r ~/dotfiles/.bashrc/ ~/
+```
+
+5. Copy .xprofile
+
+```bash
+cp -r ~/dotfiles/.xprofile ~/
+```
+
+After this, you should restart the PC and you will have my setup.
+
+## How to customize it?
