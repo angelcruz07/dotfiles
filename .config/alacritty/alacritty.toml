@@ -1,10 +1,10 @@
 [colors.bright]
-black = "#282a40"
+black = "#24283b"
 blue = "#a3c5ff"
-cyan = "#98fffd"
+cyan = "#b4f9f8"
 green = "#e0ffad"
-magenta = "#d6afed"
-red = "#eb7f84"
+magenta = "#bb9af7"
+red = "#c53b53"
 white = "#d1e5ed"
 yellow = "#ffee7e"
 
@@ -12,14 +12,14 @@ yellow = "#ffee7e"
 black = "#181a29"
 blue = "#93bbff"
 cyan = "#98e4ff"
-green = "#cdea9f"
-magenta = "#d3a7ee"
-red = "#F07178"
+green = "#c3e88d"
+magenta = "#bb9af7"
+red = "#c53b53"
 white = "#bfd5de"
-yellow = "#ffd47e"
+yellow = "#ff9e64"
 
 [colors.primary]
-background = "#000000"
+background = "#0f101a"
 foreground = "#c5c9de"
 
 [window]
@@ -27,3 +27,4 @@ opacity = 0.8
 
 [font]
 normal = { family = "UbuntuMono Nerd Font", style = "regular" }
+
