@@ -117,7 +117,7 @@ nano /etc/hosts
 passwd
 pacman -S networkmanager
 systemctl enable NetworkManager
-pacman -S grub efibootmgr
+pacman -S grub efibootmgr dosfstools mtools
 
 # configurar grub
 grub-install --target=x86_64-efi --efi-directory=/boot
