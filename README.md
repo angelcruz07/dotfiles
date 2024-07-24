@@ -5,8 +5,6 @@ is supported on a laptop, an MSI Notebook with an AMD Ryzen 5-7530U
 processor, and within my personal desktop with support for two monitors,
 24 and 26 inches respectively.
 
-## **Overview of the enviroment**
-
 ## **Window Manager - Qtile**
 
 ![Dracula theme](./assets/screenshots/dracula.jpg)

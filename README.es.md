@@ -1,5 +1,9 @@
 # Dotfiles y configuracion
 
+El entorno cuenta con configuracion y soporte
+para un escritorios con doble monitor, y una
+laptop MSI Notebook con procesador AMD Ryzen 5-7530U
+
 ## Resumen
 
 Esta es un guia que te llevara a crear un entorno de escritorio personalizado
@@ -11,6 +15,15 @@ se encuentra escrito en python y es muy facil de configurar.
 
 Esto es un poco del camino que yo e tomado en este mundo de
 los sistemas operativos y la magia de Arch Linux.
+
+Si deseas ahorrarte estos pasos y la terea de configurar ve al final de este archivo
+ahi te dejare una guia de como copear exactamente esta configuracion.
+
+## Qtile
+
+Las siguientes instrucciones estan basadas para
+configurar Qtile ya que tambien encontraras configuraciones
+para spectdwrm
 
 ## Inicio de sesion y gestor de ventanas
 
@@ -42,7 +55,7 @@ reboot
 
 | Atajo                | Acción                              |
 | -------------------- | ----------------------------------- |
-| **mod + enter**      | abrir xterm                         |
+| **mod + enter**      | abrir alacritty                     |
 | **mod + k**          | ventana siguiente                   |
 | **mod + j**          | ventana anterior                    |
 | **mod + w**          | cerrar ventana                      |
@@ -50,9 +63,8 @@ reboot
 | **mod + ctrl + r**   | reiniciar qtile                     |
 | **mod + ctrl + q**   | cerrar sesión                       |
 
-Antes de continuar si tu distribucion del teclado no se encuentra en ingles
-deberias cambiarla, abre **alacritty** con **mod + enter** la tecla mod
-es la tecla con el icono de windows en tu teclado
+Antes de continuar si tu distribucion del teclado no se encuentra en ingles deberias cambiarla, abre **alacritty**
+con **mod + enter** la tecla mod es la tecla con el icono de windows en tu teclado.
 
 ```bash
 setxkbmap es
