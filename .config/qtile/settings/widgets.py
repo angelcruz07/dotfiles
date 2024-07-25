@@ -33,7 +33,7 @@ def workspaces():
         separator(),
         widget.GroupBox(
             **base(fg='light'),
-            font='Cascadia Code',
+            font='UbuntuMono Nerd Font',
             fontsize=30,
             margin_y=3,
             margin_x=0,
