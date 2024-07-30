@@ -1,0 +1,32 @@
+[colors.bright]
+black = "#24283b"
+blue = "#a3c5ff"
+cyan = "#b4f9f8"
+green = "#e0ffad"
+magenta = "#bb9af7"
+red = "#c53b53"
+white = "#d1e5ed"
+yellow = "#ffee7e"
+
+[colors.normal]
+black = "#181a29"
+blue = "#93bbff"
+cyan = "#98e4ff"
+green = "#c3e88d"
+magenta = "#bb9af7"
+red = "#c53b53"
+white = "#bfd5de"
+yellow = "#ff9e64"
+
+[colors.primary]
+background = "#0f101a"
+foreground = "#c5c9de"
+
+[window]
+opacity = 0.8
+
+[font]
+normal = { family = "UbuntuMono Nerd Font", style = "semibold" }
+
+[shell]
+program = "/usr/bin/fish"

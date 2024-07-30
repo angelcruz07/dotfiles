@@ -118,6 +118,7 @@ sudo chown -R youruser:youruser ./yay-git
 
 cd yay-git
 
+feh --bg-scale wallpapers/forest-violet.jpg &
 makepkg -si
 
 ```

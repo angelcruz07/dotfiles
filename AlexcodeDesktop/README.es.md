@@ -10,3 +10,9 @@ configuraciones especiales y adaptadas
 para que funcione correctamente y trabajar comodo
 realmente no varia demasiado, si estas interesado
 en verla la encontraras en [AlexcodeDesktop](../AlexcodeLaptop/README.es.md)
+
+1. Copea mi configuracion
+
+```bash
+cp -r ~/dotfiles/AlexcodeDesktop/.config/ ~/
+```

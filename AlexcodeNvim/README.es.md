@@ -1,8 +1,8 @@
 # Nvim
 
 Mi configuracion esta basada en el creador de
-constenido Gentleman Programing con algunos
-cambios personales, en esta guia podras
+constenido [Gentleman Programing](https://github.com/Gentleman-Programming/Gentleman.Dots.git)
+con algunos cambios personales, en esta guia podras
 establecer mi configuracion y modificarla a
 tu gusto.
 

@@ -167,3 +167,32 @@ De igual forma en tu archivo .xprofile
 ```bash
 udiskie -t &
 ```
+
+## Inatalar AUR ( Arch User Repository)
+
+Lo mas probable es que algunos paquetes de software no los
+encuentres con el gestor de paquetes pacmna por lo que
+la comundidad de Arch Linux cuenta con un sistema de gestor de
+paquetes llamado AUR y para instalar software desde aqui deberas
+hacer las siguientes instalaciones
+
+```bash
+
+# Verify if you have git installed
+sudo pacman -S git
+
+# Clone repository
+sudo git clone https:aur.archlinux.org/yay-git.git
+
+# Install yay
+sudo chown -R youruser:youruser ./yay-git
+
+cd yay-git
+
+feh --bg-scale wallpapers/forest-violet.jpg &
+makepkg -si
+```
+
+```
+
+```
