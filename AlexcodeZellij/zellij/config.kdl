@@ -520,18 +520,33 @@ themes {
         black "#1a1a1a"
         white "#8D908D"
     }
+   
+   tokyo_night {
+        fg    "#1a1a1a"
+        bg  "#1f2335"
+        red  "#c53b53"
+        green  "#c3e88d"
+        yellow  "#ffee7e"
+        blue  "#93bbff"
+        magenta  "#bb9af7"
+        cyan  "#98e4ff"
+        orange "#ff9e64"
+        white  "#bfd5de"
+        black  "#181a29"
+    }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: 
-//
-theme "everforest"
 
-// The name of the default layout to load on startup
-// Default: "work"
+
+theme "tokyo_night"
+
+
+// The name of the default layout to load on startup Default: "work"
 //
 
-default_layout "work_everforest"
+default_layout "work_tokyo_night"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -604,5 +619,5 @@ default_layout "work_everforest"
 // Default: true
 //
 // styled_underlines false
-
+//
 
