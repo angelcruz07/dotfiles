@@ -2,8 +2,18 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua Add any additional keymaps here
 
 -- Change normal mode
-vim.keymap.set({ "i", "v" }, "jk", "<c-\\><c-n>", { desc = "Enter normal mode" })
-vim.keymap.set({ "i", "v" }, "kj", "<c-\\><c-n>", { desc = "Enter normal mode" })
+vim.keymap.set(
+  { "i", "v" },
+  "jk",
+  "<c-\\><c-n>",
+  { desc = "Enter normal mode" }
+)
+vim.keymap.set(
+  { "i", "v" },
+  "kj",
+  "<c-\\><c-n>",
+  { desc = "Enter normal mode" }
+)
 
 -- Position cursor at the middle of the screen after scrolling half page
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -38,13 +48,6 @@ vim.keymap.set(
   "<cmd>lua require('obsidian').util.toggle_checkbox()<CR>",
   { desc = "Obsidian Check Checkbox" }
 )
-vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianTemplate<CR>", { desc = "Insert Obsidian Template" })
-vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianOpen<CR>", { desc = "Open in Obsidian App" })
-vim.keymap.set("n", "<leader>ob", "<cmd>ObsidianBacklinks<CR>", { desc = "Show ObsidianBacklinks" })
-vim.keymap.set("n", "<leader>ol", "<cmd>ObsidianLinks<CR>", { desc = "Show ObsidianLinks" })
-vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "Create New Note" })
-vim.keymap.set("n", "<leader>os", "<cmd>ObsidianSearch<CR>", { desc = "Search Obsidian" })
-vim.keymap.set("n", "<leader>oq", "<cmd>ObsidianQuickSwitch<CR>", { desc = "Quick Switch" })
 
 -----  OIL -----
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
@@ -75,15 +78,45 @@ vim.keymap.set("n", "<C-M-l>", function()
 end)
 
 -- Disable key mappings in insert mode
-vim.api.nvim_set_keymap("i", "<A-j>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-k>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+  "i",
+  "<A-j>",
+  "<Nop>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "i",
+  "<A-k>",
+  "<Nop>",
+  { noremap = true, silent = true }
+)
 
 -- Disable key mappings in normal mode
-vim.api.nvim_set_keymap("n", "<A-j>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-k>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+  "n",
+  "<A-j>",
+  "<Nop>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<A-k>",
+  "<Nop>",
+  { noremap = true, silent = true }
+)
 
 -- Disable key mappings in visual block mode
-vim.api.nvim_set_keymap("x", "<A-j>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("x", "<A-k>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+  "x",
+  "<A-j>",
+  "<Nop>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "x",
+  "<A-k>",
+  "<Nop>",
+  { noremap = true, silent = true }
+)
 vim.api.nvim_set_keymap("x", "J", "<Nop>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("x", "K", "<Nop>", { noremap = true, silent = true })
