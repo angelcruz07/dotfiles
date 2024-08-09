@@ -524,21 +524,22 @@ themes {
    tokyo_night {
         fg    "#1a1a1a"
         bg  "#1f2335"
-        black  "#181a29"
-        blue  "#93bbff"
-        cyan  "#98e4ff"
-        green  "#c3e88d"
-        magenta  "#bb9af7"
         red  "#c53b53"
-        white  "#bfd5de"
-        orange "#ff9e64"
+        green  "#c3e88d"
         yellow  "#ffee7e"
+        blue  "#93bbff"
+        magenta  "#bb9af7"
+        cyan  "#98e4ff"
+        orange "#ff9e64"
+        white  "#bfd5de"
+        black  "#181a29"
     }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: 
-//
+
+
 theme "tokyo_night"
 
 

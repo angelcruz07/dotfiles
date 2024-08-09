@@ -1,8 +1,10 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
+
+# For linux
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-#
+
 # if status is-interactive
 #     and not set -q TMUX
 #     exec tmux
@@ -28,18 +30,28 @@ end
 #set -l pink D27E99
 
 ## everforest
-set -l foreground #000000
-set -l selection #2d4f67
-set -l comment #859289
-set -l red #e67e80
-set -l orange #ff9e64
-set -l yellow #dbbc7f
-set -l green #a7c080
-set -l purple #d699b6
-set -l cyan #7fbbb3
-set -l pink #d699b6
+#set -l foreground 000000
+#set -l selection 2d4f67
+#set -l comment 859289
+#set -l red e67e80
+#set -l orange ff9e64
+#set -l yellow dbbc7f
+#set -l green a7c080
+#set -l purple d699b6
+#set -l cyan 7fbbb3
+#set -l pink d699b6
 
-## Catpuccin
+## Tokyo night
+set -l foreground c0caf5
+set -l selection 283457
+set -l comment 565f89
+set -l red f7768e
+set -l orange ff9e64
+set -l yellow e0af68
+set -l green 9ece6a
+set -l purple 9d7cd8
+set -l cyan 7dcfff
+set -l pink bb9af7
 
 
 # Syntax Highlighting Colors
@@ -63,6 +75,9 @@ set -g fish_pager_color_progress $comment
 set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
+set -g fish_greeting ''
+
+set -gx PROJECT_PATHS ~/Dev
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"

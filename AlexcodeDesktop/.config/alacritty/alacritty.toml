@@ -1,3 +1,11 @@
+[[colors.indexed_colors]]
+color = "#ffa066"
+index = 16
+
+[[colors.indexed_colors]]
+color = "#ff5d62"
+index = 17
+
 [colors.bright]
 black = "#24283b"
 blue = "#a3c5ff"
@@ -18,15 +26,24 @@ red = "#c53b53"
 white = "#bfd5de"
 yellow = "#ff9e64"
 
+[colors.cursor]
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
 [colors.primary]
 background = "#0f101a"
 foreground = "#c5c9de"
 
 [window]
-opacity = 0.8
+opacity = 0.9
 
 [font]
-normal = { family = "UbuntuMono Nerd Font", style = "semibold" }
+size = 16
+
+[font.normal]
+family = "Jetbrains Mono"
 
 [shell]
 program = "/usr/bin/fish"

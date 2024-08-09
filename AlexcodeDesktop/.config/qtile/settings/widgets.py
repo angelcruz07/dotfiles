@@ -33,7 +33,7 @@ def workspaces():
         separator(),
         widget.GroupBox(
             **base(fg='light'),
-            font='Cascadia Code',
+            font='Jetbrains Mono',
             fontsize=30,
             margin_y=3,
             margin_x=0,
@@ -65,7 +65,7 @@ primary_widgets = [
 
     powerline('color4', 'dark'),
 
-    icon(bg="color4", text=' '), # Icon: nf-fa-download
+    icon(bg="color4", text='  '), # Icon: nf-fa-download
     
     widget.CheckUpdates(
         background=colors['color4'],
@@ -73,7 +73,7 @@ primary_widgets = [
         colour_no_updates=colors['text'],
         no_update_string='0',
         display_format='{updates}',
-        update_interval=1800,
+        update_interval=180,
         custom_command='checkupdates',
     ),
 
