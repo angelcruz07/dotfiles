@@ -5,13 +5,9 @@ is supported on a laptop, an MSI Notebook with an AMD Ryzen 5-7530U
 processor, and within my personal desktop with support for two monitors,
 24 and 26 inches respectively.
 
-## **Window Manager - Qtile**
-
-![Dracula theme](./assets/screenshots/dracula.jpg)
-
 ## **Table of contents**
 
-- [**Dotfiles \& Configs Arch Linux**](#dotfiles--configs-arch-linux)
+- [**Dotfiles**](#dotfiles--configs-arch-linux)
 - [**Overview of the enviroment**](#overview-of-the-enviroment)
   - [**Window Manager - Qtile**](#window-manager---qtile)
   - [**Menu - Rofi**](#menu---rofi)
@@ -43,14 +39,24 @@ processor, and within my personal desktop with support for two monitors,
 
 ## **Overview**
 
-This guide will walk you through the process of building a desktop environment starting with a fresh Arch based installation. I will assume that you are comfortable with Linux based operating systems and command line interfaces. Because you are reading this, I will also assume that you've looked through some "tiling window manager" videos on Youtube, because that's where the rabbit hole starts. You can pick any window managers you want, but I'm going to use Qtile as a first tiling window manager because that's what I started with. This is basically a description of how I made my desktop environment from scratch.
+This guide will walk you through the process of building
+a desktop environment starting with a fresh Arch based installation.
+I will assume that you are comfortable with Linux based operating systems
+and command line interfaces. Because you are reading this,
+I will also assume that you've looked through some
+"tiling window manager" videos on Youtube,
+because that's where the rabbit hole starts.
+You can pick any window managers you want,
+but I'm going to use Qtile as a first tiling
+window manager because that's what I started with.
+This is basically a description of how I made my desktop environment from scratch.
 
 ## **Arch Installation**
 
 The starting point of this guide is a right after a complete clean Arch based distro installation.
 
+![Dracula theme](./assets/screenshots/dracula.jpg)
 Wiki [arch](https://wiki.archlinux.org/title/installation_guide)
-
 My recomendations [Installation](/install/README.md)
 
 ## **Install Xorg**
@@ -88,11 +94,11 @@ sotfware:
 
 you can modify it your way.
 
-1. Install basis software
+1. Install basic software
 
 ```bash
 sudo pacman -S lightdm lighdm-gtk-greeter lightdm-webkit2-greeter
-qtile alacritty code firefox rofi neofetch htop rofi neofetch htop
+qtile alacritty firefox rofi neofetch htop rofi neofetch htop
 base-devel exa neovim flameshot unzip thunar picom
 ```
 
@@ -140,7 +146,8 @@ sudo pacman -S brightnessctl
 ## **Wallapaper**
 
 Install the software feh to set the wallpaper
-Configure your **.xprofile** file to set your background when you boot your PC
+Configure your **.xprofile** file to set your
+background when you boot your PC.
 
 ```bash
 # Install feh
@@ -220,28 +227,6 @@ avaible.
 - Nord-wave
 - Nord
 
-## Extras
-
-In my case I require the dual configuration of my keyboard between the English and Spanish languages, if you still require it, follow the following steps
-
-```bash
-
-# config layout keyboard US-intl
-setxkbmap -layout us -variant intl
-
-# Update the next file
-sudo nano /etc/X11/xorg.conf.d/00-keyboard.conf
-
-# Add this lines
-Section "InputClass"
-    Identifier "system-keyboard"
-    MatchIsKeyboard "on"
-    Option "XkbLayout" "us"
-    Option "XkbVariant" "intl"
-EndSection
-
-```
-
 ## Software
 
 List of software used in the desktop environment
@@ -281,6 +266,7 @@ List of software used in the desktop environment
 | Software  | Utility           | Pacman                   |
 | --------- | ----------------- | ------------------------ |
 | Alacritty | Terminal emulator | sudo pacman -S alacritty |
+| Kitty     | Terminal emulator | sudo pacman -S kitty     |
 
 ## Text editor
 
@@ -328,29 +314,29 @@ Testing your window manager
 
 ## How to use my setup
 
-After a clean installation of Archlinux
+After a clean installation of Archlinux.
 
-1. Installl software
+- Installl software
 
 ```bash
 sudo pacman -S lightdm lighdm-gtk-greeter lightdm-webkit2-greeter
-qtile alacritty code firefox rofi neofetch htop rofi neofetch htop
+qtile alacritty firefox rofi neofetch htop rofi neofetch htop
 base-devel exa neovim flameshot unzip thunar pulseaudio pavucontrol
 brightnessctl feh arandr picom
 ```
 
 Before continuing, it is recommended to restart the PC.
 
-2. Clone this repository
+- Clone this repository
 
 ```bash
 https://github.com/angelcruz07/dotfiles.git
 ```
 
-3. Copy my .config
+- Copy my .config of desktop
 
 ```bash
-cp -r ~/dotfiles/.config/ ~/
+cp -r ~/dotfiles/AlexcodeDesktop/.config/ ~/
 ```
 
 4. Copy .bashrc
