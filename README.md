@@ -23,7 +23,7 @@ processor, and within my personal desktop with support for two monitors,
   - [Apps](#apps)
   - [Software](#software)
   - [Basic utilities](#basic-utilities)
-  - [Audio](#audio-1)
+  - [Audio](#audio-bluetooth)
   - [Video \& Images](#video--images)
   - [Terminal](#terminal)
   - [Text editor](#text-editor)
@@ -136,6 +136,14 @@ makepkg -si
 sudo pacman -S pulseaudio pavucontrol
 ```
 
+## Bluetooth
+
+```bash
+sudo systemctl start bluetooth.service
+sudo systemctl enable bluetooth.service
+sudo systemctl status bluetooth.service
+```
+
 ## Brightness
 
 Config keys laptop of brightness.
@@ -217,7 +225,6 @@ avaible.
 
 - Dracula
   ![Dracula theme](./assets/screenshots/dracula.jpg)
-
 - Tokyo night
   ![Tokyo Night](./assets/screenshots/tokyo-night.png)
 - King
@@ -234,26 +241,28 @@ List of software used in the desktop environment
 
 ## Basic utilities
 
-| Software                               | Utility                     | Pacman                                                |
-| -------------------------------------- | --------------------------- | ----------------------------------------------------- |
-| networkmanager                         | Self explanatory            | sudo pacman -S networkmanager                         |
-| ntfs                                   | Read mounted usb in windows | sudo pacman -S ntfs-3g                                |
-| thunar                                 | Graphical file explorer     | sudo pacman -S thunar                                 |
-| unzip                                  | Uzip files                  | sudo pacman -S unzip                                  |
-| network-manager-applet                 | Wifi icon                   | sudo pacman -S network-manager-applet                 |
-| cbattion                               | Baterry Icon                | sudo pacman -S cbatticon                              |
-| notification deamon                    | Notification                | sudo pacman -S notification-daemon                    |
-| lib notify                             | Recibir notificaciones      | sudo pacman -S libnotify                              |
-| picom                                  | Composer                    | sudo pacman -S picom                                  |
-| flameshot                              | Screenshot                  | sudo pacman -S flameshot                              |
-| bluez blues-utils pulseaudio-bluetooth | Bluethoot                   | sudo pacman -S bluez bluez-utils pulseaudio-bluetooth |
+| Software               | Utility                     | Pacman                                |
+| ---------------------- | --------------------------- | ------------------------------------- |
+| networkmanager         | Self explanatory            | sudo pacman -S networkmanager         |
+| ntfs                   | Read mounted usb in windows | sudo pacman -S ntfs-3g                |
+| thunar                 | Graphical file explorer     | sudo pacman -S thunar                 |
+| unzip                  | Uzip files                  | sudo pacman -S unzip                  |
+| network-manager-applet | Wifi icon                   | sudo pacman -S network-manager-applet |
+| cbattion               | Baterry Icon                | sudo pacman -S cbatticon              |
+| notification deamon    | Notification                | sudo pacman -S notification-daemon    |
+| lib notify             | Recibir notificaciones      | sudo pacman -S libnotify              |
+| picom                  | Composer                    | sudo pacman -S picom                  |
+| flameshot              | Screenshot                  | sudo pacman -S flameshot              |
 
-## Audio
+## Audio & bluetooth
 
-| Software     | Utility       | Pacman                    |
-| ------------ | ------------- | ------------------------- |
-| Pulse Audio  | Audio control | sudo pacman -S pulseaudio |
-| volumen icon | Icon audio    | sudo pacman -S volumeicon |
+| Software             | Utility           | Pacman                              |
+| -------------------- | ----------------- | ----------------------------------- |
+| Pulse Audio          | Audio control     | sudo pacman -S pulseaudio           |
+| volumen icon         | Icon audio        | sudo pacman -S volumeicon           |
+| bluez bluez-utis     | Bluetooth         | sudo pacman -S bluez bluez-utils    |
+| pulseaudio-bluetooth | Bluetooth         | sudo pacman -S pulseaudio-bluetooth |
+| blueman              | Bluetooth Control | sudo pacman -S blueman              |
 
 ## Video & Images
 
