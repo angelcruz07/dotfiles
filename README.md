@@ -233,18 +233,19 @@ List of software used in the desktop environment
 
 ## Basic utilities
 
-| Software               | Utility                     | Pacman                                |
-| ---------------------- | --------------------------- | ------------------------------------- |
-| networkmanager         | Self explanatory            | sudo pacman -S networkmanager         |
-| ntfs                   | Read mounted usb in windows | sudo pacman -S ntfs-3g                |
-| thunar                 | Graphical file explorer     | sudo pacman -S thunar                 |
-| unzip                  | Uzip files                  | sudo pacman -S unzip                  |
-| network-manager-applet | Wifi icon                   | sudo pacman -S network-manager-applet |
-| cbattion               | Baterry Icon                | sudo pacman -S cbatticon              |
-| notification deamon    | Notification                | sudo pacman -S notification-daemon    |
-| lib notify             | Recibir notificaciones      | sudo pacman -S libnotify              |
-| picom                  | Composer                    | sudo pacman -S picom                  |
-| flameshot              | Screenshot                  | sudo pacman -S flameshot              |
+| Software                               | Utility                     | Pacman                                                |
+| -------------------------------------- | --------------------------- | ----------------------------------------------------- |
+| networkmanager                         | Self explanatory            | sudo pacman -S networkmanager                         |
+| ntfs                                   | Read mounted usb in windows | sudo pacman -S ntfs-3g                                |
+| thunar                                 | Graphical file explorer     | sudo pacman -S thunar                                 |
+| unzip                                  | Uzip files                  | sudo pacman -S unzip                                  |
+| network-manager-applet                 | Wifi icon                   | sudo pacman -S network-manager-applet                 |
+| cbattion                               | Baterry Icon                | sudo pacman -S cbatticon                              |
+| notification deamon                    | Notification                | sudo pacman -S notification-daemon                    |
+| lib notify                             | Recibir notificaciones      | sudo pacman -S libnotify                              |
+| picom                                  | Composer                    | sudo pacman -S picom                                  |
+| flameshot                              | Screenshot                  | sudo pacman -S flameshot                              |
+| bluez blues-utils pulseaudio-bluetooth | Bluethoot                   | sudo pacman -S bluez bluez-utils pulseaudio-bluetooth |
 
 ## Audio
 
