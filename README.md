@@ -1,33 +1,27 @@
-# **Dotfiles & Configs Arch Linux**
+# Dotfiles & Arch Linux
 
 This is my desktop environment on Arch Linux. Currently, this setup
 is supported on a laptop, an MSI Notebook with an AMD Ryzen 5-7530U
 processor, and within my personal desktop with support for two monitors,
 24 and 26 inches respectively.
 
-## **Table of contents**
+## Table of contents
 
-- [**Dotfiles**](#dotfiles--configs-arch-linux)
-- [**Overview of the enviroment**](#overview-of-the-enviroment)
-  - [**Window Manager - Qtile**](#window-manager---qtile)
-  - [**Menu - Rofi**](#menu---rofi)
-  - [**Theme**](#theme)
-  - [**Avaible themes**](#avaible-themes)
-- [**Table of contents**](#table-of-contents)
-  - [**Overview**](#overview)
-  - [**Arch Installation**](#arch-installation)
-  - [**Install Xorg**](#install-xorg)
-  - [**Login and window manager**](#login-and-window-manager)
-  - [Window manager, Login Manager, Browser, Terminal, Text editor, Menu, neofetch, htop](#window-manager-login-manager-browser-terminal-text-editor-menu-neofetch-htop)
-  - [Install Arch User Repository (AUR)](#install-arch-user-repository-aur)
-  - [**Audio**](#audio)
-  - [**Brightness**](#brightness)
-  - [**Wallapaper**](#wallapaper)
-  - [**Monitors**](#monitors)
-  - [**Keybindings**](#keybindings)
+- [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Arch Installation](#arch-installation)
+  - [Install Xorg](#install-xorg)
+  - [Login and window manager](#login-and-window-manager)
+  - [Initial software](#initial-software)
+  - [Install (AUR)](#install-arch-user-repository-aur)
+  - [Audio](#audio)
+  - [Brightness](#brightness)
+  - [Wallapaper](#wallapaper)
+  - [Monitors](#monitors)
+  - [Keybindings](#keybindings)
   - [Extras](#extras)
   - [Apps](#apps)
-- [Software](#software)
+  - [Software](#software)
   - [Basic utilities](#basic-utilities)
   - [Audio](#audio-1)
   - [Video \& Images](#video--images)
@@ -37,7 +31,7 @@ processor, and within my personal desktop with support for two monitors,
   - [Additional features](#additional-features)
   - [Fonts, theming and GTK](#fonts-theming-and-gtk)
 
-## **Overview**
+## Overview
 
 This guide will walk you through the process of building
 a desktop environment starting with a fresh Arch based installation.
@@ -51,15 +45,14 @@ but I'm going to use Qtile as a first tiling
 window manager because that's what I started with.
 This is basically a description of how I made my desktop environment from scratch.
 
-## **Arch Installation**
+## Arch Installation
 
-The starting point of this guide is a right after a complete clean Arch based distro installation.
-
-![Dracula theme](./assets/screenshots/dracula.jpg)
+The starting point of this guide is a right after
+a complete clean Arch based distro installation.
 Wiki [arch](https://wiki.archlinux.org/title/installation_guide)
 My recomendations [Installation](/install/README.md)
 
-## **Install Xorg**
+## Install Xorg
 
 Before proceeding, you should have Xorg installed
 
@@ -67,11 +60,19 @@ Before proceeding, you should have Xorg installed
 sudo pacman -S xorg
 ```
 
-## **Login and window manager**
+## Login and window manager
 
-First, we need to be able to login and open some programs like a browser and a terminal, so we'll start by installing lighdm and qtile. Lightdm will not work unless we install a greeter. We also need xterm because that's the terminal emulator qtile will open by default, until we change the config file. Then, a text editor is necessary for editing config files, you can use vscode or jump straight into neovim if you have previous experience, otherwise I wouldn't suggest it. Last but not least, we need a browser.
+First, we need to be able to login and open some programs
+like a browser and a terminal, so we'll start by installing
+lighdm and qtile. Lightdm will not work unless we install a greeter.
+We also need xterm because that's the terminal emulator qtile
+will open by default, until we change the config file. Then,
+a text editor is necessary for editing config files, you can
+use vscode or jump straight into neovim if you have previous
+experience, otherwise I wouldn't suggest it. Last but not
+least, we need a browser.
 
-## Window manager, Login Manager, Browser, Terminal, Text editor, Menu, neofetch, htop
+## Initial software
 
 Note: This comand will install the next
 sotfware:
@@ -129,13 +130,13 @@ makepkg -si
 
 ```
 
-## **Audio**
+## Audio
 
 ```bash
 sudo pacman -S pulseaudio pavucontrol
 ```
 
-## **Brightness**
+## Brightness
 
 Config keys laptop of brightness.
 
@@ -143,7 +144,7 @@ Config keys laptop of brightness.
 sudo pacman -S brightnessctl
 ```
 
-## **Wallapaper**
+## Wallapaper
 
 Install the software feh to set the wallpaper
 Configure your **.xprofile** file to set your
@@ -157,7 +158,7 @@ sudo pacman -S feh
 feh --bg-scale /path/to/image.jpg
 ```
 
-## **Monitors**
+## Monitors
 
 Install graphic software for managing monitors
 
@@ -167,7 +168,7 @@ sudo pacman -S arandr
 
 Check my config in [xprofile](/.xprofile)
 
-## **Keybindings**
+## Keybindings
 
 | Key                 | Action                           |
 | ------------------- | -------------------------------- |
@@ -207,12 +208,12 @@ sudo pacman -S rofi thunar firefox alacritty redshift scrot
 | mod + s         | screenshot (scrot)          |
 | mod + c         | Launch VsCode               |
 
-## **Gallery**
+## Gallery
 
 My setup has the followig themes
 avaible.
 
-### Qtile
+## Qtile
 
 - Dracula
   ![Dracula theme](./assets/screenshots/dracula.jpg)
