@@ -43,7 +43,7 @@ opacity = 0.9
 size = 16
 
 [font.normal]
-family = "Jetbrains Mono"
+family = "UbuntuMono Nerd Font"
 
 [shell]
 program = "/usr/bin/fish"
