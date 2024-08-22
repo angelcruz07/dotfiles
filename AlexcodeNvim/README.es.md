@@ -1,41 +1,143 @@
 # Nvim
 
-Mi configuracion esta basada en el creador de
-constenido [Gentleman Programing](https://github.com/Gentleman-Programming/Gentleman.Dots.git)
+Mi configuracion esta basada en este repositorio
+[Gentleman Programing](https://github.com/Gentleman-Programming/Gentleman.Dots.git)
 con algunos cambios personales, en esta guia podras
-establecer mi configuracion y modificarla a
-tu gusto.
+establecer mi configuracion.
 
 ## Instalacion
 
 La configuracion esta basada en Lazy Vim
 y customizada por lo que debera de tener NeoVim
-y Lazy Vim instalado.
+y LazyVim instalado.
 
-Dale un vistazo a la documentacion.
+Consulta la documentacion [neovim](https://neovim.io) [lazyvim](http://www.lazyvim.org/installation)
 
-Una vez instaldo Lazy vim pueder ejecutar las
-siguientes instrucciones en la linea de comandos
+Una vez instaldos NeoVim y LazyVim puedes ejecutar
+los siguientes comandos en tu terminal.
 
-1. Instalar software
-   Para tener mi configuracion deberas tener
-   un poco de software para el buen funcionamiento
+### Instalar Home Brew
 
-2. Copear mi configuracion
+Este es un administrador de paquetes para macOS y Linux,
+te permitirá instalar muchos paquetes y herramientas fácilmente
+y siempre está actualizado.
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Incluye la ruta de HomeBrew en tu perfil de shell
+
+```bash
+# Cambia 'TuNombreDeUsuario' por el nombre de usuario del dispositivo
+
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/YourUserName/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+```
+
+Ahora necesitamos instalar los paquetes necesarios para
+compilar software y algunos complementos
+
+```bash
+sudo pacman -Syu
+
+sudo pacman -S base-devel
+```
+
+### Instalar nvim
+
+Instalaremos nvim utilizando HomeBrew
+
+```bash
+brew install nvim
+```
+
+### Instalar Node y NPM
+
+```bash
+brew install node
+brew install npm
+```
+
+### Instalar Git
+
+Necesitamos git para clonar mi repositorio
+
+```bash
+brew install git
+```
+
+### Instalar fish
+
+```bash
+brew install fish
+# Establecer como predeterminado:
+
+which fish
+# Esto devolverá una ruta, llamémosla whichFishResultingPath
+
+# Agregarlo como un shell disponible
+echo whichFishResultingPath | sudo tee -a /etc/shells
+
+# establecerlo como predeterminado
+sudo chsh -s wichFishResultingPath
+```
+
+### Instalar Oh My Fish
+
+```bash
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+```
+
+### Instalar las siguientes dependencias para ejecutar LazyVim
+
+```bash
+brew install gcc
+brew install fzf
+brew install fd
+brew install ripgrep
+```
+
+### Instalar Zellij
+
+Este es un multiplexor de terminal, te permitirá dividir
+tu terminal en múltiples paneles y ejecutar múltiples comandos al mismo tiempo.
+
+```bash
+brew install zellij
+```
+
+### Clonar mi repositorio
+
+```bash
+git clone https://github.com/angelcruz07/dotfiles.git
+```
+
+### Copear mi configuracion
+
+Copea mi configuracion del repositorio que acabase de clonar
 
 ```bash
 cp -r ~/dotfiles/AlexcodeNvim/nvim ~/.config/
 ```
 
-Con esta instrucciones copearas mi carpeta de configuracion
-y establecerla en la tuya, esto es todo ahora te guiare a como puedes
-personalizarla tu mismo.
+Hasta este punto tendras mi configuracion pero aun podemos mejorarla
+puedes seguir con las siguientes isntalaciones
 
-Dentro de la raiz de tu sistema encontraras el
-directorio **.config** en el se encuntras todas
-las carpetas de configuracion de tu sistema y dentro
-de se encuentra el directorio de configuracion para nvim
-asi que cada que quieras personalizar o agregar algo
-deberas de entrar aqui.
+### Instalar Zsh
 
-## Atajos de teclado
+```bash
+brew install zsh
+```
+
+### Instalar Oh My Zsh
+
+```bash
+brew install zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete
+```
+
+### Copear mi zsh
+
+```bash
+cp ~/dotfiles/AlexcodeDesktop/.zshrc ~/
+```

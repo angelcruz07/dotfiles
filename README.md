@@ -260,38 +260,40 @@ My setup has the followig themes avaible.
 
 ## Software
 
-List of software used in the desktop environment
+List of software used in the desktop environment.
 
-| Software               | Utility                     | Pacman                                |
-| ---------------------- | --------------------------- | ------------------------------------- |
-| networkmanager         | Self explanatory            | sudo pacman -S networkmanager         |
-| ntfs                   | Read mounted usb in windows | sudo pacman -S ntfs-3g                |
-| thunar                 | Graphical file explorer     | sudo pacman -S thunar                 |
-| unzip                  | Uzip files                  | sudo pacman -S unzip                  |
-| network-manager-applet | Wifi icon                   | sudo pacman -S network-manager-applet |
-| cbattion               | Baterry Icon                | sudo pacman -S cbatticon              |
-| notification deamon    | Notification                | sudo pacman -S notification-daemon    |
-| lib notify             | Recibir notificaciones      | sudo pacman -S libnotify              |
-| picom                  | Composer                    | sudo pacman -S picom                  |
-| flameshot              | Screenshot                  | sudo pacman -S flameshot              |
-
-## Audio & bluetooth
-
-| Software             | Utility           | Pacman                              |
-| -------------------- | ----------------- | ----------------------------------- |
-| Pulse Audio          | Audio control     | sudo pacman -S pulseaudio           |
-| volumen icon         | Icon audio        | sudo pacman -S volumeicon           |
-| bluez bluez-utis     | Bluetooth         | sudo pacman -S bluez bluez-utils    |
-| pulseaudio-bluetooth | Bluetooth         | sudo pacman -S pulseaudio-bluetooth |
-| blueman              | Bluetooth Control | sudo pacman -S blueman              |
-
-## Video & Images
-
-| Software | Utility     | Pacman                |
-| -------- | ----------- | --------------------- |
-| Vlc      | Show Video  | sudo pacman -S vlc    |
-| Qeeqie   | Show images | sudo pacman -S geeqie |
-| scrot    | Screenshots | Sudo pacman -S scrot  |
+| Software               | Utility                                |
+| ---------------------- | -------------------------------------- |
+| arandr                 | Manage multiple screens                |
+| bat                    | View files with syntax highlighting    |
+| blueman                | Bluetooth control                      |
+| bluez                  | Bluetooth stack                        |
+| bluez-utils            | Bluetooth utilities                    |
+| brightnessctl          | Laptop screen brightness               |
+| cbatticon              | Battery icon                           |
+| exa                    | List files visually                    |
+| feh                    | Wallpaper setter                       |
+| flameshot              | Screenshot                             |
+| libnotify              | Receive notifications                  |
+| lxappearance           | GUI for changing themes                |
+| network-manager-applet | NetworkManager systray                 |
+| networkmanager         | Self explanatory                       |
+| notification-daemon    | Notifications                          |
+| ntfs-3g                | Read mounted USB in Windows            |
+| picom                  | Compositor for Xorg                    |
+| pip                    | Python package manager                 |
+| pulseaudio             | Audio control                          |
+| pulseaudio-bluetooth   | Bluetooth audio support for PulseAudio |
+| qiv                    | Image viewer                           |
+| ranger                 | Terminal based explorer                |
+| rofi                   | Menu and window switcher               |
+| scrot                  | Screenshots                            |
+| thunar                 | Graphical file explorer                |
+| udiskie                | Automounter                            |
+| unzip                  | Unzip files                            |
+| vlc                    | Media player                           |
+| volumeicon             | Audio icon                             |
+| xcb-util-cursor        | Change theme cursor                    |
 
 ## Terminal
 
@@ -299,13 +301,6 @@ List of software used in the desktop environment
 | --------- | ----------------- | ------------------------ |
 | Alacritty | Terminal emulator | sudo pacman -S alacritty |
 | Kitty     | Terminal emulator | sudo pacman -S kitty     |
-
-## Text editor
-
-| Software    | Utility     | Pacman                |
-| ----------- | ----------- | --------------------- |
-| neovim      | Text editor | sudo pacman -S neovim |
-| visual code | Text editor | sudo pacman -S code   |
 
 ## Neovim
 
@@ -320,26 +315,13 @@ List of software used in the desktop environment
 
 More info [Neovim](https://neovim.io/)
 
-## Additional features
-
-| Software        | Utility                 | Pacman                         |
-| --------------- | ----------------------- | ------------------------------ |
-| ArandDR         | Manage multiple screens | sudo pacman -S arandr          |
-| xappearance     | Change theme            | sudo pacman -S lxappearance    |
-| pip             | Python package manager  | sudo pacman -s python-pip      |
-| exa             | List files visually     | sudo pacman -S exa             |
-| xcb-util-cursor | Change theme cursor     | sudo pacman -S xcb-util-cursor |
-
 ## Fonts, theming and GTK
 
-| Software              | Utility                                                                                      |
-| --------------------- | -------------------------------------------------------------------------------------------- |
-| Alacritty             | Terminal emulator                                                                            |
-| Exa                   | Pager                                                                                        |
-| Bat                   | Pager                                                                                        |
-| UbuntuMono Nerd Fonts | [Font](https://archlinux.org/packages/extra/any/ttf-ubuntu-mono-nerd/)                       |
-| Cascadia Code         | [Font](https://archlinux.org/packages/extra/any/ttf-cascadia-code/)                          |
-| Theme GTK             | [Iconst](https://www.gnome-look.org/p/1333360) [Theme](https://www.gnome-look.org/p/1316887) |
+| Software              | Utility                                                                                     |
+| --------------------- | ------------------------------------------------------------------------------------------- |
+| UbuntuMono Nerd Fonts | [Font](https://archlinux.org/packages/extra/any/ttf-ubuntu-mono-nerd/)                      |
+| Cascadia Code         | [Font](https://archlinux.org/packages/extra/any/ttf-cascadia-code/)                         |
+| Theme GTK             | [Icons](https://www.gnome-look.org/p/1333360) [Theme](https://www.gnome-look.org/p/1316887) |
 
 ## Testing your window manager
 
