@@ -4,16 +4,15 @@ Esta es una guia para una instalacion limpia de Arch linux.
 [Mas Info](https://wiki.archlinux.org/)
 
 > [NOTE]
-> Si deseas instalar Arch junto a linux deberas de crear primero una particion para
-> el sistema desde windows y despues podras seguir con la instalacion de Arch.
+> Si deseas instalar Arch junto a linux deberas
+> de crear primero una particion para el sistema
+> desde windows y despues podras seguir con la instalacion de Arch.
 
-- 1. Introduce el archivo ISO Y arrcanca desde el grub
+1. Introduce el archivo ISO Y arrcanca desde el grub
 
 Antes de comenzar deberiamos verificar si tenemos internet
 
 ```bash
-
-# Promt
 iwctl
 device list
 station wlan0 get-networks
@@ -28,7 +27,7 @@ timedatectl set-ntp true
 
 ```
 
-1. Particionar los discos
+2. Particionar los discos
 
 En lo personal me gusta crear las particiones de la siguiente manera
 

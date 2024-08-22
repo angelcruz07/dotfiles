@@ -63,7 +63,8 @@ reboot
 | **mod + ctrl + r**   | reiniciar qtile                     |
 | **mod + ctrl + q**   | cerrar sesión                       |
 
-Antes de continuar si tu distribucion del teclado no se encuentra en ingles deberias cambiarla, abre **alacritty**
+Antes de continuar si tu distribucion del teclado nose
+encuentra en ingles deberias cambiarla, abre **alacritty**
 con **mod + enter** la tecla mod es la tecla con el icono de windows en tu teclado.
 
 ```bash
