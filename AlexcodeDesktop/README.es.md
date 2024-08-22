@@ -82,9 +82,6 @@ sudo systemctl enable lightdm
 cp -r ~/dotfiles/AlexcodeDesktop/.config ~/
 ```
 
-### Instalar fuentes
-
-Ahora mismo si has reiniciado el PC y te has saltado este paso
 veras que todo el entorno esta roto, esto sucede por que no tienes instalada una
 fuente de tipo NerdFont, en mi caso utilizo UbuntuMono Nerd Font y CascadiaCode
 podras cambiarlas despues.

@@ -14,6 +14,11 @@ processor, and within my personal desktop with support for two monitors,
   - [Install Xorg](#install-xorg)
   - [Login and window manager](#login-and-window-manager)
   - [Initial software](#initial-software)
+    - [Enable login manager](#enable-login-manager)
+    - [Clone repository](#clone-repository)
+    - [Install Fonts](#install-fonts)
+    - [Copy config](#copy-config)
+    - [Rebooting the PC](#rebooting-the-pc)
   - [Install Arch User Repository (AUR)](#install-arch-user-repository-aur)
   - [Audio](#audio)
   - [Bluetooth](#bluetooth)
@@ -23,9 +28,8 @@ processor, and within my personal desktop with support for two monitors,
   - [Keybindings](#keybindings)
   - [Apps](#apps)
   - [Gallery](#gallery)
-  - [Qtile](#qtile)
+    - [Qtile](#qtile)
   - [Software](#software)
-  - [Basic utilities](#basic-utilities)
   - [Audio \& bluetooth](#audio--bluetooth)
   - [Video \& Images](#video--images)
   - [Terminal](#terminal)
@@ -33,7 +37,8 @@ processor, and within my personal desktop with support for two monitors,
   - [Neovim](#neovim)
   - [Additional features](#additional-features)
   - [Fonts, theming and GTK](#fonts-theming-and-gtk)
-  - [How to use my setup](#how-to-use-my-setup)
+  - [Testing your window manager](#testing-your-window-manager)
+    - [How to use my setup](#how-to-use-my-setup)
 
 ## Overview
 
@@ -58,7 +63,9 @@ My recomendations [Installation](/install/README.md)
 
 ## Install Xorg
 
-Before proceeding, you should have Xorg installed
+Xorg is an implementation of the X Window System for Unix-like operating systems, such as Linux. It is one of the key components for providing a graphical interface on these systems.
+
+[xorg](https://wiki.archlinux.org/title/Xorg)
 
 ```bash
 sudo pacman -S xorg
@@ -78,42 +85,61 @@ least, we need a browser.
 
 ## Initial software
 
-Note: This comand will install the next
-sotfware:
-
-- lightdm
-- Qtile
-- Alacritty
-- Vs Code
-- Firefox
-- Rofi
-- Neofetch
-- Base devel
-- exa
-- unzip
-- Thunar
-- Flameshot
-- Htop
-- NeoVim
-- Picom
-
-you can modify it your way.
-
-1. Install basic software
+First, we need to install the basic software to make my configuration work.
 
 ```bash
-sudo pacman -S lightdm lighdm-gtk-greeter lightdm-webkit2-greeter
-qtile alacritty firefox rofi neofetch htop rofi neofetch htop
-base-devel exa neovim flameshot unzip thunar picom
+sudo pacman -S lightdm lightdm-gtk-greeter
+lightdm-webkit2-greeter qtile alacritty
+firefox rofi neofetch htop base-devel
+pulseaudio pavucontrol feh exa neovim
+flameshot unzip thunar picom arandr brightnessctl
 ```
 
 Info about this software in [Software](#software)
 
-2. Enable login manager
+### Enable login manager
+
+To be able to log in to Qtile, you will need to enable it first.
 
 ```bash
 sudo systemctl enable lightdm
 ```
+
+### Clone repository
+
+Clone the repository of my configurations.
+
+```bash
+git clone https://github.com/angelcruz07/dotfiles.git
+```
+
+### Install Fonts
+
+Before continuing, let's install the fonts used in my configuration. In my case, I use UbuntuMono Nerd Font and CascadiaCode.
+
+```bash
+sudo pacman -S ttf-ubuntu-mono-nerdfont ttf-cascadia-code
+```
+
+### Copy config
+
+Copy my configuration to see the changes.
+
+```bash
+cp -r ~/dotfiles/AlexcodeDesktop/.config ~/
+```
+
+### Rebooting the PC
+
+Restart your PC to check if everything has gone well.
+
+```bash
+reboot
+```
+
+Take a look at the configured [keyboard shortcuts](#keybindings).
+
+If you've followed the steps correctly, you should see my environment with the theme I'm currently using.
 
 ## Install Arch User Repository (AUR)
 
@@ -200,12 +226,6 @@ Check my config in [xprofile](/.xprofile)
 | mod + ctrl + r      | restart wm                       |
 | mod + ctrl + q      | quit window                      |
 
-The following keybindings will only work if you install all programs needed:
-
-```bash
-sudo pacman -S rofi thunar firefox alacritty redshift scrot
-```
-
 ## Apps
 
 | Key             | Action                      |
@@ -217,14 +237,14 @@ sudo pacman -S rofi thunar firefox alacritty redshift scrot
 | mod + return    | Luch Terminal (Alacritty)   |
 | mod + r         | Redshift                    |
 | mod + shift + r | Stop redshift               |
-| mod + s         | screenshot (scrot)          |
+| mod + s         | Screenshot (scrot)          |
 | mod + c         | Launch VsCode               |
 
 ## Gallery
 
 My setup has the followig themes avaible.
 
-## Qtile
+### Qtile
 
 - Dracula
   ![Dracula theme](./assets/screenshots/dracula.jpg)
@@ -241,8 +261,6 @@ My setup has the followig themes avaible.
 ## Software
 
 List of software used in the desktop environment
-
-## Basic utilities
 
 | Software               | Utility                     | Pacman                                |
 | ---------------------- | --------------------------- | ------------------------------------- |
@@ -323,10 +341,11 @@ More info [Neovim](https://neovim.io/)
 | Cascadia Code         | [Font](https://archlinux.org/packages/extra/any/ttf-cascadia-code/)                          |
 | Theme GTK             | [Iconst](https://www.gnome-look.org/p/1333360) [Theme](https://www.gnome-look.org/p/1316887) |
 
-Testing your window manager
+## Testing your window manager
+
 [Xephyr](https://wiki.archlinux.org/title/Xephyr)
 
-## How to use my setup
+### How to use my setup
 
 After a clean installation of Archlinux.
 
@@ -339,21 +358,13 @@ base-devel exa neovim flameshot unzip thunar pulseaudio pavucontrol
 brightnessctl feh arandr picom
 ```
 
-Before continuing, it is recommended to restart the PC.
-
-- Clone this repository
-
-```bash
-https://github.com/angelcruz07/dotfiles.git
-```
-
 - Copy my .config of desktop
 
 ```bash
 cp -r ~/dotfiles/AlexcodeDesktop/.config/ ~/
 ```
 
-4. Copy _.bashrc_
+1. Copy _.bashrc_
 
 ```bash
 cp -r ~/dotfiles/.bashrc/ ~/
@@ -364,5 +375,3 @@ cp -r ~/dotfiles/.bashrc/ ~/
 ```bash
 cp -r ~/dotfiles/.xprofile ~/
 ```
-
-After this, you should restart the PC and you will have my setup.

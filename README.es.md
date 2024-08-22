@@ -1,29 +1,38 @@
-# Dotfiles y configuracion
+# Dotfiles
 
-El entorno cuenta con configuracion y soporte
-para un escritorios con doble monitor, y una
-laptop MSI Notebook con procesador AMD Ryzen 5-7530U
+Esta es mi configuracion para mi
+entorno de escritorio Arch Linux con soporte
+para dos monitores de 24 y 26 pulgadas,
+he separado mi configuracion de mi laptop
+por un sencilla razon, se requiren algunas
+configuraciones especiales y adaptadas
+para que funcione correctamente y trabajar comodo
+realmente no varia demasiado, si estas interesado
+en verla la encontraras en [AlexcodeLaptop](../AlexcodeLaptop)
 
-## Resumen
+## Arch Linux - Qtile
 
-Esta es un guia que te llevara a crear un entorno de escritorio personalizado
-con Arch Linux. En este caso voy a asumir que estas familizarizado con sistemas
-operativos basados en Linux y sus lineas de comandos, ademas de eso deberias
-tener un poco de conocimiento sobre que son los "tiling window manager"
-ya que en este caso mi configuracion esta basada en Qtile ya que este
-se encuentra escrito en python y es muy facil de configurar.
+Bienvenido si estas leyendo esto es
+por que quires aprender a crear tu entorno de escritorio
+con Arch Linux.
 
-Esto es un poco del camino que yo e tomado en este mundo de
-los sistemas operativos y la magia de Arch Linux.
+## Instalacion de Arch Linux
 
-Si deseas ahorrarte estos pasos y la terea de configurar ve al final de este archivo
-ahi te dejare una guia de como copear exactamente esta configuracion.
+Para comenzar asegurate de tener una Instalacion
+limpia de Arch Linux.
 
-## Qtile
+Wiki [arch](https://wiki.archlinux.org/title/installation_guide)
+Mis recomendaciones [Installation](/install/README.md)
 
-Las siguientes instrucciones estan basadas para
-configurar Qtile ya que tambien encontraras configuraciones
-para spectdwrm
+## Instalar Xorg
+
+Xorg es una implementación del sistema de ventanas X para sistemas operativos tipo Unix, como Linux. Es uno de los componentes fundamentales para proporcionar una interfaz gráfica en estos sistemas.
+
+[xorg](https://wiki.archlinux.org/title/Xorg)
+
+```bash
+sudo pacman -S xorg
+```
 
 ## Inicio de sesion y gestor de ventanas
 
@@ -33,25 +42,80 @@ utilizando [lighdm](https://wiki.archlinux.org/title/LightDM) y
 [qtile](https://wiki.archlinux.org/title/Qtile) lightdm no funcionara si
 no tienes un [gretter](https://wiki.archlinux.org/title/LightDM#Greeter)
 al igual necesitaremos de una terminal en mi caso yo utilizo [alacritty](https://alacritty.org/)
-de igual manera ocuparemos de un editor de texto puedes utilizar [vscode](https://code.visualstudio.com/)
-o [nvim](https://neovim.io/) si tienes experiencia previa, si no de lo
-contrario no lo recomiendo por ultimo ocupamos de un navegador.
 
-Para instalar el software mencionado usaremos los siguientes comandos
+### Instalar software basico
+
+Primero necesitamos instalar el software
+basico para poder hacer funcionar mi
+configuracion.
+
+- lightdm
+- Qtile
+- Alacritty
+- Firefox
+- Rofi
+- Neofetch
+- Base devel
+- exa
+- unzip
+- Thunar
+- Flameshot
+- Htop
+- NeoVim
+- Picom
 
 ```bash
-sudo pacman -S lightdm lightdm-gtk-greeter qtile xterm code firefox
+sudo pacman -S lightdm lightdm-gtk-greeter lightdm-webkit2-greeter qtile alacritty firefox rofi neofetch htop base-devel pulseaudio pavucontrol feh exa neovim flameshot unzip thunar picom
 ```
 
-Activa el servicio de lightdm y reinicia el ordenador, deberias poder iniciar
-sesion en Qtile a travez de lightdm
+Mas info sobre este software en []()
+
+### Habilitar el login manager
+
+Para que puedas iniciar sesion en Qtile deberas de habilitarlo primero.
 
 ```bash
 sudo systemctl enable lightdm
+```
+
+### Clonar repositorio
+
+Clonar el repositorio de mis configuraciones
+
+```bash
+git clone https://github.com/angelcruz07/dotfiles.git
+```
+
+### Instalar fuentes
+
+Antes de continuar vamos a instalar las fuentes
+que usa mi configuracion, en mi caso utilizo UbuntuMono Nerd Font y CascadiaCode.
+
+```bash
+sudo pacman -S ttf-ubuntu-mono-nerdfont ttf-cascadia-code
+```
+
+### Copear mi configuracion
+
+Copea mi configuracion para ver los cambios
+
+```bash
+cp -r ~/dotfiles/AlexcodeDesktop/.config ~/
+```
+
+### Reinicio del PC
+
+Reinicia tu pc para revisar que todo a salido bien
+
+```bash
 reboot
 ```
 
-## Configuracion basica de qtile
+Dale un vistazo a los atajos de teclado configurados
+en [atajos](#atajos-basicos-qtile), si has echo los pasos bien deberias tener la vista de mi entorno
+con el tema que estoy utilizando actualmente.
+
+## Atajos basicos Qtile
 
 | Atajo                | Acción                              |
 | -------------------- | ----------------------------------- |
@@ -72,41 +136,4 @@ setxkbmap es
 ```
 
 Ten en cuenta que este cambio no es permanente, si reinicias el PC tendras que escribir
-el comando anterios de nuevo.
-
-Por defecto no hay menu para iniciar programas, actualmente solo
-lo puedes hacer a travez de alacritty.
-
-En mi caso utilizo el menu [rofi](https://wiki.archlinux.org/title/Rofi)
-pero puedes utilizar [dmenu](https://wiki.archlinux.org/title/Dmenu)
-
-```bash
-sudo pacman -S rofi
-```
-
-Bien ahora tendremos que agregar algunos atajos de teclados
-para esto abre el archivo de configuracion con tu editor
-de texto elegido y dirigete al archivo de configuracion de
-qtile
-
-```bash
-nvim .config/qtile/config.py
-```
-
-En este fichero agregaremos lo siguientes atajos de teclado
-
-```bash
-Key([mod], "m", lazy.spawn("rofi -show run")),
-Key([mod, 'shift'], "m", lazy.spawn("rofi -show")),
-```
-
-Reinicia Qtile con mod + control + r. Deberías poder abrir el
-menú y el emulador de terminal usando los atajos de teclado
-que acabas de definir. Si has instalado rofi, puedes cambiar su tema:
-
-```bash
-sudo pacman -S which
-rofi-theme-selector
-```
-
-## Utilidades basicas de sistema
+el comando anterior de nuevo.
