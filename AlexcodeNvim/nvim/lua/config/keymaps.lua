@@ -2,18 +2,10 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua Add any additional keymaps here
 
 -- Change normal mode
-vim.keymap.set(
-  { "i", "v" },
-  "jk",
-  "<c-\\><c-n>",
-  { desc = "Enter normal mode" }
-)
-vim.keymap.set(
-  { "i", "v" },
-  "kj",
-  "<c-\\><c-n>",
-  { desc = "Enter normal mode" }
-)
+vim.keymap.set({ "i", "v" }, "jk", "<c-\\><c-n>", { desc = "Enter normal mode" })
+vim.keymap.set({ "i", "v" }, "kj", "<c-\\><c-n>", { desc = "Enter normal mode" })
+
+-- Mueve líneas hacia arriba y abajo en modo visual
 
 -- Position cursor at the middle of the screen after scrolling half page
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -78,45 +70,15 @@ vim.keymap.set("n", "<C-M-l>", function()
 end)
 
 -- Disable key mappings in insert mode
-vim.api.nvim_set_keymap(
-  "i",
-  "<A-j>",
-  "<Nop>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "i",
-  "<A-k>",
-  "<Nop>",
-  { noremap = true, silent = true }
-)
+vim.api.nvim_set_keymap("i", "<A-j>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<A-k>", "<Nop>", { noremap = true, silent = true })
 
 -- Disable key mappings in normal mode
-vim.api.nvim_set_keymap(
-  "n",
-  "<A-j>",
-  "<Nop>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<A-k>",
-  "<Nop>",
-  { noremap = true, silent = true }
-)
+vim.api.nvim_set_keymap("n", "<A-j>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-k>", "<Nop>", { noremap = true, silent = true })
 
 -- Disable key mappings in visual block mode
-vim.api.nvim_set_keymap(
-  "x",
-  "<A-j>",
-  "<Nop>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "x",
-  "<A-k>",
-  "<Nop>",
-  { noremap = true, silent = true }
-)
+vim.api.nvim_set_keymap("x", "<A-j>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("x", "<A-k>", "<Nop>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("x", "J", "<Nop>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("x", "K", "<Nop>", { noremap = true, silent = true })

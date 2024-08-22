@@ -68,44 +68,8 @@ return {
       width = 60,
     },
   },
-  {
-    "rcarriga/nvim-notify",
-    opts = {
-      background_colour = "#1a1b26",
-      timeout = 5000,
-    },
-  },
 
-  -- animations
-  {
-    "echasnovski/mini.animate",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      opts.scroll = {
-        enable = false,
-      }
-    end,
-  },
-
-  -- buffer line
-  {
-    "akinsho/bufferline.nvim",
-    event = "VeryLazy",
-    enabled = false,
-    keys = {
-      { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
-      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
-    },
-    opts = {
-      options = {
-        mode = "tabs",
-        -- separator_style = "slant",
-        show_buffer_close_icons = false,
-        show_close_icon = false,
-      },
-    },
-  },
-
+  -- Notifications
   {
     "rcarriga/nvim-notify",
     opts = {
@@ -130,7 +94,7 @@ return {
         lualine_a = {
           {
             "mode",
-            icon = "󱗞 ",
+            icon = "󱗞",
           },
         },
       },
@@ -160,7 +124,30 @@ return {
       })
     end,
   },
-
+  {
+    "echasnovski/mini.nvim",
+    version = false,
+    config = function()
+      require("mini.animate").setup({
+        resize = {
+          enable = false,
+        },
+        open = {
+          enable = false,
+        },
+        close = {
+          enable = false,
+        },
+        scroll = {
+          enable = true,
+          timing = require("mini.animate").gen_timing.linear({ duration = 100, unit = "total" }),
+          subscroll = require("mini.animate").gen_subscroll.equal({
+            move = true,
+          }),
+        },
+      })
+    end,
+  },
   {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
@@ -174,7 +161,6 @@ return {
     },
     keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
   },
-
   {
     "nvimdev/dashboard-nvim",
     event = "VimEnter",
