@@ -2,6 +2,8 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
+PROJECT_PATHS=(~/Dev)
+
 # Si la sesión es interactiva
 if [[ $- == *i* ]]; then
     # Commands to run in interactive sessions can go here
