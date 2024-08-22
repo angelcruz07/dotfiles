@@ -28,14 +28,14 @@ export FZF_DEFAULT_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exlude .git"
 
 # Run Tmux
-if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
-    exec tmux
-fi
+#if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
+#    exec tmux
+#fi
 
 # Run Zellij
-#if [[ $- == *i* ]] && [[ -z "$ZELLIJ" ]]; then
-#    exec zellij
-#fi
+if [[ $- == *i* ]] && [[ -z "$ZELLIJ" ]]; then
+   exec zellij
+fi
 
 
 # bun
@@ -45,6 +45,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # alias
 alias fzfbat='fzf --preview="bat --theme=gruvbox-dark --color=always {}"'
 alias fzfnvim='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
+alias cat='bat --style=full --paging=never'
+alias ls='exa --group-directories-first'
+alias tree='exa -T'
+
 
 #plugins
 plugins=(

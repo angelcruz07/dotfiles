@@ -2,20 +2,32 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+set PROJECT_PATHS ~/Dev/
+
 # For linux
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
-# if status is-interactive
-#     and not set -q TMUX
-#     exec tmux
-# end
 
-starship init fish | source
+#if not set -q TMUX
+#    tmux
+#end
 
 if set -q ZELLIJ
 else
     zellij
 end
+
+starship init fish | source
+
+set -x LS_COLORS "di=38;5;73:ow=48;5;22:ex=38;5;131:ln=38;5;179:*.tar=38;5;209:*.zip=38;5;209:*.jpg=38;5;176:*.png=38;5;176:*.mp3=38;5;176:*.wav=38;5;176:*.txt=38;5;223:*.sh=38;5;131"
+
+#alias 
+alias fzfbat='fzf --preview="bat --theme=gruvbox-dark --color=always {}"'
+alias fzfnvim='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
+alias cat='bat --style=full --paging=never'
+alias ls='exa --group-directories-first'
+alias tree='exa -T'
+
 
 ## kanagawa
 #set -l foreground DCD7BA
@@ -77,7 +89,6 @@ set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
 set -g fish_greeting ''
 
-set -gx PROJECT_PATHS ~/Dev
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
