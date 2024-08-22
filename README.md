@@ -7,29 +7,33 @@ processor, and within my personal desktop with support for two monitors,
 
 ## Table of contents
 
-- [Table of contents](#table-of-contents)
+- [Dotfiles \& Arch Linux](#dotfiles--arch-linux)
+  - [Table of contents](#table-of-contents)
   - [Overview](#overview)
   - [Arch Installation](#arch-installation)
   - [Install Xorg](#install-xorg)
   - [Login and window manager](#login-and-window-manager)
   - [Initial software](#initial-software)
-  - [Install (AUR)](#install-arch-user-repository-aur)
+  - [Install Arch User Repository (AUR)](#install-arch-user-repository-aur)
   - [Audio](#audio)
+  - [Bluetooth](#bluetooth)
   - [Brightness](#brightness)
   - [Wallapaper](#wallapaper)
   - [Monitors](#monitors)
   - [Keybindings](#keybindings)
-  - [Extras](#extras)
   - [Apps](#apps)
+  - [Gallery](#gallery)
+  - [Qtile](#qtile)
   - [Software](#software)
   - [Basic utilities](#basic-utilities)
-  - [Audio](#audio-bluetooth)
+  - [Audio \& bluetooth](#audio--bluetooth)
   - [Video \& Images](#video--images)
   - [Terminal](#terminal)
   - [Text editor](#text-editor)
   - [Neovim](#neovim)
   - [Additional features](#additional-features)
   - [Fonts, theming and GTK](#fonts-theming-and-gtk)
+  - [How to use my setup](#how-to-use-my-setup)
 
 ## Overview
 
@@ -218,8 +222,7 @@ sudo pacman -S rofi thunar firefox alacritty redshift scrot
 
 ## Gallery
 
-My setup has the followig themes
-avaible.
+My setup has the followig themes avaible.
 
 ## Qtile
 
@@ -350,18 +353,16 @@ https://github.com/angelcruz07/dotfiles.git
 cp -r ~/dotfiles/AlexcodeDesktop/.config/ ~/
 ```
 
-4. Copy .bashrc
+4. Copy _.bashrc_
 
 ```bash
 cp -r ~/dotfiles/.bashrc/ ~/
 ```
 
-5. Copy .xprofile
+5. Copy _.xprofile_
 
 ```bash
 cp -r ~/dotfiles/.xprofile ~/
 ```
 
 After this, you should restart the PC and you will have my setup.
-
-## How to customize it?
