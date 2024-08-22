@@ -37,7 +37,7 @@ background = "#0f101a"
 foreground = "#c5c9de"
 
 [window]
-opacity = 0.9
+opacity = 0.95
 
 [font]
 size = 16
