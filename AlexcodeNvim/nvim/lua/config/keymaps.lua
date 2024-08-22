@@ -5,8 +5,6 @@
 vim.keymap.set({ "i", "v" }, "jk", "<c-\\><c-n>", { desc = "Enter normal mode" })
 vim.keymap.set({ "i", "v" }, "kj", "<c-\\><c-n>", { desc = "Enter normal mode" })
 
--- Mueve líneas hacia arriba y abajo en modo visual
-
 -- Position cursor at the middle of the screen after scrolling half page
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -32,14 +30,6 @@ local harpoon = require("harpoon")
 harpoon:setup()
 
 -- REQUIRED
-
------ OBSIDIAN -----
-vim.keymap.set(
-  "n",
-  "<leader>oc",
-  "<cmd>lua require('obsidian').util.toggle_checkbox()<CR>",
-  { desc = "Obsidian Check Checkbox" }
-)
 
 -----  OIL -----
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
