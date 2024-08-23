@@ -49,6 +49,7 @@ alias fzfnvim='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}"
 alias cat='bat --style=full --paging=never'
 alias ls='exa --group-directories-first'
 alias tree='exa -T'
+alias lg='lazygit'
 
 
 #plugins
