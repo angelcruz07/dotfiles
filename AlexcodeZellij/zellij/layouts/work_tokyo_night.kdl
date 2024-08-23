@@ -9,7 +9,6 @@ layout {
       }
 
     default_tab_template {
-        children
         pane size=1 borderless=true{
            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
               format_left   "{mode} #[fg=#b4f9f8,bold]{session}{tabs}"
@@ -37,9 +36,8 @@ layout {
               datetime        "#[fg=#c3e88d,bold] {format} "
               datetime_format "%A, %d %b %Y %H:%M"
               datetime_timezone "America/Mexico_City"
-
-
             }
           }
+          children
       }
   }
