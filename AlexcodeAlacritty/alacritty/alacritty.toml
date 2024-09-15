@@ -43,7 +43,7 @@ opacity = 0.95
 size = 16
 
 [font.normal]
-family = "UbuntuMono Nerd Font"
+family = "Iosevka Term"
 
 [shell]
 program = "/usr/bin/zsh"
