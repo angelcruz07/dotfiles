@@ -75,46 +75,26 @@ return {
       },
     },
   },
-
   {
     "nvim-telescope/telescope.nvim",
     opts = function(_, opts)
       local actions = require("telescope.actions")
 
-      -- Function to calculate the appropriate height
-      local function calculate_height()
-        if vim.o.lines <= 40 then
-          return vim.o.lines -- 100% height for small terminals
-        else
-          return math.floor(vim.o.lines * 0.3) -- 30% height for larger terminals
-        end
-      end
-
-      -- Set initial height based on the current terminal size
-      local initial_height = calculate_height()
-
-      -- Update layout_config with the initial height calculation
       opts.defaults = {
         file_ignore_patterns = {
+
           "node_modules",
           "package-lock.json",
           "yarn.lock",
           "bun.lockb",
-          "pnpm-lock.yaml",
         },
         prompt_prefix = "> ", -- Set the prompt to just ">"
         layout_strategy = "horizontal", -- Use horizontal layout
-        layout_config = {
-          prompt_position = "top", -- Position the prompt at the top
-          height = initial_height, -- Set the initial height
-          width = vim.o.columns, -- Occupy the full width of the window
-          preview_cutoff = 0, -- Always show the preview
-          mirror = false, -- Place the preview on the right
-          anchor = "S", -- Anchor the layout to the bottom
-        },
         sorting_strategy = "ascending",
+
         winblend = 0, -- No transparency
         results_title = false, -- Remove the "Results" title
+
         borderchars = {
           prompt = { "─", " ", " ", " ", " ", " ", " ", " " }, -- Top border for the prompt only
           results = { " ", " ", " ", " ", " ", " ", " ", " " }, -- No borders for results
@@ -123,8 +103,10 @@ return {
         mappings = {
           i = {
             ["<C-Down>"] = actions.cycle_history_next,
+
             ["<C-Up>"] = actions.cycle_history_prev,
             ["<C-f>"] = actions.preview_scrolling_down,
+
             ["<C-b>"] = actions.preview_scrolling_up,
           },
           n = {
@@ -133,17 +115,20 @@ return {
         },
       }
 
-      -- Set up an autocmd to recalculate the height on window resize
-      vim.api.nvim_create_autocmd("VimResized", {
-        callback = function()
-          opts.defaults.layout_config.height = calculate_height()
-          opts.defaults.layout_config.width = vim.o.columns
-        end,
-      })
-
       -- Load the fzf extension for fast searches
       require("telescope").load_extension("fzf")
 
+      -- Add hidden files and no-ignore options to file search and live_grep
+      opts.pickers = {
+        find_files = {
+          find_command = { "rg", "--files", "--hidden", "--no-ignore", "--iglob", "!.git/" },
+        },
+        live_grep = {
+          additional_args = function()
+            return { "--hidden", "--no-ignore" }
+          end,
+        },
+      }
       return opts
     end,
 
@@ -163,5 +148,10 @@ return {
         end,
       },
     },
+    config = function(_, opts)
+      require("telescope").setup(opts)
+
+      vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+    end,
   },
 }
