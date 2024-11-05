@@ -30,6 +30,8 @@ return {
     name = "kanagawa",
     priority = 1000,
     opts = {
+      transparent = true,
+      theme = "dragon",
       overrides = function(colors)
         local theme = colors.theme
         return {
@@ -72,23 +74,35 @@ return {
     "xiyaowong/transparent.nvim",
   },
   {
+    "ribru17/bamboo.nvim",
+    lazy = false,
+  },
+  {
     "neanias/everforest-nvim",
     version = false,
     lazy = false,
-    priority = 1000,
     config = function()
       require("everforest").setup({
         background = "hard",
         italis = true,
-        transparent_background_level = 1,
+        -- transparent_background_level = 1,
         diagnostic_text_highlight = true,
         diagnostic_virtual_text = "coloured",
+        colours_override = function(palette)
+          palette.bg0 = "#1A1A22"
+        end,
       })
     end,
   },
   {
+    "dgox16/oldworld.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
+      -- change this line to change the color scheme
       colorscheme = "catppuccin",
     },
   },

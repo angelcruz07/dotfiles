@@ -489,6 +489,7 @@ keybinds clear-defaults=true {
 // also default to the scrollback size. This does nothing if `serialize_pane_viewport` is not true.
 //
 // scrollback_lines_to_serialize 10000
+scrollback_editor "nvim"
 
 // Define color themes for Zellij
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
@@ -541,7 +542,6 @@ themes {
 
 // Choose the theme that is specified in the themes section.
 // Default: 
-
 
 theme "tokyo_night"
 

@@ -148,16 +148,16 @@ If you've followed the steps correctly, you should see my environment with the t
 sudo pacman -S git
 
 # Clone repository
-sudo git clone https:aur.archlinux.org/yay-git.git
+sudo git clone https://aur.archlinux.org/yay-git.git
 
 # Install yay
 sudo chown -R youruser:youruser ./yay-git
 
 cd yay-git
 
-feh --bg-scale wallpapers/forest-violet.jpg &
 makepkg -si
 
+rm -r yay-git
 ```
 
 ## Audio
