@@ -1,133 +1,136 @@
-[buf]
-format = '(with [$symbol$version ]($style))'
+format = """\
+($directory)\
+$os\
+$git_branch\
+$fill\
+$nodejs\
+$rust\
+$golang\
+$php\
+$bun\
+$java\
+$c\
+$conda\
+$zig\
+$cmd_duration\
+$time\
+\n$character\
+"""
 
-[bun]
-format = '(via [$symbol($version )]($style))'
+# Disable the blank line at the beginning of the prompt
+add_newline = true
 
-[c]
-format = '(via [$symbol($version(-$name) )]($style))'
+# Command timeout
+command_timeout = 3600000
 
-[cmake]
-format = '(via [$symbol($version )]($style))'
+# Kanagawa Dragon color and style settings
+palette = "kanagawa_dragon"
 
-[cobol]
-format = '(via [$symbol($version )]($style))'
+[fill]
+symbol = ' '
 
-[crystal]
-format = '(via [$symbol($version )]($style))'
+[palettes.kanagawa_dragon]
+arrow = "#DCD7BA"      # Light bone color, soft and visible
+os = "#C4B28A"         # Warm yellow tone of dragonYellow
+directory = "#8BA4B0"  # Soft sky blue, dragonBlue2
+git = "#C4746E"        # Soft red, dragonRed
+duration = "#957FB8"   # Soft purple, oniViolet
+text_color = "#C5C9C5" # Light color, dragonWhite
+text_light = "#2A2A37" # Dark gray, sumiInk4
 
-[daml]
-format = '(via [$symbol($version )]($style))'
+# Pink mustache icon for the prompt
+[character]
+success_symbol = "[󱗞](fg:#A3BE8C)" # Mustache in dark pink tone
+error_symbol = "[󱗞](fg:red)"       # Mustache in red if there is an error
 
-[dart]
-format = '(via [$symbol($version )]($style))'
+# User settings
+[username]
+style_user = 'bold os'
+style_root = 'bold os_admin'
+format = '[󱗞 $user](fg:$style) ' # Mustache before the username
+disabled = false
+show_always = true
 
-[deno]
-format = '(via [$symbol($version )]($style))'
+# Directory settings
+[directory]
+format = "[$path](bold $style)[$read_only]($read_only_style) "
+truncation_length = 2
+style = "fg:directory"
+read_only_style = "fg:directory"
+before_repo_root_style = "fg:directory"
+truncation_symbol = "…/"
+truncate_to_repo = true
+read_only = "  "
 
-[dotnet]
-format = '(via [$symbol($version )(🎯 $tfm )]($style))'
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
 
-[elixir]
-format = '(via [$symbol($version \(OTP $otp_version\) )]($style))'
+[cmd_duration]
+format = " took [ $duration]($style) "
+style = "bold fg:duration"
+min_time = 500
 
-[elm]
-format = '(via [$symbol($version )]($style))'
+[git_branch]
+format = "-> [$symbol$branch]($style) "
+style = "bold fg:git"
+symbol = " "                           # Branch with oriental touch
 
-[erlang]
-format = '(via [$symbol($version )]($style))'
+[git_status]
+format = '[$all_status$ahead_behind ]($style)'
+style = "fg:text_color bg:git"
 
-[fennel]
-format = '(via [$symbol($version )]($style))'
-
-[gleam]
-format = '(via [$symbol($version )]($style))'
-
-[golang]
-format = '(via [$symbol($version )]($style))'
-
-[haskell]
-format = '(via [$symbol($version )]($style))'
-
-[helm]
-format = '(via [$symbol($version )]($style))'
-
-[java]
-format = '(via [$symbol($version )]($style))'
-
-[julia]
-format = '(via [$symbol($version )]($style))'
-
-[kotlin]
-format = '(via [$symbol($version )]($style))'
-
-[lua]
-format = '(via [$symbol($version )]($style))'
-
-[nim]
-format = '(via [$symbol($version )]($style))'
-
-[nodejs]
-format = '(via [$symbol($version )]($style))'
-
-[ocaml]
-format = '(via [$symbol($version )(\($switch_indicator$switch_name\) )]($style))'
-
-[opa]
-format = '(via [$symbol($version )]($style))'
-[package]
-format = '(is [$symbol$version]($style) )'
-
-[perl]
-format = '(via [$symbol($version )]($style))'
-
-[php]
-format = '(via [$symbol($version )]($style))'
-
-[purescript]
-format = '(via [$symbol($version )]($style))'
+[docker_context]
+disabled = true
+symbol = " "
 
 [python]
-format = '(via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style))'
+disabled = false
+format = '[${symbol}${pyenv_prefix}(${version})( \($virtualenv\))](fg:#FF9E3B)($style)'
+symbol = " "
+version_format = "${raw}"
 
-[quarto]
-format = '(via [$symbol($version )]($style))'
+[java]
+format = '[[ $symbol ($version) ](fg:#FF5D62)]($style)'
+version_format = "${raw}"
+symbol = " "
+disabled = false
 
-[raku]
-format = '(via [$symbol($version-$vm_version )]($style))'
-
-[red]
-format = '(via [$symbol($version )]($style))'
-
-[rlang]
-format = '(via [$symbol($version )]($style))'
-
-[ruby]
-format = '(via [$symbol($version )]($style))'
-
-[rust]
-format = '(via [$symbol($version )]($style))'
-
-[scala]
-format = '(via [$symbol($version )]($style))'
-
-[swift]
-format = '(via [$symbol($version )]($style))'
-
-[typst]
-format = '(via [$symbol($version )]($style))'
-
-[vagrant]
-format = '(via [$symbol($version )]($style))'
-
-[vlang]
-format = '(via [$symbol($version )]($style))'
+[c]
+format = '[[ $symbol ($version) ](fg:#7FB4CA)]($style)'
+symbol = " "
+version_format = "${raw}"
+disabled = false
 
 [zig]
-format = '(via [$symbol($version )]($style))'
+format = '[[ $symbol ($version) ](fg:#FFA066)]($style)'
+version_format = "${raw}"
+disabled = false
 
-[gcloud]
-disabled = true
+[bun]
+version_format = "${raw}"
+format = '[[ $symbol ($version) ](fg:#DCD7BA)]($style)'
+disabled = false
 
-[aws]
-disabled = true
+[nodejs]
+symbol = ""
+format = '[[ $symbol ($version) ](fg:#87a987)]($style)'
+
+[rust]
+symbol = ""
+format = '[[ $symbol ($version) ](fg:#FF5D62)]($style)'
+
+[golang]
+symbol = ""
+format = '[[ $symbol ($version) ](fg:#7FB4CA)]($style)'
+
+[php]
+symbol = ""
+format = '[[ $symbol ($version) ](fg:#FF9E3B)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"                            # Hour:Minute Format
+format = '[[   $time ](fg:#8BA4B0)]($style)'
