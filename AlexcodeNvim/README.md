@@ -2,7 +2,8 @@
 
 My configuration is based on this repository:
 [Gentleman Programming](https://github.com/Gentleman-Programming/Gentleman.Dots.git)
-with some personal changes. In this guide, you will be able to set up my configuration.
+with some personal changes.
+In this guide, you will be able to set up my configuration.
 
 ## Installation
 

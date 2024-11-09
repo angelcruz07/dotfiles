@@ -70,8 +70,8 @@ keys = [
     Key([mod], "e", lazy.spawn("thunar"), desc="Spawn file explorer"),
 
     #Screenshot
-    Key([], "Print", lazy.spawn("scrot /home/angel/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"), desc="Take Screenshot"),
-    Key([mod], "Print", lazy.spawn("scrot -s /home/angel/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"), desc="Take Screenshot custom"),
+    Key([], "Print", lazy.spawn("flameshot"), desc="Take Screenshot"),
+    Key([mod], "Print", lazy.spawn("flameshot"), desc="Take Screenshot custom"),
     Key([mod], "s", lazy.spawn("flameshot"), desc="Take Screenshot custom"),
 
     #Browser

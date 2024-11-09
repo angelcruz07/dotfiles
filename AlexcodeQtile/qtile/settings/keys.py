@@ -58,7 +58,7 @@ keys = [
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window",),
 
     #Apps
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "Return", lazy.spawn("wezterm"), desc="Launch terminal"),
 
     #Menu Rofi
     Key([mod], "m", lazy.spawn("rofi -show drun"), desc="Spawn a command using a prompt widget"),
@@ -70,8 +70,8 @@ keys = [
     Key([mod], "e", lazy.spawn("thunar"), desc="Spawn file explorer"),
 
     #Screenshot
-    Key([], "Print", lazy.spawn("scrot /home/angel/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"), desc="Take Screenshot"),
-    Key([mod], "Print", lazy.spawn("scrot -s /home/angel/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"), desc="Take Screenshot custom"),
+    Key([], "Print", lazy.spawn("flameshot"), desc="Take Screenshot"),
+    Key([mod], "Print", lazy.spawn("flameshot"), desc="Take Screenshot custom"),
     Key([mod], "s", lazy.spawn("flameshot"), desc="Take Screenshot custom"),
 
     #Browser

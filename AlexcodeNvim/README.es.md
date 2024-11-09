@@ -121,8 +121,9 @@ Copea mi configuracion del repositorio que acabase de clonar
 cp -r ~/dotfiles/AlexcodeNvim/nvim ~/.config/
 ```
 
-Hasta este punto tendras mi configuracion pero aun podemos mejorarla
-puedes seguir con las siguientes isntalaciones
+Hasta este punto tendrás mi configuración
+pero aun podemos mejorarlo
+puedes seguir con las siguientes isntalaciones.
 
 ### Instalar Zsh
 

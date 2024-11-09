@@ -1,13 +1,12 @@
 # Adaptation of colors from WezTerm to Alacritty in TOML format
 
-# [[colors.indexed_colors]]
-# color = "#ffa066" # Additional color
-# index = 16
-#
-# [[colors.indexed_colors]]
-# color = "#ff5d62" # Additional color
-# index = 17
-#
+[[colors.indexed_colors]]
+color = "#ffa066" # Additional color
+index = 16
+
+[[colors.indexed_colors]]
+color = "#ff5d62" # Additional color
+index = 17
 
 [colors.bright]
 black = "#24283b"
@@ -38,7 +37,7 @@ style = "Block"
 unfocused_hollow = true
 
 [font]
-size = 14
+size = 16
 
 [font.normal]
 family = "Iosevka Term"
@@ -48,8 +47,6 @@ opacity = 0.96
 
 [env]
 TERM = "xterm-256color"
-
-[terminal]
 
 [terminal.shell]
 program = "/usr/bin/zsh"
