@@ -1,17 +1,17 @@
 # Nvim
 
-Mi configuracion esta basada en este repositorio
+Mi configuración esta basada en este repositorio
 [Gentleman Programing](https://github.com/Gentleman-Programming/Gentleman.Dots.git)
-con algunos cambios personales, en esta guia podras
-establecer mi configuracion.
+con algunos cambios personales, en esta guía podrás
+establecer mi configuración.
 
-## Instalacion
+## Instalación
 
-La configuracion esta basada en Lazy Vim
-y customizada por lo que debera de tener NeoVim
-y LazyVim instalado.
+La configuración esta basada en Lazy Vim
+y customizada por lo que es necesario tener
+NeoVim y LazyVim instalado.
 
-Consulta la documentacion [neovim](https://neovim.io) [lazyvim](http://www.lazyvim.org/installation)
+Consulta la documentación [neovim](https://neovim.io) [lazyvim](http://www.lazyvim.org/installation)
 
 Una vez instaldos NeoVim y LazyVim puedes ejecutar
 los siguientes comandos en tu terminal.
