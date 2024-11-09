@@ -1,16 +1,19 @@
 # Arch Installation
 
-Esta es una guia para una instalacion limpia de Arch linux.
-[Mas Info](https://wiki.archlinux.org/)
+Esta es una guia para una instalación limpia de Arch linux.
+[Más Info](https://wiki.archlinux.org/)
 
 > [NOTE]
-> Si deseas instalar Arch junto a linux deberas
-> de crear primero una particion para el sistema
-> desde windows y despues podras seguir con la instalacion de Arch.
+> Si deseas instalar Arch junto a windows deberás
+> de crear primero una partición para el sistema
+> desde windows y después podrás seguir con la instalación de Arch Linux.
 
-1. Introduce el archivo ISO Y arrcanca desde el grub
+## Arranque
 
-Antes de comenzar deberiamos verificar si tenemos internet
+Introduce el archivo ISO previamente cargado en
+alguna USB flash y arranca desde el grub.
+
+Antes de comenzar verificamos si tenemos internet.
 
 ```bash
 iwctl
@@ -19,27 +22,28 @@ station wlan0 get-networks
 station wlan0 connect NOMBRE_ROUTER
 exit
 
-#Veriicar conexion
+#Veriicar conexión
 ping google.com
 
-# Sincronizacion automatica de la hora
+# Sincronización automatica de la hora
 timedatectl set-ntp true
 
 ```
 
-2. Particionar los discos
+## Particionar los discos
 
-En lo personal me gusta crear las particiones de la siguiente manera
+En lo personal me gusta crear las
+particiones de la siguiente manera:
 
-1. Espacio para el sistema
-   Tamaño 50G
+- Espacio para el sistema:
+  Tamaño 50G
 
-2. Swap
-   Tamaño 8G
+- Swap:
+  Tamaño 8G
 
-3. Resto del espacio al sistema
+- Resto del espacio al sistema:
 
-4. Participacion UEFI darle 150mb
+- Participación UEFI darle 150mb
 
 ## Formatear particiones
 
@@ -83,7 +87,9 @@ mount /dev/sda2 /mnt/boot
 
 ## Instalar Arch Linux
 
-Bien una vez echas las particiones podemos proceder a instalar el sistema en software.
+Bien, una vez echas las particiones
+podemos proceder a instalar el sistema
+en hardware.
 
 ```bash
 # Install system
@@ -106,25 +112,28 @@ echo "LANG=es_ES.UTF-8" > /etc/locale.conf
 echo "KEYMAP=es" > /etc/vconsole.conf
 echo "asus" > /etc/hostname
 
-# Configuracion de los host
+# Configuración de los host
+
 nano /etc/hosts
 127.0.0.1     localhost
 ::1           localhost
 127.0.1.1    myhostname.localhost myhostname
 
-# Conexion a internet
+# Conexión a internet
 passwd
 pacman -S networkmanager
 systemctl enable NetworkManager
 pacman -S grub efibootmgr dosfstools mtools
 
-# configurar grub
+# Configurar grub
 grub-install --target=x86_64-efi --efi-directory=/boot
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Con lo anterior debemos tener completada nuestra instalacion de Arch linux
-el siguiente paso seria crear nuestro usuario.
+Una vez terminado tendremos completada
+nuestra instalación de Arch linux.
+
+El siguiente paso seria crear nuestro usuario.
 
 ```bash
 # Add User
@@ -135,16 +144,20 @@ pacman -S sudo
 nano /etc/sudoers # descomentar el  %wheel ALL=(ALL) ALL
 exit
 umount -R /mnt
+
 # Despues del proximo comando sacar USB y arrancar PC
 shutdown now
 ```
 
-Bien estos son los comandos basicos para tener una instalacion de Arch linux limpia
-pero no tenemos entorno de escritorio puedes instalar alguno popular, crear el tuyo
-o copiar mi entorno.
+Bien, estos son los comandos basicos
+para tener una instalacion limpia de Arch linux,
+pero no tenemos entorno de escritorio; puedes instalar alguno
+popular, crear el tuyo o copiar mi entorno.
 
-Ahora si has elegido crear un DualBoot para tener Arch junto a windows, por lo que debemos de configurar el grub para
-poder arrancar a windows.
+Ahora si has elegido crear un DualBoot
+para tener Arch junto a windows,
+por lo que debemos de configurar
+el grub para poder arrancar a windows.
 
 ```bash
 sudo pacman -S os-prober
@@ -152,14 +165,18 @@ sudo pacman -S os-prober
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## Posibles errores
+### Posibles errores
 
-Sabemos que Arch Linux en ocasiones suele ser problematico y puede que tengas errores,
-te presentro algunos que he solucionado espero te puedan servir.
+Sabemos que Arch Linux en ocasiones
+suele ser problematico y puede que tengas errores,
+te presentro algunos que he solucionado
+espero te puedan servir.
 
-Error con el GRUB
+#### Error con el GRUB
 
-Al apagar la computadora para quitar el USB cuando arrancas el sistema se va directo a windows
+Al apagar la computadora para
+quitar el USB cuando arrancas
+el sistema se va directo a windows
 sin pasar por el grub de Arch.
 
 Este error lo e solucionado haciendo lo siguiente:
@@ -180,5 +197,4 @@ necesitas en paso siguiente.
 ```bash
 #Reemplaza /dev/sdX con el disco correcto (por ejemplo, /dev/sda) y Y con el número de partición correcto (por ejemplo, 1).
 sudo efibootmgr -c -d /dev/sdX -p Y -L "Windows Boot Manager" -l "\EFI\Microsoft\Boot\bootmgfw.efi"
-
 ```
