@@ -1,5 +1,5 @@
 {
-  "dark": ["#090618", "#090618"],
+  "dark": ["#1a1a1a", "#1a1a1a"],
   "grey": ["#292e42", "#292e42"],
   "light": ["#ffffff", "#ffffff"],
   "text": ["#2d2a2e", "#2d2a2e"],
@@ -7,8 +7,8 @@
   "active": ["#ffffff", "#ffffff"],
   "inactive": ["#545c7e", "#545c7e"],
   "urgent": ["#c34043", "#c53b53"],
-  "color1": ["#7e9cd8", "#7e9cd8"],
-  "color2": ["#957fb8", "#957fb8"],
+  "color1": ["#728f66", "#728f66"],
+  "color2": ["#9D8f6f", "#9D8f6f"],
   "color3": ["#c0a36e", "#c0a36e"],
-  "color4": ["#b4f9f8", "#b4f9f8"]
+  "color4": ["#ffb86c", "#ffb86c"]
 }
