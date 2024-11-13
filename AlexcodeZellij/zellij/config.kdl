@@ -543,19 +543,14 @@ themes {
 // Choose the theme that is specified in the themes section.
 // Default: 
 
-theme "tokyo_night"
-
-
-// The name of the default layout to load on startup Default: "work"
-//
-
-default_layout "work_tokyo_night"
+theme "kanagawa_dragon"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
-//
-// default_mode "locked"
 
+ default_mode "locked"
+
+default_layout "work"
 // Toggle enabling the mouse mode.
 // On certain configurations, or terminals this could
 // potentially interfere with copying text.
@@ -608,19 +603,4 @@ default_layout "work_tokyo_night"
 // Default: false
 //
 // mirror_session true
-
-// The folder in which Zellij will look for layouts
-//
-// layout_dir "~/.config/zellij/layouts"
-
-// The folder in which Zellij will look for themes
-//
-// theme_dir "/path/to/my/theme_dir"
-
-// Enable or disable the rendering of styled and colored underlines (undercurl).
-// May need to be disabled for certain unsupported terminals
-// Default: true
-//
-// styled_underlines false
-//
 
