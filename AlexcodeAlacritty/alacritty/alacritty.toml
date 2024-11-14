@@ -49,7 +49,7 @@ unfocused_hollow = true
 size = 16
 
 [font.normal]
-family = "IosevkaTerm"
+family = "IosevkaTerm NF"
 
 [window]
 opacity = 0.99

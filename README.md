@@ -337,7 +337,7 @@ After a clean installation of Archlinux.
 sudo pacman -S lightdm lighdm-gtk-greeter lightdm-webkit2-greeter
 qtile alacritty firefox rofi neofetch htop rofi neofetch htop
 base-devel exa neovim flameshot unzip thunar pulseaudio pavucontrol
-brightnessctl feh arandr picom
+brightnessctl feh arandr picom --neoconfirm
 ```
 
 - Copy my .config of desktop

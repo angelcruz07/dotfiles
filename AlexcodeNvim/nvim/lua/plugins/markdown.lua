@@ -1,25 +1,21 @@
--- This file contains the configuration for the markview.nvim plugin in Neovim.
-
 return {
-  {
-    -- Plugin: markview.nvim
-    -- URL: https://github.com/OXY2DEV/markview.nvim
-    -- Description: A Neovim plugin for previewing markdown files.
-    "OXY2DEV/markview.nvim",
-    lazy = false, -- Load this plugin immediately (recommended)
-    -- ft = "markdown" -- Uncomment this line if you decide to lazy-load the plugin for markdown files only
-
-    dependencies = {
-      -- Dependency: nvim-treesitter
-      -- URL: https://github.com/nvim-treesitter/nvim-treesitter
-      -- Description: Neovim Treesitter configurations and abstraction layer.
-      -- Note: You will not need this if you installed the parsers manually or if the parsers are in your $RUNTIMEPATH.
-      "nvim-treesitter/nvim-treesitter",
-
-      -- Dependency: nvim-web-devicons
-      -- URL: https://github.com/nvim-tree/nvim-web-devicons
-      -- Description: A Lua fork of vim-web-devicons for Neovim.
-      "nvim-tree/nvim-web-devicons",
+  "MeanderingProgrammer/render-markdown.nvim",
+  dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+  ---@module 'render-markdown'
+  ---@type render.md.UserConfig
+  opts = {
+    heading = {
+      enabled = true,
+      sign = true,
+      style = "full",
+      icons = { "① ", "② ", "③ ", "④ ", "⑤ ", "⑥ " },
+      left_pad = 1,
+    },
+    bullet = {
+      enabled = true,
+      icons = { "●", "○", "◆", "◇" },
+      right_pad = 1,
+      highlight = "render-markdownBullet",
     },
   },
 }
