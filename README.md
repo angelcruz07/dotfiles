@@ -118,7 +118,7 @@ git clone https://github.com/angelcruz07/dotfiles.git
 Before continuing, let's install the fonts used in my configuration. In my case, I use UbuntuMono Nerd Font and CascadiaCode.
 
 ```bash
-sudo pacman -S ttf-ubuntu-mono-nerdfont ttf-cascadia-code
+sudo pacman -S ttf-ubuntu-mono-nerd ttf-cascadia-code
 ```
 
 ### Copy config

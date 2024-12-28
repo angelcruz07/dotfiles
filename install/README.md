@@ -30,10 +30,18 @@ timedatectl set-ntp true
 
 ```
 
-## Particionar los discos
+## Particionar disco
 
 En lo personal me gusta crear las
 particiones de la siguiente manera:
+
+### Comandos
+
+```bash
+lsblk 
+
+cfdisk /dev/nvme0n1
+```
 
 - Espacio para el sistema:
   Tamaño 50G
@@ -43,19 +51,18 @@ particiones de la siguiente manera:
 
 - Resto del espacio al sistema:
 
-- Participación UEFI darle 150mb
+- Participación UEFI
+  Tamaño 150MB
+
+[!NOTE] No olvides crear la particion UEFI para evitar problemas al momento de instalar el grub de ArchLinux
 
 ## Formatear particiones
 
+Para formatear deberás usar las
+particiones que dejaste para el sistema
+en el paso anterior.
+
 ```bash
-#Listar los  discos
-lsblk
-
-#Formatear las particiones
-
-# En mi caso necesito hacer
-cfdisk /dev/nvme0n1
-
 # 50g
 mkfs.ext4 /dev/nmve0n1p1
 
@@ -82,7 +89,7 @@ mount /dev/particion/resto /mnt/home
 
 #3
 mkdir /mnt/boot
-mount /dev/sda2 /mnt/boot
+mount /dev/nvme0n1 /mnt/boot
 ```
 
 ## Instalar Arch Linux
@@ -93,18 +100,20 @@ en hardware.
 
 ```bash
 # Install system
-pacstrap /mnt base linux linux-firmware
+pacstrap /mnt base linux linux-firmware base-devel
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # System configuration
 arch-chroot /mnt
 
-# Zona horaria
+# Zona horaria - Mexico_City
 ln -sf /usr/share/zoneinfo/America/Mexico_City /etc/localtime
 hwclock --systohc
 
 # Install nano
 pacman -S nano
+
+#Configuración del idioma
 nano /etc/locale.gen  # Buscar en_US.UTF-8 UTF-8 y es_ES.UTF-8 UTF-8
 locale-gen
 
@@ -117,12 +126,14 @@ echo "asus" > /etc/hostname
 nano /etc/hosts
 127.0.0.1     localhost
 ::1           localhost
-127.0.1.1    myhostname.localhost myhostname
+127.0.1.1     myhostname.localhost myhostname
 
-# Conexión a internet
+# Conexión a internet - Software
 passwd
 pacman -S networkmanager
 systemctl enable NetworkManager
+
+# Instalación del grub
 pacman -S grub efibootmgr dosfstools mtools
 
 # Configurar grub
@@ -149,15 +160,7 @@ umount -R /mnt
 shutdown now
 ```
 
-Bien, estos son los comandos basicos
-para tener una instalacion limpia de Arch linux,
-pero no tenemos entorno de escritorio; puedes instalar alguno
-popular, crear el tuyo o copiar mi entorno.
-
-Ahora si has elegido crear un DualBoot
-para tener Arch junto a windows,
-por lo que debemos de configurar
-el grub para poder arrancar a windows.
+## Dual Boot
 
 ```bash
 sudo pacman -S os-prober
@@ -198,3 +201,21 @@ necesitas en paso siguiente.
 #Reemplaza /dev/sdX con el disco correcto (por ejemplo, /dev/sda) y Y con el número de partición correcto (por ejemplo, 1).
 sudo efibootmgr -c -d /dev/sdX -p Y -L "Windows Boot Manager" -l "\EFI\Microsoft\Boot\bootmgfw.efi"
 ```
+
+## Windows no se detecta en grub
+
+Suele ocurrir que cuando has echo una instalación
+junto a windows es posible que no te aparezca windows
+en el GRUB.
+Esta es mi posible solución para este problema
+
+1. Identificar participación UEFI de windows
+Una vez identificada la debemos de montar en /mnt
+
+2. Ejecutar os-prober
+
+```bash
+sudo os-prober
+```
+
+En este punto deberia averse agregado windows al grub.
