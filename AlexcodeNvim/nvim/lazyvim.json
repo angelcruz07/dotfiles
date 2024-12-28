@@ -6,6 +6,7 @@
     "lazyvim.plugins.extras.lang.astro",
     "lazyvim.plugins.extras.lang.clangd",
     "lazyvim.plugins.extras.lang.docker",
+    "lazyvim.plugins.extras.lang.java",
     "lazyvim.plugins.extras.lang.prisma",
     "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.tailwind",
@@ -14,7 +15,7 @@
     "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
   "news": {
-    "NEWS.md": "7107"
+    "NEWS.md": "10960"
   },
   "version": 7
 }
