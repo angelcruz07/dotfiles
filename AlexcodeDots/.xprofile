@@ -20,7 +20,7 @@ picom &
 # feh --bg-scale wallpapers/forestgood.jpg &
 # feh --bg-scale wallpapers/tokyo-night.jpg &
 # feh --bg-scale wallpapers/violet.png &
-feh --bg-scale wallpapers/triangle.jpg &
+# feh --bg-scale wallpapers/triangle.jpg &
 # feh --bg-scale wallpapers/forest-violet.jpg &
 # feh --bg-scale wallpapers/ocean.png &
 # feh --bg-scale wallpapers/asusrog.png &
@@ -42,5 +42,8 @@ volumeicon &
 
 # Mount usb
 udiskie -t &
+
+# Set Keyboard to English International
+setxkbmap us -variant intl &
 
 # More info [Wiki Arch]('https://wiki.archlinux.org/title/Xprofile')

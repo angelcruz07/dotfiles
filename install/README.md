@@ -38,7 +38,7 @@ particiones de la siguiente manera:
 ### Comandos
 
 ```bash
-lsblk 
+lsblk
 
 cfdisk /dev/nvme0n1
 ```
@@ -168,6 +168,12 @@ sudo pacman -S os-prober
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
+## Conexión a internet
+
+```bash
+nmcli device wifi connect NOMBRE_DE_LA_RED password Contraseña
+```
+
 ### Posibles errores
 
 Sabemos que Arch Linux en ocasiones
@@ -210,7 +216,7 @@ en el GRUB.
 Esta es mi posible solución para este problema
 
 1. Identificar participación UEFI de windows
-Una vez identificada la debemos de montar en /mnt
+   Una vez identificada la debemos de montar en /mnt
 
 2. Ejecutar os-prober
 

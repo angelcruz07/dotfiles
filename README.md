@@ -27,18 +27,13 @@ processor, and within my personal desktop with support for two monitors,
   - [Monitors](#monitors)
   - [Keybindings](#keybindings)
   - [Apps](#apps)
-  - [Gallery](#gallery)
-    - [Qtile](#qtile)
   - [Software](#software)
-  - [Audio \& bluetooth](#audio--bluetooth)
-  - [Video \& Images](#video--images)
   - [Terminal](#terminal)
-  - [Text editor](#text-editor)
   - [Neovim](#neovim)
-  - [Additional features](#additional-features)
   - [Fonts, theming and GTK](#fonts-theming-and-gtk)
   - [Testing your window manager](#testing-your-window-manager)
-    - [How to use my setup](#how-to-use-my-setup)
+  - [Gallery](#gallery)
+    - [Qtile](#qtile)
 
 ## Overview
 
@@ -52,7 +47,8 @@ because that's where the rabbit hole starts.
 You can pick any window managers you want,
 but I'm going to use Qtile as a first tiling
 window manager because that's what I started with.
-This is basically a description of how I made my desktop environment from scratch.
+This is basically a description of how I made
+my desktop environment from scratch.
 
 ## Arch Installation
 
@@ -63,12 +59,15 @@ My recomendations [Installation](/install/README.md)
 
 ## Install Xorg
 
-Xorg is an implementation of the X Window System for Unix-like operating systems, such as Linux. It is one of the key components for providing a graphical interface on these systems.
+Xorg is an implementation of the X Window System for
+Unix-like operating systems, such as Linux.
+It is one of the key components for providing
+a graphical interface on these systems.
 
 [xorg](https://wiki.archlinux.org/title/Xorg)
 
 ```bash
-sudo pacman -S xorg
+sudo pacman -S xorg --noconfirm
 ```
 
 ## Login and window manager
@@ -88,11 +87,10 @@ least, we need a browser.
 First, we need to install the basic software to make my configuration work.
 
 ```bash
-sudo pacman -S lightdm lightdm-gtk-greeter
-lightdm-webkit2-greeter qtile alacritty
-firefox rofi neofetch htop base-devel
-pulseaudio pavucontrol feh exa neovim
-flameshot unzip thunar picom arandr brightnessctl
+sudo pacman -S lightdm lightdm-gtk-greeter lightdm-webkit2-greeter \
+qtile alacritty firefox rofi neofetch htop base-devel pulseaudio \
+pavucontrol feh exa neovim flameshot unzip thunar picom arandr \
+brightnessctl --noconfirm
 ```
 
 Info about this software in [Software](#software)
@@ -115,7 +113,10 @@ git clone https://github.com/angelcruz07/dotfiles.git
 
 ### Install Fonts
 
-Before continuing, let's install the fonts used in my configuration. In my case, I use UbuntuMono Nerd Font and CascadiaCode.
+Before continuing, let's install the fonts used in my configuration.
+In my case, I use **IsevkaTerm**, **CascadiaCode**, **Ubuntu Mono Nerd**.
+
+**Download the Iosevka font** from its official site or from [Nerd Fonts GitHub](https://github.com/ryanoasis/nerd-fonts).
 
 ```bash
 sudo pacman -S ttf-ubuntu-mono-nerd ttf-cascadia-code
@@ -126,7 +127,11 @@ sudo pacman -S ttf-ubuntu-mono-nerd ttf-cascadia-code
 Copy my configuration to see the changes.
 
 ```bash
-cp -r ~/dotfiles/AlexcodeDesktop/.config ~/
+cp -r ~/dotfiles/AlexcodeQtile/qtile/ ~/.config/
+cp -r ~/dotfiles/AlexcodeRofi/rofi/ ~/.config/
+cp -r ~/dotfiles/AlexcodeNvim/nvim/ ~/.config/
+cp -r ~/dotfiles/AlexcodeZellij/zellij/ ~/.config/
+cp -r ~/dotfiles/AlexcodeDots/ ~/
 ```
 
 ### Rebooting the PC
@@ -139,7 +144,8 @@ reboot
 
 Take a look at the configured [keyboard shortcuts](#keybindings).
 
-If you've followed the steps correctly, you should see my environment with the theme I'm currently using.
+If you've followed the steps correctly, you should see my
+environment with the theme I'm currently using.
 
 ## Install Arch User Repository (AUR)
 
@@ -169,7 +175,7 @@ sudo pacman -S pulseaudio pavucontrol
 ## Bluetooth
 
 ```bash
-sudo systemctl start bluetooth.service
+sudo systemctl start  bluetooth.service
 sudo systemctl enable bluetooth.service
 sudo systemctl status bluetooth.service
 ```
@@ -240,24 +246,6 @@ Check my config in [xprofile](/.xprofile)
 | mod + s         | Screenshot (scrot)          |
 | mod + c         | Launch VsCode               |
 
-## Gallery
-
-My setup has the followig themes avaible.
-
-### Qtile
-
-- Dracula
-  ![Dracula theme](./assets/screenshots/dracula.jpg)
-- Tokyo night
-  ![Tokyo Night](./assets/screenshots/tokyo-night.png)
-- King
-- Dark-grey
-- Material-darker
-- Material-ocean
-- Monokai-pro
-- Nord-wave
-- Nord
-
 ## Software
 
 List of software used in the desktop environment.
@@ -297,15 +285,17 @@ List of software used in the desktop environment.
 
 ## Terminal
 
-| Software  | Utility           | Pacman                   |
-| --------- | ----------------- | ------------------------ |
-| Alacritty | Terminal emulator | sudo pacman -S alacritty |
-| Kitty     | Terminal emulator | sudo pacman -S kitty     |
+| Software  | Utility           | Pacman                                           |
+| --------- | ----------------- | ------------------------------------------------ |
+| Alacritty | Terminal emulator | sudo pacman -S alacritty                         |
+| Kitty     | Terminal emulator | sudo pacman -S kitty                             |
+| WezTerm   | Terminal emulator | https://wezfurlong.org/wezterm/installation.html |
 
 ## Neovim
 
 | Software          | Utility   | Pacman                             |
 | ----------------- | --------- | ---------------------------------- |
+| nvim              | Editor    | sudo pacman -S neovim              |
 | xsel              | Clipboard | sudo pacman -S xsel                |
 | fzf               | Finder    | sudo pacman -S fzf                 |
 | ripgrep           | Finder    | sudo pacman -S ripgrep             |
@@ -327,33 +317,18 @@ More info [Neovim](https://neovim.io/)
 
 [Xephyr](https://wiki.archlinux.org/title/Xephyr)
 
-### How to use my setup
+## Gallery
 
-After a clean installation of Archlinux.
+### Qtile
 
-- Installl software
-
-```bash
-sudo pacman -S lightdm lighdm-gtk-greeter lightdm-webkit2-greeter
-qtile alacritty firefox rofi neofetch htop rofi neofetch htop
-base-devel exa neovim flameshot unzip thunar pulseaudio pavucontrol
-brightnessctl feh arandr picom --neoconfirm
-```
-
-- Copy my .config of desktop
-
-```bash
-cp -r ~/dotfiles/AlexcodeDesktop/.config/ ~/
-```
-
-1. Copy _.bashrc_
-
-```bash
-cp -r ~/dotfiles/.bashrc/ ~/
-```
-
-5. Copy _.xprofile_
-
-```bash
-cp -r ~/dotfiles/.xprofile ~/
-```
+- Dracula
+  ![Dracula theme](./assets/screenshots/dracula.jpg)
+- Tokyo night
+  ![Tokyo Night](./assets/screenshots/tokyo-night.png)
+- King
+- Dark-grey
+- Material-darker
+- Material-ocean
+- Monokai-pro
+- Nord-wave
+- Nord
