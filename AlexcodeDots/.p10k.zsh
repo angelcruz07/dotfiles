@@ -34,6 +34,7 @@
     # =========================[ Line #1 ]=========================
     os_icon                 # os identifier
     dir                     # current directory
+    spacer
     vcs                     # git status
     # =========================[ Line #2 ]=========================
     newline                 # \n
@@ -148,7 +149,7 @@
   # Connect left prompt lines with these symbols.
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%238F╭─'
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX='%238F├─'
-  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%238F╰─'
+  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%238F╰─ '
   # Connect right prompt lines with these symbols.
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX=
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX=
@@ -1702,25 +1703,54 @@
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
 
   # If p10k is already loaded, reload configuration.
+
+  # Kanawagua theme
   # This works even with POWERLEVEL9K_DISABLE_HOT_RELOAD=true.
-  typeset -g COLOR_BACKGROUND="#181616"
-  typeset -g COLOR_FOREGROUND="#dcd7ba"
-  typeset -g COLOR_BLACK="#090618"
-  typeset -g COLOR_RED="#c34043"
-  typeset -g COLOR_GREEN="#76946a"
-  typeset -g COLOR_YELLOW="#c0a36e"
-  typeset -g COLOR_BLUE="#7e9cd8"
-  typeset -g COLOR_MAGENTA="#957fb8"
-  typeset -g COLOR_CYAN="#6a9589"
-  typeset -g COLOR_WHITE="#c8c093"
-  typeset -g COLOR_BRIGHT_BLACK="#727169"
-  typeset -g COLOR_BRIGHT_RED="#e82424"
-  typeset -g COLOR_BRIGHT_GREEN="#98bb6c"
-  typeset -g COLOR_BRIGHT_YELLOW="#e6c384"
-  typeset -g COLOR_BRIGHT_BLUE="#7fb4ca"
-  typeset -g COLOR_BRIGHT_MAGENTA="#938aa9"
-  typeset -g COLOR_BRIGHT_CYAN="#7aa89f"
-  typeset -g COLOR_BRIGHT_WHITE="#dcd7ba"
+  # typeset -g COLOR_BACKGROUND="#181616"
+  # typeset -g COLOR_FOREGROUND="#dcd7ba"
+  # typeset -g COLOR_BLACK="#090618"
+  # typeset -g COLOR_RED="#c34043"
+  # typeset -g COLOR_GREEN="#76946a"
+  # typeset -g COLOR_YELLOW="#c0a36e"
+  # typeset -g COLOR_BLUE="#7e9cd8"
+  # typeset -g COLOR_MAGENTA="#957fb8"
+  # typeset -g COLOR_CYAN="#6a9589"
+  # typeset -g COLOR_WHITE="#c8c093"
+  # typeset -g COLOR_BRIGHT_BLACK="#727169"
+  # typeset -g COLOR_BRIGHT_RED="#e82424"
+  # typeset -g COLOR_BRIGHT_GREEN="#98bb6c"
+  # typeset -g COLOR_BRIGHT_YELLOW="#e6c384"
+  # typeset -g COLOR_BRIGHT_BLUE="#7fb4ca"
+  # typeset -g COLOR_BRIGHT_MAGENTA="#938aa9"
+  # typeset -g COLOR_BRIGHT_CYAN="#7aa89f"
+  # typeset -g COLOR_BRIGHT_WHITE="#dcd7ba"
+  #
+
+ # Catppuccin mocha - theme
+ # Background and Foreground
+ typeset -g COLOR_BACKGROUND="#1e1e2e"  # Mantle (fondo)
+ typeset -g COLOR_FOREGROUND="#cdd6f4"  # Text (texto principal)
+
+ # ANSI Colors
+ typeset -g COLOR_BLACK="#11111b"       # Crust (negro estándar)
+ typeset -g COLOR_RED="#f38ba8"         # Red (rojo estándar)
+ typeset -g COLOR_GREEN="#a6e3a1"       # Green (verde estándar)
+ typeset -g COLOR_YELLOW="#f9e2af"      # Yellow (amarillo estándar)
+ typeset -g COLOR_BLUE="#89b4fa"        # Blue (azul estándar)
+ typeset -g COLOR_MAGENTA="#cba6f7"     # Mauve (magenta estándar)
+ typeset -g COLOR_CYAN="#94e2d5"        # Teal (cian estándar)
+ typeset -g COLOR_WHITE="#bac2de"       # Subtext1 (blanco estándar)
+
+ # Bright ANSI Colors
+ typeset -g COLOR_BRIGHT_BLACK="#585b70"   # Surface2 (negro brillante)
+ typeset -g COLOR_BRIGHT_RED="#eba0ac"     # Maroon (rojo brillante)
+ typeset -g COLOR_BRIGHT_GREEN="#a6e3a1"   # Green (verde brillante)
+ typeset -g COLOR_BRIGHT_YELLOW="#fab387"  # Peach (amarillo brillante)
+ typeset -g COLOR_BRIGHT_BLUE="#b4befe"    # Lavender (azul brillante)
+ typeset -g COLOR_BRIGHT_MAGENTA="#f5c2e7" # Pink (magenta brillante)
+ typeset -g COLOR_BRIGHT_CYAN="#89dceb"    # Sky (cian brillante)
+ typeset -g COLOR_BRIGHT_WHITE="#cdd6f4"   # Text (blanco brillante)
+
 
   typeset -g POWERLEVEL9K_BACKGROUND=$COLOR_BACKGROUND
   typeset -g POWERLEVEL9K_FOREGROUND=$COLOR_FOREGROUND
