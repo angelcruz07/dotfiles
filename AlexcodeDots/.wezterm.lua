@@ -41,7 +41,7 @@ config.window_padding = {
 }
 
 -- Additional configurations
-config.window_background_opacity = 0.97
+config.window_background_opacity = 0.80
 config.font = wezterm.font("IosevkaTerm NF")
 config.hide_tab_bar_if_only_one_tab = true
 config.font_size = 18
