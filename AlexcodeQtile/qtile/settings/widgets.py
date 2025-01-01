@@ -30,8 +30,8 @@ def workspaces():
         separator(),
         widget.GroupBox(
             **base(fg="light"),
-            font="IosevkaTerm Nerd Font",
-            fontsize=20,
+            font="IosevkaTerm",
+            fontsize=25,
             margin_y=3,
             margin_x=0,
             padding_y=8,
@@ -50,7 +50,7 @@ def workspaces():
             disable_drag=True,
         ),
         separator(),
-        widget.WindowName(**base(fg="focus"), fontsize=14, padding=5),
+        widget.WindowName(**base(fg="focus"), fontsize=16, padding=10),
         separator(),
     ]
 
@@ -91,7 +91,7 @@ secondary_widgets = [
 ]
 
 widget_defaults = {
-    "font": "IosevkaTerm Nerd Font",
+    "font": "IosevkaTerm Nerd Font Bold",
     "fontsize": 16,
     "padding": 1,
 }
