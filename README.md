@@ -214,6 +214,58 @@ Check my config in [xprofile](/.xprofile)
 
 ## Keybindings
 
+- **mod**: Sets the mod key to the "super" key (usually the Windows key).
+- **terminal**: Sets the default terminal emulator to Wezterm.
+- **keys**: A list of key bindings for various actions in Qtile.
+
+Each `Key` object in the `keys` list has the following parameters:
+
+- **modifiers**: A list of modifier keys (e.g., `mod`, `shift`, `control`).
+- **key**: The key to bind the action to.
+- **command**: The command to execute when the key combination is pressed.
+- **desc**: A description of the key binding.
+
+### Key Bindings
+
+- **Switch between windows**:
+
+  - `mod + h`: Move focus to the left.
+  - `mod + l`: Move focus to the right.
+  - `mod + j`: Move focus down.
+  - `mod + k`: Move focus up.
+  - `mod + space`: Move window focus to the other window.
+
+- **Move windows**:
+
+  - `mod + shift + h`: Move window to the left.
+  - `mod + shift + l`: Move window to the right.
+  - `mod + shift + j`: Move window down.
+  - `mod + shift + k`: Move window up.
+
+- **Grow windows**:
+
+  - `mod + control + h`: Grow window to the left.
+  - `mod + control + l`: Grow window to the right.
+  - `mod + control + j`: Grow window down.
+  - `mod + control + k`: Grow window up.
+  - `mod + n`: Reset all window sizes.
+
+- **Toggle split/unsplit**:
+
+  - `mod + shift + Return`: Toggle between split and unsplit sides of stack.
+  - `mod + Return`: Launch terminal.
+
+- **Layouts and window management**:
+
+  - `mod + Tab`: Toggle between layouts.
+  - `mod + w`: Kill focused window.
+  - `mod + control + r`: Restart Qtile.
+  - `mod + control + q`: Shutdown Qtile.
+  - `mod + r`: Spawn a command using a prompt widget.
+
+- **Window navigation**:
+  - Add more key bindings here for window navigation if needed.
+
 | Key                 | Action                           |
 | ------------------- | -------------------------------- |
 | mod + j             | next window (down)               |
@@ -253,6 +305,7 @@ List of software used in the desktop environment.
 | Software               | Utility                                |
 | ---------------------- | -------------------------------------- |
 | arandr                 | Manage multiple screens                |
+| pacman-contrib         | Pacman utilities                       |
 | bat                    | View files with syntax highlighting    |
 | blueman                | Bluetooth control                      |
 | bluez                  | Bluetooth stack                        |
@@ -285,11 +338,11 @@ List of software used in the desktop environment.
 
 ## Terminal
 
-| Software  | Utility           | Pacman                                           |
-| --------- | ----------------- | ------------------------------------------------ |
-| Alacritty | Terminal emulator | sudo pacman -S alacritty                         |
-| Kitty     | Terminal emulator | sudo pacman -S kitty                             |
-| WezTerm   | Terminal emulator | https://wezfurlong.org/wezterm/installation.html |
+| Software  | Utility           | Pacman                                             |
+| --------- | ----------------- | -------------------------------------------------- |
+| Alacritty | Terminal emulator | sudo pacman -S alacritty                           |
+| Kitty     | Terminal emulator | sudo pacman -S kitty                               |
+| WezTerm   | Terminal emulator | <https://wezfurlong.org/wezterm/installation.html> |
 
 ## Neovim
 
