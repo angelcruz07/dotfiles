@@ -1,8 +1,8 @@
--- This file contains the configuration for the twilight.nvim plugin in Neovim.
+-- This file contains the configuration for the nvim-tmux-navigation plugin in Neovim.
 
 return {
-  -- Plugin: twilight.nvim
-  -- URL: https://github.com/folke/twilight.nvim
-  -- Description: A Neovim plugin for dimming inactive portions of the code you're editing.
-  "folke/twilight.nvim",
+  -- Plugin: nvim-tmux-navigation
+  -- URL: https://github.com/alexghergh/nvim-tmux-navigation
+  -- Description: A Neovim plugin that allows seamless navigation between Neovim and tmux panes.
+  "alexghergh/nvim-tmux-navigation",
 }
