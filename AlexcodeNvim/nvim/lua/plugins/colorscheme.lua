@@ -3,7 +3,7 @@ return {
     -- Plugin for the Catppuccin color scheme
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = true, -- Load this plugin immediately
+    lazy = false, -- Load this plugin immediately
     priority = 1000,
     opts = {
       transparent_background = true, -- Enable transparent background
@@ -32,8 +32,8 @@ return {
     -- Plugin for the Kanagawa color scheme
     "rebelot/kanagawa.nvim",
     name = "kanagawa",
-    lazy = false,
-    --priority = 1000, -- High priority to ensure it loads early
+    lazy = true,
+    priority = 500, -- High priority to ensure it loads early
     opts = {
       transparent = true, -- Enable transparent background
       theme = "dragon", -- Set the theme variant to 'dragon'
@@ -94,7 +94,7 @@ return {
     -- Plugin for the Everforest color scheme
     "neanias/everforest-nvim",
     version = false, -- Use the latest version
-    lazy = false, -- Load this plugin immediately
+    lazy = true, -- Load this plugin immediately
     config = function()
       require("everforest").setup({
         background = "hard", -- Set the background to 'hard'
@@ -119,7 +119,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- Set the default color scheme
-      colorscheme = "kanagawa-dragon",
+      colorscheme = "catppuccin",
     },
   },
 }
