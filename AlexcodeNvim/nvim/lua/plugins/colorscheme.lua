@@ -3,7 +3,8 @@ return {
     -- Plugin for the Catppuccin color scheme
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = false, -- Load this plugin immediately
+    lazy = true, -- Load this plugin immediately
+    priority = 1000,
     opts = {
       transparent_background = true, -- Enable transparent background
       flavour = "mocha", -- Set the flavor of the color scheme
@@ -31,7 +32,8 @@ return {
     -- Plugin for the Kanagawa color scheme
     "rebelot/kanagawa.nvim",
     name = "kanagawa",
-    priority = 1000, -- High priority to ensure it loads early
+    lazy = false,
+    --priority = 1000, -- High priority to ensure it loads early
     opts = {
       transparent = true, -- Enable transparent background
       theme = "dragon", -- Set the theme variant to 'dragon'

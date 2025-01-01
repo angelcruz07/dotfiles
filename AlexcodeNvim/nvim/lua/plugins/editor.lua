@@ -1,16 +1,19 @@
--- https://github.com/craftzdog/dotfiles-public/blob/master/.config/nvim/lua/plugins/editor.lua
+-- This file contains the configuration for various Neovim plugins related to the editor.
 
 return {
   {
+    -- Plugin: goto-preview
+    -- URL: https://github.com/rmagatti/goto-preview
+    -- Description: Provides preview functionality for definitions, declarations, implementations, type definitions, and references.
     "rmagatti/goto-preview",
-    event = "BufEnter",
-    config = true, -- necessary as per https://github.com/rmagatti/goto-preview/issues/88
+    event = "BufEnter", -- Load the plugin when a buffer is entered
+    config = true, -- Enable default configuration
     keys = {
       {
         "gpd",
         "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
-        noremap = true,
-        desc = "goto preview definition",
+        noremap = true, -- Do not allow remapping
+        desc = "goto preview definition", -- Description for the keybinding
       },
       {
         "gpD",
@@ -45,12 +48,15 @@ return {
     },
   },
   {
+    -- Plugin: mini.hipatterns
+    -- URL: https://github.com/echasnovski/mini.hipatterns
+    -- Description: Provides highlighter patterns for various text patterns.
     "echasnovski/mini.hipatterns",
-    event = "BufReadPre",
+    event = "BufReadPre", -- Load the plugin before reading a buffer
     opts = {
       highlighters = {
         hsl_color = {
-          pattern = "hsl%(%d+,? %d+,? %d+%)",
+          pattern = "hsl%(%d+,? %d+,? %d+%)", -- Pattern to match HSL color values
           group = function(_, match)
             local utils = require("config.gentleman.utils")
             local h, s, l = match:match("hsl%((%d+),? (%d+),? (%d+)%)")
@@ -62,57 +68,38 @@ return {
       },
     },
   },
-
   {
+    -- Plugin: git.nvim
+    -- URL: https://github.com/dinhhuy258/git.nvim
+    -- Description: Provides Git integration for Neovim.
     "dinhhuy258/git.nvim",
-    event = "BufReadPre",
+    event = "BufReadPre", -- Load the plugin before reading a buffer
     opts = {
       keymaps = {
-        -- Open blame window
-        blame = "<Leader>gb",
-        -- Open file/folder in git repository
-        browse = "<Leader>go",
+        blame = "<Leader>gb", -- Keybinding to open blame window
+        browse = "<Leader>go", -- Keybinding to open file/folder in git repository
       },
     },
   },
-
   {
+    -- Plugin: telescope.nvim
+    -- URL: https://github.com/nvim-telescope/telescope.nvim
+    -- Description: A highly extendable fuzzy finder over lists.
     "nvim-telescope/telescope.nvim",
     opts = function(_, opts)
       local actions = require("telescope.actions")
 
-      -- Function to calculate the appropriate height
-      local function calculate_height()
-        if vim.o.lines <= 40 then
-          return vim.o.lines -- 100% height for small terminals
-        else
-          return math.floor(vim.o.lines * 0.3) -- 30% height for larger terminals
-        end
-      end
-
-      -- Set initial height based on the current terminal size
-      local initial_height = calculate_height()
-
-      -- Update layout_config with the initial height calculation
       opts.defaults = {
+        path_display = { "smart" }, -- Display paths smartly
         file_ignore_patterns = {
           "node_modules",
           "package-lock.json",
           "yarn.lock",
           "bun.lockb",
-          "pnpm-lock.yaml",
         },
         prompt_prefix = "> ", -- Set the prompt to just ">"
         layout_strategy = "horizontal", -- Use horizontal layout
-        layout_config = {
-          prompt_position = "top", -- Position the prompt at the top
-          height = initial_height, -- Set the initial height
-          width = vim.o.columns, -- Occupy the full width of the window
-          preview_cutoff = 0, -- Always show the preview
-          mirror = false, -- Place the preview on the right
-          anchor = "S", -- Anchor the layout to the bottom
-        },
-        sorting_strategy = "ascending",
+        sorting_strategy = "ascending", -- Sort results in ascending order
         winblend = 0, -- No transparency
         results_title = false, -- Remove the "Results" title
         borderchars = {
@@ -122,33 +109,39 @@ return {
         },
         mappings = {
           i = {
-            ["<C-Down>"] = actions.cycle_history_next,
-            ["<C-Up>"] = actions.cycle_history_prev,
-            ["<C-f>"] = actions.preview_scrolling_down,
-            ["<C-b>"] = actions.preview_scrolling_up,
+            ["<C-Down>"] = actions.cycle_history_next, -- Cycle to next history item
+            ["<C-Up>"] = actions.cycle_history_prev, -- Cycle to previous history item
+            ["<C-f>"] = actions.preview_scrolling_down, -- Scroll preview down
+            ["<C-b>"] = actions.preview_scrolling_up, -- Scroll preview up
           },
           n = {
-            ["q"] = actions.close,
+            ["q"] = actions.close, -- Close the telescope window
           },
         },
       }
 
-      -- Set up an autocmd to recalculate the height on window resize
-      vim.api.nvim_create_autocmd("VimResized", {
-        callback = function()
-          opts.defaults.layout_config.height = calculate_height()
-          opts.defaults.layout_config.width = vim.o.columns
-        end,
-      })
-
       -- Load the fzf extension for fast searches
       require("telescope").load_extension("fzf")
 
+      -- Add hidden files and no-ignore options to file search and live_grep
+      opts.pickers = {
+        find_files = {
+          find_command = { "rg", "--files", "--hidden", "--no-ignore", "--iglob", "!.git/" },
+        },
+        live_grep = {
+          additional_args = function()
+            return { "--hidden", "--no-ignore" }
+          end,
+        },
+      }
       return opts
     end,
 
     dependencies = {
       {
+        -- Plugin: telescope-live-grep-args.nvim
+        -- URL: https://github.com/nvim-telescope/telescope-live-grep-args.nvim
+        -- Description: Adds live grep arguments to Telescope.
         "nvim-telescope/telescope-live-grep-args.nvim",
         version = "^1.0.0",
         config = function()
@@ -156,12 +149,21 @@ return {
         end,
       },
       {
+        -- Plugin: telescope-fzf-native.nvim
+        -- URL: https://github.com/nvim-telescope/telescope-fzf-native.nvim
+        -- Description: FZF sorter for Telescope written in C.
         "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make",
+        build = "make", -- Build the plugin using make
         config = function()
           require("telescope").load_extension("fzf")
         end,
       },
     },
+    config = function(_, opts)
+      require("telescope").setup(opts)
+
+      -- Keybinding to open live grep with arguments
+      vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+    end,
   },
 }

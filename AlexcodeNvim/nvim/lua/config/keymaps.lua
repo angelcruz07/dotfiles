@@ -1,3 +1,5 @@
+-- This file contains custom key mappings for Neovim.
+
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
@@ -5,7 +7,6 @@
 -- Change normal mode
 vim.keymap.set({ "i", "v" }, "jk", "<c-\\><c-n>", { desc = "Enter normal mode" })
 vim.keymap.set({ "i", "v" }, "kj", "<c-\\><c-n>", { desc = "Enter normal mode" })
--- This file contains custom key mappings for Neovim.
 
 -- Position cursor at the middle of the screen after scrolling half page
 vim.keymap.set("n", "<C-d>", "<C-d>zz") -- Scroll down half a page and center the cursor
