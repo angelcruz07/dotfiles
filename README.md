@@ -1,32 +1,39 @@
-# Dotfiles & Arch Linux
+# Dotfiles
 
-This is my desktop environment on Arch Linux. Currently, this setup
-is supported on a laptop, an MSI Notebook with an AMD Ryzen 5-7530U
-processor, and within my personal desktop with support for two monitors,
-24 and 26 inches respectively.
+## Description
 
-## Table of contents
+This repository contains customized
+configurations for a complete development
+desktop environment, including Qtile, Neovim,
+Fish, Zsh, Zellij, and terminal emulators like
+WezTerm and Alacritty, along with essential utilities.
 
-- [Dotfiles \& Arch Linux](#dotfiles--arch-linux)
-  - [Table of contents](#table-of-contents)
+## Table of Contents
+
+- [Dotfiles](#dotfiles)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Arch Installation](#arch-installation)
   - [Install Xorg](#install-xorg)
-  - [Login and window manager](#login-and-window-manager)
-  - [Initial software](#initial-software)
-    - [Enable login manager](#enable-login-manager)
-    - [Clone repository](#clone-repository)
+  - [Login and Window Manager](#login-and-window-manager)
+  - [Initial Software](#initial-software)
+    - [Enable Login Manager](#enable-login-manager)
+    - [Clone Repository](#clone-repository)
     - [Install Fonts](#install-fonts)
-    - [Copy config](#copy-config)
-    - [Rebooting the PC](#rebooting-the-pc)
-  - [Install Arch User Repository (AUR)](#install-arch-user-repository-aur)
+    - [Copy Configurations](#copy-configurations)
+    - [Reboot the PC](#reboot-the-pc)
+    - [Install Homebrew](#install-homebrew)
+    - [Install Arch User Repository (AUR)](#install-arch-user-repository-aur)
   - [Audio](#audio)
   - [Bluetooth](#bluetooth)
   - [Brightness](#brightness)
-  - [Wallapaper](#wallapaper)
+  - [Wallpaper](#wallpaper)
   - [Monitors](#monitors)
-  - [Keybindings](#keybindings)
+    - [Keybindings](#keybindings)
+    - [Window Navigation](#window-navigation)
   - [Apps](#apps)
+  - [Apps](#apps-1)
   - [Software](#software)
   - [Terminal](#terminal)
   - [Neovim](#neovim)
@@ -37,75 +44,68 @@ processor, and within my personal desktop with support for two monitors,
 
 ## Overview
 
-This guide will walk you through the process of building
-a desktop environment starting with a fresh Arch based installation.
-I will assume that you are comfortable with Linux based operating systems
-and command line interfaces. Because you are reading this,
-I will also assume that you've looked through some
-"tiling window manager" videos on Youtube,
-because that's where the rabbit hole starts.
-You can pick any window managers you want,
-but I'm going to use Qtile as a first tiling
-window manager because that's what I started with.
-This is basically a description of how I made
-my desktop environment from scratch.
+This guide will walk you through the
+process of building a desktop environment
+starting from a fresh Arch-based installation.
+It assumes you are familiar with Linux-based
+operating systems and command-line interfaces.
+Since you're reading this, it's also assumed
+that you've explored some "tiling window managers"
+the place where the rabbit hole begins.
+While you can use any window manager,
+I will focus on Qtile, as that's what I started with.
+This is a description of how I set up my desktop
+environment from scratch.
 
 ## Arch Installation
 
-The starting point of this guide is a right after
-a complete clean Arch based distro installation.
-Wiki [arch](https://wiki.archlinux.org/title/installation_guide)
-My recomendations [Installation](/install/README.md)
+The starting point of this guide is right
+after completing a clean Arch-based distro installation.  
+See the [Arch Installation Guide](https://wiki.archlinux.org/title/installation_guide)
+for more details.  
+My suggestions can be found in [Installation](install/README.md).
 
 ## Install Xorg
 
-Xorg is an implementation of the X Window System for
-Unix-like operating systems, such as Linux.
-It is one of the key components for providing
-a graphical interface on these systems.
+Xorg is an implementation of the
+X Window System for Unix-like
+operating systems, such as Linux.
+It is a key component for providing a graphical interface on these systems.
 
-[xorg](https://wiki.archlinux.org/title/Xorg)
+Install Xorg:
 
 ```bash
 sudo pacman -S xorg --noconfirm
 ```
 
-## Login and window manager
+## Login and Window Manager
 
-First, we need to be able to login and open some programs
-like a browser and a terminal, so we'll start by installing
-lighdm and qtile. Lightdm will not work unless we install a greeter.
-We also need xterm because that's the terminal emulator qtile
-will open by default, until we change the config file. Then,
-a text editor is necessary for editing config files, you can
-use vscode or jump straight into neovim if you have previous
-experience, otherwise I wouldn't suggest it. Last but not
-least, we need a browser.
+First, we need to be able to log in and open programs like a browser and terminal. We will start by installing LightDM and Qtile. Note that LightDM requires a greeter to work. We'll also need a terminal and text editor.
 
-## Initial software
+## Initial Software
 
-First, we need to install the basic software to make my configuration work.
+To make this configuration work, we need to install some basic software:
 
 ```bash
 sudo pacman -S lightdm lightdm-gtk-greeter lightdm-webkit2-greeter \
-qtile alacritty firefox rofi neofetch htop base-devel pulseaudio \
+qtile wezterm firefox rofi neofetch htop base-devel pulseaudio \
 pavucontrol feh exa neovim flameshot unzip thunar picom arandr \
 brightnessctl --noconfirm
 ```
 
-Info about this software in [Software](#software)
+For details about this software, see the [Software](#software) section.
 
-### Enable login manager
+### Enable Login Manager
 
-To be able to log in to Qtile, you will need to enable it first.
+To enable logging in to Qtile, you need to enable LightDM:
 
 ```bash
 sudo systemctl enable lightdm
 ```
 
-### Clone repository
+### Clone Repository
 
-Clone the repository of my configurations.
+Clone my configuration repository:
 
 ```bash
 git clone https://github.com/angelcruz07/dotfiles.git
@@ -113,18 +113,17 @@ git clone https://github.com/angelcruz07/dotfiles.git
 
 ### Install Fonts
 
-Before continuing, let's install the fonts used in my configuration.
-In my case, I use **IsevkaTerm**, **CascadiaCode**, **Ubuntu Mono Nerd**.
+Before continuing, let's install the fonts used in my configuration. I use **IosevkaTerm**, **CascadiaCode**, and **Ubuntu Mono Nerd**.
 
-**Download the Iosevka font** from its official site or from [Nerd Fonts GitHub](https://github.com/ryanoasis/nerd-fonts).
+**Download Iosevka font** from its official site or from [Nerd Fonts GitHub](https://github.com/ryanoasis/nerd-fonts) or install it directly:
 
 ```bash
-sudo pacman -S ttf-ubuntu-mono-nerd ttf-cascadia-code
+sudo pacman -S ttf-ubuntu-mono-nerd ttf-cascadia-code ttf-iosevkaterm-nerd
 ```
 
-### Copy config
+### Copy Configurations
 
-Copy my configuration to see the changes.
+Copy my configurations to apply the changes:
 
 ```bash
 cp -r ~/dotfiles/AlexcodeQtile/qtile/ ~/.config/
@@ -134,39 +133,62 @@ cp -r ~/dotfiles/AlexcodeZellij/zellij/ ~/.config/
 cp -r ~/dotfiles/AlexcodeDots/ ~/
 ```
 
-### Rebooting the PC
+### Reboot the PC
 
-Restart your PC to check if everything has gone well.
+Reboot your PC to check if everything is set up correctly:
 
 ```bash
 reboot
 ```
 
-Take a look at the configured [keyboard shortcuts](#keybindings).
+If you've followed the steps, you should see my environment with the theme I am currently using. Don't forget to check the [keyboard shortcuts](#keybindings).
 
-If you've followed the steps correctly, you should see my
-environment with the theme I'm currently using.
+### Install Homebrew
 
-## Install Arch User Repository (AUR)
+Homebrew is a package manager for macOS and Linux that makes it easy to install and keep packages up-to-date. Install it with:
 
 ```bash
-# Verify if you have git installed
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Add Homebrew to your shell profile:
+
+```bash
+# Replace 'YourUserName' with your username
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/YourUserName/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+```
+
+### Install Arch User Repository (AUR)
+
+Install git if you don’t have it:
+
+```bash
 sudo pacman -S git
+```
 
-# Clone repository
+Clone the yay AUR helper repository:
+
+```bash
 sudo git clone https://aur.archlinux.org/yay-git.git
+```
 
-# Install yay
-sudo chown -R youruser:youruser ./yay-git
+Build and install yay:
 
+```bash
 cd yay-git
-
 makepkg -si
+```
 
+Remove the yay directory once installed:
+
+```bash
 rm -r yay-git
 ```
 
 ## Audio
+
+Install PulseAudio and its control tools:
 
 ```bash
 sudo pacman -S pulseaudio pavucontrol
@@ -174,115 +196,71 @@ sudo pacman -S pulseaudio pavucontrol
 
 ## Bluetooth
 
+To enable Bluetooth, start and enable the Bluetooth service:
+
 ```bash
-sudo systemctl start  bluetooth.service
+sudo systemctl start bluetooth.service
 sudo systemctl enable bluetooth.service
 sudo systemctl status bluetooth.service
 ```
 
 ## Brightness
 
-Config keys laptop of brightness.
+To manage screen brightness:
 
 ```bash
 sudo pacman -S brightnessctl
 ```
 
-## Wallapaper
+## Wallpaper
 
-Install the software feh to set the wallpaper
-Configure your **.xprofile** file to set your
-background when you boot your PC.
+Install **feh** to set your wallpaper, and configure it in your `.xprofile` file:
 
 ```bash
 # Install feh
 sudo pacman -S feh
 
-# Set wallpaper in your file .xprofile
+# Set wallpaper in your .xprofile
 feh --bg-scale /path/to/image.jpg
 ```
 
-## Monitors
+#### Monitors
 
-Install graphic software for managing monitors
+To manage multiple monitors, install **arandr**:
 
 ```bash
 sudo pacman -S arandr
 ```
 
-Check my config in [xprofile](/.xprofile)
+Check my configuration in [xprofile](./AlexcodeDots/.xprofile).
 
-## Keybindings
+#### Keybindings
 
 - **mod**: Sets the mod key to the "super" key (usually the Windows key).
-- **terminal**: Sets the default terminal emulator to Wezterm.
+- **terminal**: Sets the default terminal emulator to WezTerm.
 - **keys**: A list of key bindings for various actions in Qtile.
 
-Each `Key` object in the `keys` list has the following parameters:
-
-- **modifiers**: A list of modifier keys (e.g., `mod`, `shift`, `control`).
-- **key**: The key to bind the action to.
-- **command**: The command to execute when the key combination is pressed.
-- **desc**: A description of the key binding.
-
-### Key Bindings
-
-- **Switch between windows**:
-
-  - `mod + h`: Move focus to the left.
-  - `mod + l`: Move focus to the right.
-  - `mod + j`: Move focus down.
-  - `mod + k`: Move focus up.
-  - `mod + space`: Move window focus to the other window.
-
-- **Move windows**:
-
-  - `mod + shift + h`: Move window to the left.
-  - `mod + shift + l`: Move window to the right.
-  - `mod + shift + j`: Move window down.
-  - `mod + shift + k`: Move window up.
-
-- **Grow windows**:
-
-  - `mod + control + h`: Grow window to the left.
-  - `mod + control + l`: Grow window to the right.
-  - `mod + control + j`: Grow window down.
-  - `mod + control + k`: Grow window up.
-  - `mod + n`: Reset all window sizes.
-
-- **Toggle split/unsplit**:
-
-  - `mod + shift + Return`: Toggle between split and unsplit sides of stack.
-  - `mod + Return`: Launch terminal.
-
-- **Layouts and window management**:
-
-  - `mod + Tab`: Toggle between layouts.
-  - `mod + w`: Kill focused window.
-  - `mod + control + r`: Restart Qtile.
-  - `mod + control + q`: Shutdown Qtile.
-  - `mod + r`: Spawn a command using a prompt widget.
-
-- **Window navigation**:
-  - Add more key bindings here for window navigation if needed.
+#### Window Navigation
 
 | Key                 | Action                           |
 | ------------------- | -------------------------------- |
-| mod + j             | next window (down)               |
-| mod + k             | next window (up)                 |
-| mod + shift + h     | decrease master                  |
-| mod + shift + l     | increase master                  |
-| mod + shift + j     | move window down                 |
-| mod + shift + k     | move window up                   |
-| mod + shift + f     | toggle floating                  |
-| mod + tab           | change layout                    |
+| mod + j             | Move focus down                  |
+| mod + k             | Move focus up                    |
+| mod + shift + h     | Decrease master                  |
+| mod + shift + l     | Increase master                  |
+| mod + shift + j     | Move window down                 |
+| mod + shift + k     | Move window up                   |
+| mod + shift + f     | Toggle floating window           |
+| mod + tab           | Change layout                    |
 | mod + [1-9]         | Switch to workspace N (1-9)      |
-| mod + shift + [1-9] | Send Window to workspace N (1-9) |
+| mod + shift + [1-9] | Move window to workspace N (1-9) |
 | mod + period        | Focus next monitor               |
 | mod + comma         | Focus previous monitor           |
-| mod + w             | kill window                      |
-| mod + ctrl + r      | restart wm                       |
-| mod + ctrl + q      | quit window                      |
+| mod + w             | Kill window                      |
+| mod + ctrl + r      | Restart window manager           |
+| mod + ctrl + q      | Quit window manager              |
+
+## Apps
 
 ## Apps
 
@@ -378,10 +356,3 @@ More info [Neovim](https://neovim.io/)
   ![Dracula theme](./assets/screenshots/dracula.jpg)
 - Tokyo night
   ![Tokyo Night](./assets/screenshots/tokyo-night.png)
-- King
-- Dark-grey
-- Material-darker
-- Material-ocean
-- Monokai-pro
-- Nord-wave
-- Nord
