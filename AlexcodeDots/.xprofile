@@ -25,7 +25,7 @@ picom &
 # feh --bg-scale wallpapers/ocean.png &
 # feh --bg-scale wallpapers/asusrog.png &
 # feh --bg-scale wallpapers/rog.jpg &
-# feh --bg-scale wallpapers/69.jpeg &
+feh --bg-scale wallpapers/69.jpeg &
 # feh --bg-scale wallpapers/70.png &
 # feh --bg-scale wallpapers/asus.jpg &
 # feh --bg-scale wallpapers/dracula.png &
