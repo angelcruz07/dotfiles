@@ -1,4 +1,5 @@
 from libqtile import widget
+import subprocess
 from .theme import colors
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
@@ -58,10 +59,10 @@ def workspaces():
 primary_widgets = [
     *workspaces(),
     separator(),
-    powerline("color4", "dark"),
-    icon(bg="color4", text="  "),  # Icon: nf-fa-download
+    powerline("color2", "dark"),
+    icon(bg="color2", text="  "),  # Icon: nf-fa-download
     widget.CheckUpdates(
-        background=colors["color4"],
+        background=colors["color2"],
         colour_have_updates=colors["text"],
         colour_no_updates=colors["text"],
         no_update_string="0",
@@ -69,7 +70,23 @@ primary_widgets = [
         update_interval=180,
         custom_command="checkupdates",
     ),
-    powerline("color2", "color4"),
+    powerline("color4", "color2"),
+    widget.GenPollText(
+        func=lambda: subprocess.check_output("~/scripts/nvidia_usage.sh", shell=True)
+        .decode("utf-8")
+        .strip(),
+        update_interval=1,
+        foreground=colors["text"],
+        background=colors["color4"],
+    ),
+    powerline("color3", "color4"),
+    widget.NvidiaSensors(
+        format="GPU: {temp}°C",
+        foreground=colors["text"],
+        background=colors["color3"],
+        update_interval=1,
+    ),
+    powerline("color2", "color3"),
     widget.CurrentLayoutIcon(**base(bg="color2"), scale=0.55),
     widget.CurrentLayout(**base(bg="color2"), padding=5),
     powerline("color1", "color2"),

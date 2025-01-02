@@ -186,7 +186,7 @@ Remove the yay directory once installed:
 rm -r yay-git
 ```
 
-## Audio
+### Audio
 
 Install PulseAudio and its control tools:
 
@@ -194,7 +194,7 @@ Install PulseAudio and its control tools:
 sudo pacman -S pulseaudio pavucontrol
 ```
 
-## Bluetooth
+### Bluetooth
 
 To enable Bluetooth, start and enable the Bluetooth service:
 
@@ -204,7 +204,7 @@ sudo systemctl enable bluetooth.service
 sudo systemctl status bluetooth.service
 ```
 
-## Brightness
+### Brightness
 
 To manage screen brightness:
 
@@ -212,7 +212,7 @@ To manage screen brightness:
 sudo pacman -S brightnessctl
 ```
 
-## Wallpaper
+### Wallpaper
 
 Install **feh** to set your wallpaper, and configure it in your `.xprofile` file:
 
