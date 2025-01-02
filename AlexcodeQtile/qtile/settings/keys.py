@@ -25,7 +25,12 @@ keys = [
         lazy.window.toggle_floating(),
         desc="Toggle floating on the focused window",
     ),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key(
+        [mod],
+        "space",
+        lazy.widget["keyboardlayout"].next_keyboard(),
+        desc="Next keyboard layout.",
+    ),
     # Move windows up or down in current stack
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),

@@ -21,7 +21,7 @@ def powerline(fg="light", bg="dark"):
     return widget.TextBox(
         **base(fg, bg),
         text="",  # Icon: nf-oct-triangle_left
-        fontsize=55,
+        fontsize=60,
         padding=5,
     )
 
@@ -45,7 +45,7 @@ def workspaces():
             urgent_alert_method="block",
             urgent_border=colors["urgent"],
             this_current_screen_border=colors["focus"],
-            this_screen_border=colors["grey"],
+            this_screen_border=colors["dark"],
             other_current_screen_border=colors["dark"],
             other_screen_border=colors["dark"],
             disable_drag=True,
@@ -59,10 +59,18 @@ def workspaces():
 primary_widgets = [
     *workspaces(),
     separator(),
-    powerline("color2", "dark"),
-    icon(bg="color2", text="  "),  # Icon: nf-fa-download
+    powerline("color1", "dark"),
+    widget.Pomodoro(
+        background=colors["color1"],
+        foreground=colors["text"],
+        color_brake=colors["urgent"],
+        color_active=colors["text"],
+        color_inactive=colors["inactive"],
+    ),
+    powerline("color4", "color1"),
+    icon(bg="color4", text="  "),  # Icon: nf-fa-download
     widget.CheckUpdates(
-        background=colors["color2"],
+        background=colors["color4"],
         colour_have_updates=colors["text"],
         colour_no_updates=colors["text"],
         no_update_string="0",
@@ -70,15 +78,15 @@ primary_widgets = [
         update_interval=180,
         custom_command="checkupdates",
     ),
-    powerline("color4", "color2"),
-    widget.GenPollText(
-        func=lambda: subprocess.check_output("~/scripts/nvidia_usage.sh", shell=True)
-        .decode("utf-8")
-        .strip(),
-        update_interval=1,
-        foreground=colors["text"],
-        background=colors["color4"],
-    ),
+    # powerline("color4", "color2"),
+    # widget.GenPollText(
+    #     func=lambda: subprocess.check_output("~/scripts/nvidia_usage.sh", shell=True)
+    #     .decode("utf-8")
+    #     .strip(),
+    #     update_interval=1,
+    #     foreground=colors["text"],
+    #     background=colors["color4"],
+    # ),
     powerline("color3", "color4"),
     widget.NvidiaSensors(
         format="GPU: {temp}°C",
@@ -92,7 +100,15 @@ primary_widgets = [
     powerline("color1", "color2"),
     icon(bg="color1", fontsize=17, text=" "),  # Icon: nf-mdi-calendar_clock
     widget.Clock(**base(bg="color1"), format="%d/%m/%Y - %H:%M "),
-    powerline("dark", "color1"),
+    powerline("color2", "color1"),
+    widget.KeyboardLayout(
+        **base(bg="color2"),
+        configured_keyboards=[
+            "us",
+            "es",
+        ],
+    ),
+    powerline("dark", "color2"),
     widget.Systray(background=colors["dark"], padding=5),
 ]
 
