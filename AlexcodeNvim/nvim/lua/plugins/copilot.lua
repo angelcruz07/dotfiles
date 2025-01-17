@@ -26,40 +26,40 @@ local prompts = {
 -- This table contains the configuration for various plugins used in Neovim.
 return {
   -- GitHub Copilot plugin
-  { "github/copilot.vim" }, -- Load the GitHub Copilot plugin
-
+  -- { "github/copilot.vim" }, -- Load the GitHub Copilot plugin
+  --
   -- Which-key plugin configuration
-  {
-    "folke/which-key.nvim", -- Load the which-key plugin
-    optional = true, -- This plugin is optional
-    opts = {
-      spec = {
-        { "<leader>a", group = "ai" }, -- Define a group for AI-related commands
-        { "gm", group = "+Copilot chat" }, -- Define a group for Copilot chat commands
-        { "gmh", desc = "Show help" }, -- Keybinding to show help
-        { "gmd", desc = "Show diff" }, -- Keybinding to show diff
-        { "gmp", desc = "Show system prompt" }, -- Keybinding to show system prompt
-        { "gms", desc = "Show selection" }, -- Keybinding to show selection
-        { "gmy", desc = "Yank diff" }, -- Keybinding to yank diff
-      },
-    },
-  },
+  -- {
+  --   "folke/which-key.nvim", -- Load the which-key plugin
+  --   optional = true, -- This plugin is optional
+  --   opts = {
+  --     spec = {
+  --       { "<leader>a", group = "ai" }, -- Define a group for AI-related commands
+  --       { "gm", group = "+Copilot chat" }, -- Define a group for Copilot chat commands
+  --       { "gmh", desc = "Show help" }, -- Keybinding to show help
+  --       { "gmd", desc = "Show diff" }, -- Keybinding to show diff
+  --       { "gmp", desc = "Show system prompt" }, -- Keybinding to show system prompt
+  --       { "gms", desc = "Show selection" }, -- Keybinding to show selection
+  --       { "gmy", desc = "Yank diff" }, -- Keybinding to yank diff
+  --     },
+  --   },
+  -- },
 
   -- Copilot Chat plugin configuration
   {
     "CopilotC-Nvim/CopilotChat.nvim", -- Load the Copilot Chat plugin
-    branch = "canary", -- Use the 'canary' branch
-    dependencies = {
-      { "nvim-telescope/telescope.nvim" }, -- Dependency on Telescope plugin
-      { "nvim-lua/plenary.nvim" }, -- Dependency on Plenary plugin
-    },
+    -- branch = "canary", -- Use the 'canary' branch
+    -- dependencies = {
+    --   { "nvim-telescope/telescope.nvim" }, -- Dependency on Telescope plugin
+    --   { "nvim-lua/plenary.nvim" }, -- Dependency on Plenary plugin
+    -- },
     opts = {
-      question_header = "## User ", -- Header for user questions
-      answer_header = "## Copilot ", -- Header for Copilot answers
-      error_header = "## Error ", -- Header for errors
       prompts = prompts, -- Use the defined prompts
       auto_follow_cursor = false, -- Disable auto-follow cursor
       show_help = false, -- Disable showing help by default
+      model = "gpt-4o",
+      answer_header = "󱗞  The Kingdev 󱗞 ",
+      system_prompt = "A partir de ahora asume mi soy: soy kingdev, un estudiante de ingenieria en sistemas computacionales, quiero que hables de manera casual como si fuera un amigo, al inicio de cada respuesta quiero que comiences con la palabras 'Mi compa', suelo trabajar en React con Next JS pero soy un amante de la programacion y me veras navegar en una infinidad de lenguajes, refirete a ti mismo como 'King dev', estructura props con ejemplo simples, Y un extra si esta contestando una continuacon a otra pregunta no saludes de nuevo",
       mappings = {
         complete = { detail = "Use @<Tab> or /<Tab> for options.", insert = "<Tab>" }, -- Keybinding for completion
         close = { normal = "q", insert = "<C-c>" }, -- Keybinding to close chat
