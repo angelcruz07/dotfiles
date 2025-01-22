@@ -19,14 +19,15 @@ return {
       -- Define workspaces for Obsidian
       workspaces = {
         {
-          name = "KingdevNotes", -- Name of the workspace
-          path = "/home/kingdev/Notes/", -- Path to the notes directory
+          name = "KindevNotes", -- Name of the workspace
+          path = "/home/kingdev/Notes", -- Path to the notes directory
         },
       },
 
       -- Completion settings
       completion = {
-        nvim_cmp = false, -- Disable completion using nvim-cmp
+        nvim_cmp = true,
+        min_chars = 2,
       },
 
       notes_subdir = "limbo", -- Subdirectory for notes
