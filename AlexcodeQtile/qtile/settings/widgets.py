@@ -105,6 +105,7 @@ primary_widgets = [
         **base(bg="color2"),
         configured_keyboards=[
             "us",
+            "us intl",
             "es",
         ],
     ),

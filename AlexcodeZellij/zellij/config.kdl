@@ -321,7 +321,7 @@ themes {
         black "#1a1a1a"
         white "#8D908D"
     }
-      catppuccin-latte {
+    catppuccin-latte {
     bg "#acb0be" // Surface2
     fg "#4c4f69" // Text
     red "#d20f39"
