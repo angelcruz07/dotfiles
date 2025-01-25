@@ -7,7 +7,8 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.cargo/bin:$PATH"
-
+export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
 
 if [[ $- == *i* ]]; then
     # Commands to run in interactive sessions can go here
@@ -43,6 +44,15 @@ function start_if_needed() {
     if [[ $- == *i* ]] && [[ -z "${WM_VAR#/}" ]] && [[ -t 1 ]]; then
         exec $WM_CMD
     fi
+}
+
+function ze() {
+  if [ -z "$1" ]; then
+    echo "zellij session not exist"
+    return 1
+  fi
+ 
+  zellij attach "$1"
 }
 
 # bun

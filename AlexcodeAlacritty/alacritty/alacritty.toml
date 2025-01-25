@@ -1,4 +1,3 @@
-
 # Adaptation of colors from WezTerm to Alacritty in TOML format
 
 [[colors.indexed_colors]]
