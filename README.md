@@ -1,5 +1,9 @@
 # Dotfiles
 
+## Overview
+
+![Qtile Enviroment](./assets/screenshots/Qtile.png)
+
 ## Description
 
 This repository contains customized
@@ -12,12 +16,11 @@ WezTerm and Alacritty, along with essential utilities.
 > This is my config with my preferences
 > but you can customize it
 
-## Table of Contents
+<!--toc:start-->
 
 - [Dotfiles](#dotfiles)
-  - [Description](#description)
-  - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
+  - [Description](#description)
   - [Arch Installation](#arch-installation)
   - [Install Xorg](#install-xorg)
   - [Login and Window Manager](#login-and-window-manager)
@@ -29,25 +32,20 @@ WezTerm and Alacritty, along with essential utilities.
     - [Reboot the PC](#reboot-the-pc)
     - [Install Homebrew](#install-homebrew)
     - [Install Arch User Repository (AUR)](#install-arch-user-repository-aur)
-  - [Audio](#audio)
-  - [Bluetooth](#bluetooth)
-  - [Brightness](#brightness)
-  - [Wallpaper](#wallpaper)
-  - [Monitors](#monitors)
-    - [Keybindings](#keybindings)
-    - [Window Navigation](#window-navigation)
+    - [Audio](#audio)
+    - [Bluetooth](#bluetooth)
+    - [Brightness](#brightness)
+    - [Wallpaper](#wallpaper)
+      - [Monitors](#monitors)
+      - [Keybindings](#keybindings)
+      - [Window Navigation](#window-navigation)
   - [Apps](#apps)
   - [Software](#software)
   - [Terminal](#terminal)
-  - [Neovim](#neovim-and-lazyvim)
+  - [Neovim Lazyvim](#neovim-lazyvim)
   - [Fonts, theming and GTK](#fonts-theming-and-gtk)
   - [Testing your window manager](#testing-your-window-manager)
-  - [Gallery](#gallery)
-    - [Qtile](#qtile)
-
-## Overview
-
-![Qtile Enviroment](./assets/screenshots/Qtile.png)
+      <!--toc:end-->
 
 This guide will walk you through the
 process of building a desktop environment
@@ -361,5 +359,3 @@ More info [Neovim](https://neovim.io/)
 ## Testing your window manager
 
 [Xephyr](https://wiki.archlinux.org/title/Xephyr)
-
-## Gallery
