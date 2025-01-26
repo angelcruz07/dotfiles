@@ -8,6 +8,10 @@ desktop environment, including Qtile, Neovim,
 Fish, Zsh, Zellij, and terminal emulators like
 WezTerm and Alacritty, along with essential utilities.
 
+> **DISCLAIMER**
+> This is my config with my preferences
+> but you can customize it
+
 ## Table of Contents
 
 - [Dotfiles](#dotfiles)
@@ -33,16 +37,17 @@ WezTerm and Alacritty, along with essential utilities.
     - [Keybindings](#keybindings)
     - [Window Navigation](#window-navigation)
   - [Apps](#apps)
-  - [Apps](#apps-1)
   - [Software](#software)
   - [Terminal](#terminal)
-  - [Neovim](#neovim)
+  - [Neovim](#neovim-and-lazyvim)
   - [Fonts, theming and GTK](#fonts-theming-and-gtk)
   - [Testing your window manager](#testing-your-window-manager)
   - [Gallery](#gallery)
     - [Qtile](#qtile)
 
 ## Overview
+
+![Qtile Enviroment](./assets/screenshots/Qtile.png)
 
 This guide will walk you through the
 process of building a desktop environment
@@ -113,9 +118,12 @@ git clone https://github.com/angelcruz07/dotfiles.git
 
 ### Install Fonts
 
-Before continuing, let's install the fonts used in my configuration. I use **IosevkaTerm**, **CascadiaCode**, and **Ubuntu Mono Nerd**.
+Before continuing, let's install the fonts used in my configuration.
+I use **IosevkaTerm**, **CascadiaCode**, and **Ubuntu Mono Nerd**.
 
-**Download Iosevka font** from its official site or from [Nerd Fonts GitHub](https://github.com/ryanoasis/nerd-fonts) or install it directly:
+**Download Iosevka font** from its official site
+or from [Nerd Fonts GitHub](https://github.com/ryanoasis/nerd-fonts)
+or install it directly:
 
 ```bash
 sudo pacman -S ttf-ubuntu-mono-nerd ttf-cascadia-code ttf-iosevkaterm-nerd
@@ -141,11 +149,18 @@ Reboot your PC to check if everything is set up correctly:
 reboot
 ```
 
-If you've followed the steps, you should see my environment with the theme I am currently using. Don't forget to check the [keyboard shortcuts](#keybindings).
+If you've followed the steps, you should see
+my environment with the theme I am currently using.
+Don't forget to check the
+[keyboard shortcuts](#keybindings).
 
 ### Install Homebrew
 
-Homebrew is a package manager for macOS and Linux that makes it easy to install and keep packages up-to-date. Install it with:
+Homebrew is a package manager for macOS
+and Linux that makes it easy to install
+and keep packages up-to-date.
+
+Install it with:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -262,8 +277,6 @@ Check my configuration in [xprofile](./AlexcodeDots/.xprofile).
 
 ## Apps
 
-## Apps
-
 | Key             | Action                      |
 | --------------- | --------------------------- |
 | mod + m         | Launch rofi                 |
@@ -316,13 +329,13 @@ List of software used in the desktop environment.
 
 ## Terminal
 
-| Software  | Utility           | Pacman                                             |
-| --------- | ----------------- | -------------------------------------------------- |
-| Alacritty | Terminal emulator | sudo pacman -S alacritty                           |
-| Kitty     | Terminal emulator | sudo pacman -S kitty                               |
-| WezTerm   | Terminal emulator | <https://wezfurlong.org/wezterm/installation.html> |
+| Software  | Utility           | Pacman                                                      |
+| --------- | ----------------- | ----------------------------------------------------------- |
+| Alacritty | Terminal emulator | [Alacritty](https://alacritty.org/)                         |
+| Kitty     | Terminal emulator | [Kitty](https://sw.kovidgoyal.net/kitty/)                   |
+| WezTerm   | Terminal emulator | [WezTerm](https://wezfurlong.org/wezterm/installation.html) |
 
-## Neovim
+## Neovim & Lazyvim
 
 | Software          | Utility   | Pacman                             |
 | ----------------- | --------- | ---------------------------------- |
@@ -335,6 +348,7 @@ List of software used in the desktop environment.
 | prettier          | Formater  | sudo pacman -S prettier            |
 
 More info [Neovim](https://neovim.io/)
+[LazyVim](http://www.lazyvim.org/)
 
 ## Fonts, theming and GTK
 
@@ -349,10 +363,3 @@ More info [Neovim](https://neovim.io/)
 [Xephyr](https://wiki.archlinux.org/title/Xephyr)
 
 ## Gallery
-
-### Qtile
-
-- Dracula
-  ![Dracula theme](./assets/screenshots/dracula.jpg)
-- Tokyo night
-  ![Tokyo Night](./assets/screenshots/tokyo-night.png)
