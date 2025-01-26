@@ -1,40 +1,45 @@
-# Images
+# Wallpapers
 
-- Minimal
-  ![Minimal](./minimal.png)
+![1.png](./1.png)
 
-- Ocean
-  ![Ocean](./ocean.png)
+![10.png](./10.png)
 
-- Dracula
-  ![Dracula](./dracula.png)
+![11.jpg](./11.jpg)
 
-- Forest
-  ![Forest](./forest.jpg)
+![12.jpg](./12.jpg)
 
-- Forest Night
-  ![Forest Night](./forestnight.png)
+![13.jpg](./13.jpg)
 
-- Rog
-  ![Rog](./rog.jpg)
+![14.jpg](./14.jpg)
 
-- Asus Rog
-  ![Asus Rog](./asusrog.png)
+![15.png](./15.png)
 
-- Asus
-  ![Asus](./asus.jpg)
+![16.png](./16.png)
 
-- FireWatch
-  ![FireWatch](./firewatch.jpg)
+![17.png](./17.png)
 
-- Violet
-  ![violet](./violet.png)
+![18.jpg](./18.jpg)
 
-- Triangle
-  ![Triangle](./triangle.jpg)
+![19.jpg](./19.jpg)
 
-- Tokyo Night
-  ![Tokyo-night](./tokyo-night.jpg)
+![2.jpg](./2.jpg)
 
-- Forest Dark
-  ![Forest Dark](./forest-dark.png)
+![20.jpg](./20.jpg)
+
+![21.jpg](./21.jpg)
+
+![22.png](./22.png)
+
+![3.png](./3.png)
+
+![4.png](./4.png)
+
+![5.jpg](./5.jpg)
+
+![6.png](./6.png)
+
+![7.jpg](./7.jpg)
+
+![8.jpg](./8.jpg)
+
+![9.jpg](./9.jpg)
