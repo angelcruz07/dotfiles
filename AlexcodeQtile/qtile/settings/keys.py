@@ -110,4 +110,6 @@ keys = [
     ),
     # Editors
     Key([mod], "n", lazy.spawn("nvim"), desc="Open Nvim"),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
 ]

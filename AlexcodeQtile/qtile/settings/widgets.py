@@ -78,6 +78,7 @@ primary_widgets = [
         update_interval=180,
         custom_command="checkupdates",
     ),
+    # Uncomment if have graphic nvidia
     # powerline("color4", "color2"),
     # widget.GenPollText(
     #     func=lambda: subprocess.check_output("~/scripts/nvidia_usage.sh", shell=True)
@@ -94,7 +95,7 @@ primary_widgets = [
     #     background=colors["color3"],
     #     update_interval=1,
     # ),
-     powerline("color2", "color4"),
+    powerline("color2", "color4"),
     widget.CurrentLayoutIcon(**base(bg="color2"), scale=0.55),
     widget.CurrentLayout(**base(bg="color2"), padding=5),
     powerline("color1", "color2"),
@@ -104,8 +105,8 @@ primary_widgets = [
     widget.KeyboardLayout(
         **base(bg="color2"),
         configured_keyboards=[
-            "us",
             "us intl",
+            "us",
             "es",
         ],
     ),
