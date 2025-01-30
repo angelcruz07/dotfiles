@@ -136,7 +136,7 @@ cp -r ~/dotfiles/AlexcodeQtile/qtile/ ~/.config/
 cp -r ~/dotfiles/AlexcodeRofi/rofi/ ~/.config/
 cp -r ~/dotfiles/AlexcodeNvim/nvim/ ~/.config/
 cp -r ~/dotfiles/AlexcodeZellij/zellij/ ~/.config/
-cp -r ~/dotfiles/AlexcodeDots/ ~/
+cp -r ~/dotfiles/AlexcodeDots/.* ~/
 ```
 
 ### Reboot the PC
