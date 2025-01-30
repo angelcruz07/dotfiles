@@ -226,4 +226,13 @@ Esta es mi posible solución para este problema
 sudo os-prober
 ```
 
+Se debería encontrar windows pero, una vez
+que ejecutaste el os-prober debes volver a
+configurar el grub con el siguiete comando.
+
+```
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 En este punto deberia averse agregado windows al grub.
