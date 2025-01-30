@@ -5,8 +5,8 @@ Esta es una guia para una instalación limpia de Arch linux.
 
 > [NOTE]
 > Si deseas instalar Arch junto a windows deberás
-> de crear primero una partición para el sistema
-> desde windows y después podrás seguir con la instalación de Arch Linux.
+> de tener instalado windows previamente. ya que alrevéz
+> no funciona por el momento.
 
 ## Arranque
 
@@ -27,7 +27,6 @@ ping google.com
 
 # Sincronización automatica de la hora
 timedatectl set-ntp true
-
 ```
 
 ## Particionar disco
@@ -54,7 +53,10 @@ cfdisk /dev/nvme0n1
 - Participación UEFI
   Tamaño 150MB
 
-[!NOTE] No olvides crear la particion UEFI para evitar problemas al momento de instalar el grub de ArchLinux
+[!NOTE] No olvides crear la particion UEFI
+
+> para evitar problemas al momento
+> de instalar el grub de ArchLinux.
 
 ## Formatear particiones
 
@@ -119,14 +121,14 @@ locale-gen
 
 echo "LANG=es_ES.UTF-8" > /etc/locale.conf
 echo "KEYMAP=es" > /etc/vconsole.conf
-echo "asus" > /etc/hostname
+echo "yourhostname" > /etc/hostname
 
 # Configuración de los host
 
 nano /etc/hosts
 127.0.0.1     localhost
 ::1           localhost
-127.0.1.1     myhostname.localhost myhostname
+127.0.1.1     yourhostname.localhost yourhostname
 
 # Conexión a internet - Software
 passwd
