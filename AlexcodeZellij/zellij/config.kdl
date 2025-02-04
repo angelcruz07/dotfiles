@@ -376,9 +376,23 @@ themes {
     black "#181825" // Mantle
     white "#cdd6f4" // Text
   }
+
+  sakura {
+    fg "#c5a3a9"        // na: texto principal
+    bg "#1c1a1c"        // bl: fondo oscuro
+    red "#2B1720"       // ia: rosa
+    green "#878fb9"     // va: azul
+    yellow "#9e97d0"    // ca: púrpura (sustituye amarillo)
+    blue "#878fb9"      // va: azul
+    magenta "#9e97d0"   // ca: púrpura
+    cyan "#878fb9"      // va: azul
+    orange "#9e97d0"    // ca: púrpura
+    black "#1c1a1c"     // bl: fondo
+    white "#c5a3a9"     // na: texto claro
+    }
 }
 
-theme "catppuccin-mocha"
+theme "sakura"
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -398,7 +412,7 @@ default_shell "zsh"
 // The name of the default layout to load on startup
 // Default: "work"
 
-default_layout "work_catppuccin"
+default_layout "work_sakura"
  
 // The folder in which Zellij will look for layouts
 // (Requires restart)

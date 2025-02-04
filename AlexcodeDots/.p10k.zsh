@@ -34,7 +34,6 @@
     # =========================[ Line #1 ]=========================
     os_icon                 # os identifier
     dir                     # current directory
-    spacer
     vcs                     # git status
     # =========================[ Line #2 ]=========================
     newline                 # \n
@@ -149,7 +148,7 @@
   # Connect left prompt lines with these symbols.
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%238F╭─'
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX='%238F├─'
-  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%238F╰─ '
+  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%238F╰─'
   # Connect right prompt lines with these symbols.
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX=
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX=
@@ -164,7 +163,7 @@
   # probably want to set POWERLEVEL9K_PROMPT_ADD_NEWLINE=false above and
   # POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR=' ' below.
   typeset -g POWERLEVEL9K_SHOW_RULER=false
-  typeset -g POWERLEVEL9K_RULER_CHAR='·'
+  typeset -g POWERLEVEL9K_RULER_CHAR='─'        # reasonable alternative: '·'
   typeset -g POWERLEVEL9K_RULER_FOREGROUND=238
 
   # Filler between left and right prompt on the first prompt line. You can set it to '·' or '─'
@@ -173,7 +172,7 @@
   # the number of prompt lines. You'll probably want to set POWERLEVEL9K_SHOW_RULER=false
   # if using this. You might also like POWERLEVEL9K_PROMPT_ADD_NEWLINE=false for more compact
   # prompt.
-  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR=''
+  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR='─'
   if [[ $POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR != ' ' ]]; then
     # The color of the filler.
     typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND=238
@@ -190,7 +189,6 @@
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=
-
   # Custom icon.
   # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
 
@@ -200,9 +198,9 @@
   # Red prompt symbol if the last command failed.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=196
   # Default prompt symbol.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='󱗞 '
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
   # Prompt symbol in command vi mode.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='󱗞 '
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='❮'
   # Prompt symbol in visual vi mode.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION='V'
   # Prompt symbol in overwrite vi mode.
@@ -1703,62 +1701,41 @@
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
 
   # If p10k is already loaded, reload configuration.
-
-  # Kanawagua theme
   # This works even with POWERLEVEL9K_DISABLE_HOT_RELOAD=true.
-  # typeset -g COLOR_BACKGROUND="#181616"
-  # typeset -g COLOR_FOREGROUND="#dcd7ba"
-  # typeset -g COLOR_BLACK="#090618"
-  # typeset -g COLOR_RED="#c34043"
-  # typeset -g COLOR_GREEN="#76946a"
-  # typeset -g COLOR_YELLOW="#c0a36e"
-  # typeset -g COLOR_BLUE="#7e9cd8"
-  # typeset -g COLOR_MAGENTA="#957fb8"
-  # typeset -g COLOR_CYAN="#6a9589"
-  # typeset -g COLOR_WHITE="#c8c093"
-  # typeset -g COLOR_BRIGHT_BLACK="#727169"
-  # typeset -g COLOR_BRIGHT_RED="#e82424"
-  # typeset -g COLOR_BRIGHT_GREEN="#98bb6c"
-  # typeset -g COLOR_BRIGHT_YELLOW="#e6c384"
-  # typeset -g COLOR_BRIGHT_BLUE="#7fb4ca"
-  # typeset -g COLOR_BRIGHT_MAGENTA="#938aa9"
-  # typeset -g COLOR_BRIGHT_CYAN="#7aa89f"
-  # typeset -g COLOR_BRIGHT_WHITE="#dcd7ba"
-  #
+  typeset -g COLOR_BACKGROUND="#181616"    # Dark background
+  typeset -g COLOR_FOREGROUND="#dcd7ba"    # Light text
+  typeset -g COLOR_BLACK="#090618"         # ANSI Black
+  typeset -g COLOR_RED="#c34043"           # ANSI Red
+  typeset -g COLOR_GREEN="#76946a"         # ANSI Green
+  typeset -g COLOR_YELLOW="#c0a36e"        # ANSI Yellow
+  typeset -g COLOR_BLUE="#7e9cd8"          # ANSI Blue
+  typeset -g COLOR_MAGENTA="#957fb8"       # ANSI Magenta
+  typeset -g COLOR_CYAN="#6a9589"          # ANSI Cyan
+  typeset -g COLOR_WHITE="#c8c093"         # ANSI White
 
- # Catppuccin mocha - theme
- # Background and Foreground
- typeset -g COLOR_BACKGROUND="#1e1e2e"  # Mantle (fondo)
- typeset -g COLOR_FOREGROUND="#cdd6f4"  # Text (texto principal)
+  typeset -g COLOR_BRIGHT_BLACK="#727169"  # Bright Black
+  typeset -g COLOR_BRIGHT_RED="#e82424"    # Bright Red
+  typeset -g COLOR_BRIGHT_GREEN="#98bb6c"  # Bright Green
+  typeset -g COLOR_BRIGHT_YELLOW="#e6c384" # Bright Yellow
+  typeset -g COLOR_BRIGHT_BLUE="#7fb4ca"   # Bright Blue
+  typeset -g COLOR_BRIGHT_MAGENTA="#938aa9" # Bright Magenta
+  typeset -g COLOR_BRIGHT_CYAN="#7aa89f"   # Bright Cyan
+  typeset -g COLOR_BRIGHT_WHITE="#dcd7ba"  # Bright White
 
- # ANSI Colors
- typeset -g COLOR_BLACK="#11111b"       # Crust (negro estándar)
- typeset -g COLOR_RED="#f38ba8"         # Red (rojo estándar)
- typeset -g COLOR_GREEN="#a6e3a1"       # Green (verde estándar)
- typeset -g COLOR_YELLOW="#f9e2af"      # Yellow (amarillo estándar)
- typeset -g COLOR_BLUE="#89b4fa"        # Blue (azul estándar)
- typeset -g COLOR_MAGENTA="#cba6f7"     # Mauve (magenta estándar)
- typeset -g COLOR_CYAN="#94e2d5"        # Teal (cian estándar)
- typeset -g COLOR_WHITE="#bac2de"       # Subtext1 (blanco estándar)
-
- # Bright ANSI Colors
- typeset -g COLOR_BRIGHT_BLACK="#585b70"   # Surface2 (negro brillante)
- typeset -g COLOR_BRIGHT_RED="#eba0ac"     # Maroon (rojo brillante)
- typeset -g COLOR_BRIGHT_GREEN="#a6e3a1"   # Green (verde brillante)
- typeset -g COLOR_BRIGHT_YELLOW="#fab387"  # Peach (amarillo brillante)
- typeset -g COLOR_BRIGHT_BLUE="#b4befe"    # Lavender (azul brillante)
- typeset -g COLOR_BRIGHT_MAGENTA="#f5c2e7" # Pink (magenta brillante)
- typeset -g COLOR_BRIGHT_CYAN="#89dceb"    # Sky (cian brillante)
- typeset -g COLOR_BRIGHT_WHITE="#cdd6f4"   # Text (blanco brillante)
-
-
+  # Color assignment for Powerlevel10k
   typeset -g POWERLEVEL9K_BACKGROUND=$COLOR_BACKGROUND
   typeset -g POWERLEVEL9K_FOREGROUND=$COLOR_FOREGROUND
+
+  # Directory
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=$COLOR_BLUE
   typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=$COLOR_CYAN
+
+  # Git / VCS
   typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=$COLOR_YELLOW
   typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND=$COLOR_GREEN
   typeset -g POWERLEVEL9K_VCS_CONFLICTED_FOREGROUND=$COLOR_RED
+
+  # Other elements
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$COLOR_MAGENTA
   typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=$COLOR_GREEN
   typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=$COLOR_RED

@@ -1,87 +1,102 @@
--- Pull in the wezterm API
+-- Import the wezterm API
 local wezterm = require("wezterm")
 
--- Initialize the configuration
+-- Initialize an empty configuration table
 local config = {}
 
--- Use the config_builder for better error messages if available
-if wezterm.config_builder then
-	config = wezterm.config_builder()
-end
-
--- Uncomment to active color scheme: Catppuccin Mocha
--- config.color_scheme = "Catppuccin Mocha"
-
--- Terminal color scheme
+-- Background image options
+-- config.background = {
+-- 	{
+-- 		source = {
+-- 			File = "C:/Users/alanb/Pictures/synth-kanagawa-blur-20.jpg", -- Path to the background image file
+-- 		},
+-- 		width = "100%", -- Set the background image width to 100% of the terminal window
+-- 		height = "100%", -- Set the background image height to gg100% of the terminal window
+-- 		opacity = 1, -- Set the opacity of the background image (0.0 - 1.0)
+-- 		hsb = {
+-- 			brightness = 0.04, -- Set the brightness of the background image (low value to darken the image)
+-- 			saturation = 1, -- Set the saturation of the background image
+-- 		},
+-- 	},
+-- }
 config.colors = {
-	foreground = "#e0def4", -- Set the foreground color (Text)
-	background = "#0d0c15", -- Base más oscuro (Rosé Pine Dawn)
-	cursor_bg = "#c4a7e7", -- Set the cursor background color (Iris)
-	cursor_fg = "#e0def4", -- Set the cursor foreground color (Text)
-	cursor_border = "#c4a7e7", -- Set the cursor border color (Iris)
-	selection_fg = "#e0def4", -- Set the selection foreground color (Text)
-	selection_bg = "#393552", -- Set the selection background color (Overlay)
-	scrollbar_thumb = "#2a273f", -- Set the scrollbar thumb color (Surface)
-	split = "#2a273f", -- Set the split color (Surface)
+	foreground = "#786577", -- na: texto
+	background = "#1c1a1c", -- bl: fondo
+	cursor_bg = "#9e97d0", -- ca: púrpura
+	cursor_fg = "#c5a3a9", -- na: texto
+	cursor_border = "#9e97d0", -- ca: púrpura
+	selection_fg = "#c5a3a9", -- na: texto
+	selection_bg = "#3f3b3e", -- gr: gris
+	scrollbar_thumb = "#2e2d2f", -- gl: gris claro
+	split = "#2e2d2f", -- gl: gris claro
 	ansi = {
-		"#232136", -- Base
-		"#eb6f92", -- Love
-		"#9ccfd8", -- Foam
-		"#f6c177", -- Gold
-		"#3e8fb0", -- Pine
-		"#c4a7e7", -- Iris
-		"#ea9a97", -- Rose
-		"#e0def4", -- Text
-	}, -- Set the ANSI color palette
+		"#1c1a1c", -- Black: bl: negro
+		"#c58ea7", -- Red: ia: rojo
+		"#878fb9", -- Green: va: verde (azul)
+		"#9e97d0", -- Yellow: ca: amarillo (púrpura)
+		"#665E7A", -- Blue: vb: azul oscuro
+		"#9e97d0", -- Magenta: ca: magenta
+		"#c58ea7", -- Cyan: ia: cyan (rosa)
+		"#c5a3a9", -- White: na: blanco
+	},
 	brights = {
-		"#56526e", -- Highlight High
-		"#eb6f92", -- Love
-		"#9ccfd8", -- Foam
-		"#f6c177", -- Gold
-		"#3e8fb0", -- Pine
-		"#c4a7e7", -- Iris
-		"#ea9a97", -- Rose
-		"#e0def4", -- Text
-	}, -- Set the bright color palette
+		"#3f3b3e", -- Bright Black: gr: gris oscuro
+		"#c58ea7", -- Bright Red: ia: rojo
+		"#878fb9", -- Bright Green: va: verde
+		"#9e97d0", -- Bright Yellow: ca: amarillo
+		"#665E7A", -- Bright Blue: vb: azul
+		"#9e97d0", -- Bright Magenta: ca: magenta
+		"#c58ea7", -- Bright Cyan: ia: cyan
+		"#c5a3a9", -- Bright White: na: blanco
+	},
 	indexed = {
-		[16] = "#f6c177", -- Gold
-		[17] = "#ea9a97", -- Rose
-	}, -- Set additional indexed colors
+		[16] = "#9e97d0", -- ca: púrpura
+		[17] = "#c58ea7", -- ia: rosa
+	},
 }
 
--- Window padding for a cleaner look
+-- This is where you actually apply your config choices
 config.window_padding = {
 	top = 0,
 	right = 0,
 	left = 0,
 }
 
--- Uncomment this line to enable Kanawagua theme
--- config.colors = {}
--- config.colors.foreground = "#dcd7ba"
--- config.colors.background = "#181616"
--- config.colors.cursor_bg = "#c8c093"
--- config.colors.cursor_fg = "#c8c093"
--- config.colors.cursor_border = "#c8c093"
--- config.colors.selection_fg = "#c8c093"
--- config.colors.selection_bg = "#2d4f67"
--- config.colors.scrollbar_thumb = "#16161d"
--- config.colors.split = "#16161d"
--- config.colors.ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" }
--- config.colors.brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" }
--- config.colors.indexed = { [16] = "#ffa066", [17] = "#ff5d62" }
---  change
-
--- Background
-config.window_background_opacity = 0.81
-config.macos_window_background_blur = 20
-
--- UI
+-- Set the terminal font
 config.font = wezterm.font("IosevkaTerm NF")
+
+-- Hide the tab bar if only one tab is open
 config.hide_tab_bar_if_only_one_tab = true
-config.max_fps = 240 -- hack for smoothness
-config.font_size = 18
+
+-- Background with Transparency
+config.window_background_opacity = 0.85 -- Adjust this value as needed
+config.macos_window_background_blur = 20 -- Adjust this value as needed
+config.win32_system_backdrop = "Acrylic" -- Only Works in Windows
+
+-- Font Size
+config.font_size = 16.0
+
+-- Smooth hack
+config.max_fps = 240
+
+-- Enable Kitty Graphics
 config.enable_kitty_graphics = true
 
--- Return the final configuration
+-- Disable Scroll Bar
+config.enable_scroll_bar = false
+
+-- activate ONLY if windows --
+
+-- config.default_domain = 'WSL:Ubuntu'
+-- config.front_end = "OpenGL"
+-- local gpus = wezterm.gui.enumerate_gpus()
+-- if #gpus > 0 then
+--   config.webgpu_preferred_adapter = gpus[1] -- only set if there's at least one GPU
+-- else
+--   -- fallback to default behavior or log a message
+--   wezterm.log_info("No GPUs found, using default settings")
+-- end
+
+-- and finally, return the configuration to wezterm
+
 return config

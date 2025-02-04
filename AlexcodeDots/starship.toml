@@ -23,53 +23,25 @@ add_newline = true
 # Command timeout
 command_timeout = 3600000
 
-# Kanagawa Dragon color and style settings
-palette = "catppuccin_mocha"
+# Rose Pine Moon color and style settings
+palette = "sakura"
 
 [fill]
 symbol = ' '
 
-[palettes.kanagawa_dragon]
-arrow = "#DCD7BA"      # Light bone color, soft and visible
-os = "#C4B28A"         # Warm yellow tone of dragonYellow
-directory = "#8BA4B0"  # Soft sky blue, dragonBlue2
-git = "#C4746E"        # Soft red, dragonRed
-duration = "#957FB8"   # Soft purple, oniViolet
-text_color = "#C5C9C5" # Light color, dragonWhite
-text_light = "#2A2A37" # Dark gray, sumiInk4
-
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+[palettes.sakura]
+arrow = "#c58ea7"      # Soft rose (ia: rosa)
+os = "#878fb9"         # Soft cyan (va: verde)
+directory = "#9e97d0"  # Soft purple (ca: púrpura)
+git = "#c58ea7"        # Refined pink (ia: rosa)
+duration = "#9e97d0"   # Soft yellow (ca: púrpura)
+text_color = "#c5a3a9" # Light text color (na: blanco)
+text_light = "#1c1a1c" # Base background color (bl: fondo)
 
 # Pink mustache icon for the prompt
 [character]
-success_symbol = "[󱗞 ](fg:#A3BE8C)" # Mustache in dark pink tone
-error_symbol = "[󱗞 ](fg:red)"       # Mustache in red if there is an error
+success_symbol = "[󱗞](fg:#c5a3a9)" # Mustache in dark pink tone
+error_symbol = "[󱗞](fg:red)"       # Mustache in red if there is an error
 
 # User settings
 [username]
