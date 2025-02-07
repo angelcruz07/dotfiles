@@ -1,39 +1,14 @@
 {
-  "dark": [
-    "#181825"
-  ],
-  "grey": [
-    "#585b70"
-  ],
-  "light": [
-    "#f1ffff"
-  ],
-  "text": [
-    "#181825"
-  ],
-  "focus": [
-    "#a6e3a1"
-  ],
-  "active": [
-    "#f1ffff"
-  ],
-  "inactive": [
-    "#4c566a"
-  ],
-  "urgent": [
-    "#f38ba8"
-  ],
-  "color1": [
-    "#a6e3a1"
-  ],
-  "color2": [
-    "#89b4fa",
-    "#89b4fa"
-  ],
-  "color3": [
-    "#f9e2af"
-  ],
-  "color4": [
-    "#f5c2e7"
-  ]
+  "dark": ["#181825"],
+  "grey": ["#585b70"],
+  "light": ["#f1ffff"],
+  "text": ["#181825"],
+  "focus": ["#a6e3a1"],
+  "active": ["#f1ffff"],
+  "inactive": ["#4c566a"],
+  "urgent": ["#f38ba8"],
+  "color1": ["#a6e3a1"],
+  "color2": ["#89b4fa", "#89b4fa"],
+  "color3": ["#f9e2af"],
+  "color4": ["#f5c2e7"]
 }

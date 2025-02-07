@@ -1,0 +1,14 @@
+{
+  "dark": ["#1c1a1c"],
+  "grey": ["#2e2d2f"],
+  "light": ["#f1ffff"],
+  "text": ["#181825"],
+  "focus": ["#665E7A"],
+  "active": ["#9e97d0"],
+  "inactive": ["#3f3b3e"],
+  "urgent": ["#c58ea7"],
+  "color1": ["#878fb9"],
+  "color2": ["#c5a3a9"],
+  "color3": ["#9e97d0"],
+  "color4": ["#f5c2e7"]
+}

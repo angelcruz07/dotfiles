@@ -4,6 +4,8 @@
 
 ![Qtile Enviroment](./assets/screenshots/Qtile.png)
 
+![Sakura theme](./assets/screenshots/Sakura.png)
+
 ## Description
 
 This repository contains customized
