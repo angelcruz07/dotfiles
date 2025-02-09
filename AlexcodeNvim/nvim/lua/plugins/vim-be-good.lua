@@ -1,8 +1,8 @@
--- This file contains the configuration for the twilight.nvim plugin in Neovim.
+-- This file contains the configuration for the vim-be-good plugin in Neovim.
 
 return {
-  -- Plugin: twilight.nvim
-  -- URL: https://github.com/folke/twilight.nvim
-  -- Description: A Neovim plugin for dimming inactive portions of the code you're editing.
-  "folke/twilight.nvim",
+  -- Plugin: vim-be-good
+  -- URL: https://github.com/ThePrimeagen/vim-be-good
+  -- Description: A Neovim plugin designed to help you improve your Vim skills through various exercises and games.
+  "ThePrimeagen/vim-be-good",
 }

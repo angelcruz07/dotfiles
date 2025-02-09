@@ -1,12 +1,12 @@
 return {
   {
-    "OlegGulevskyy/better-ts-errors.nvim",
-    dependencies = { "MunifTanjim/nui.nvim" },
+    "OlegGulevskyy/better-ts-errors.nvim", -- Plugin name and repository
+    dependencies = { "MunifTanjim/nui.nvim" }, -- Dependencies required for the plugin
     config = function()
       require("better-ts-errors").setup({
         keymaps = {
-          toggle = "<leader>dd", -- Tecla rápida para alternar la vista de errores
-          go_to_definition = "<leader>dx", -- Tecla rápida para ir a la definición de tipos en los errores
+          toggle = "<leader>dd", -- Quick key to toggle the error view
+          go_to_definition = "<leader>dx", -- Quick key to go to the type definition in errors
         },
       })
     end,
