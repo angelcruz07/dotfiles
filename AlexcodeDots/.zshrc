@@ -67,7 +67,7 @@ alias cat='bat --style=full --paging=never'
 alias ls='exa --group-directories-first'
 alias tree='exa -T'
 alias lg='lazygit'
-
+alias vim='nvim .'
 
 #plugins
 plugins=(
