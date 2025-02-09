@@ -14,7 +14,7 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {
-      preset = "classic",
+      preset = "helix",
       win = { border = "single" },
     },
   },
