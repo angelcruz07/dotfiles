@@ -1,4 +1,5 @@
 -- This file contains the configuration for the which-key.nvim plugin in Neovim.
+--
 
 return {
   -- Plugin: which-key.nvim

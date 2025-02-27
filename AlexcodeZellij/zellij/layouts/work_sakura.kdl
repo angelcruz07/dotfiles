@@ -34,7 +34,7 @@ layout {
 
               datetime        "#[fg=#786577,bold] {format} "  // Dark gray for date and time
               datetime_format "%A, %d %b %Y %H:%M"
-              datetime_timezone "Europe/Berlin"
+              datetime_timezone "America/Mexico_City"
             }
         }
         children
