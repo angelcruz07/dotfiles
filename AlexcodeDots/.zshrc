@@ -9,9 +9,17 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.cargo/bin:$PATH"
 export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
+export PATH="/opt/lampp/bin:$PATH"
 
 if [[ $- == *i* ]]; then
     # Commands to run in interactive sessions can go here
+fi
+
+export LS_COLORS="di=38;5;67:ow=48;5;60:ex=38;5;132:ln=38;5;144:*.tar=38;5;180:*.zip=38;5;180:*.jpg=38;5;175:*.png=38;5;175:*.mp3=38;5;175:*.wav=38;5;175:*.txt=38;5;223:*.sh=38;5;132"
+if [[ "$(uname)" == "Darwin" ]]; then
+  alias ls='ls --color=auto'
+else
+  alias ls='gls --color=auto'
 fi
 
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -100,3 +108,7 @@ case ":$PATH:" in
 esac
 # pnpm end
 . "/home/kingdev/.deno/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -1,5 +1,10 @@
 -- This file contains the configuration for setting up the lazy.nvim plugin manager in Neovim.
 -- Define the path to the lazy.nvim plugin
+
+vim.opt.smartindent = true
+vim.opt.spell = true -- activa spell checker
+vim.opt.spelllang = { "en" }
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 -- Check if the lazy.nvim plugin is not already installed

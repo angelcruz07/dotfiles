@@ -390,9 +390,23 @@ themes {
     black "#1c1a1c"     // bl: fondo
     white "#c5a3a9"     // na: texto claro
     }
+
+    oldWorld {
+      fg "#C9C7CD"        // na: main text (light gray)
+      bg "#000000"        // bl: dark background (almost black)
+      red "#EA83A5"       // ia: intense pink
+      green "#90B99F"     // va: soft green
+      yellow "#E6B99D"    // ca: beige (replaces yellow)
+      blue "#85B5BA"      // va: blue-green
+      magenta "#92A2D5"   // ca: lavender blue
+      cyan "#85B5BA"      // va: blue-green
+      orange "#F5A191"    // ca: light peach
+      black "#000000"     // bl: dark background (almost black)
+      white "#C9C7CD"     // na: light text (light gray)
+    }
 }
 
-theme "sakura"
+theme "oldWorld"
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -412,8 +426,8 @@ default_shell "zsh"
 // The name of the default layout to load on startup
 // Default: "work"
 
-default_layout "work_sakura"
- 
+default_layout "work_oldWorld"
+
 // The folder in which Zellij will look for layouts
 // (Requires restart)
 // 

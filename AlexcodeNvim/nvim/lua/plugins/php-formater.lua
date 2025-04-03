@@ -1,0 +1,16 @@
+return {
+  "stevearc/conform.nvim",
+  optional = true,
+  opts = {
+    formatters_by_ft = {
+      php = { "php_cs_fixer", "prettier" },
+      html = { "prettier" },
+      blade = { "blade-formatter" },
+    },
+    format_on_save = {
+      lsp_fallback = true,
+      async = false,
+      timeout_ms = 500,
+    },
+  },
+}
