@@ -16,7 +16,7 @@ layout {
 
                 border_enabled  "false"
                 border_char     "─"
-                border_format   "#[fg=#161617]{char}"  
+                border_format   "#[fg=#000000]{char}"  
                 border_position "top"
 
                 hide_frame_for_single_pane "true"
@@ -33,7 +33,7 @@ layout {
 
                 datetime        "#[fg=#C9C7CD,bold] {format} "  
                 datetime_format "%A, %d %b %Y %H:%M"
-                datetime_timezone "Europe/Berlin"
+                datetime_timezone "America/Mexico_City"
             }
         }
         children
