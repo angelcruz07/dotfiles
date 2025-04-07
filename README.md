@@ -12,11 +12,12 @@ This repository contains customized
 configurations for a complete development
 desktop environment, including Qtile, Neovim,
 Fish, Zsh, Zellij, and terminal emulators like
-WezTerm and Alacritty, along with essential utilities for linux system.
+WezTerm and Alacritty, along with essential
+utilities for linux system.
 
 > **DISCLAIMER**
 > This is my config with my preferences
-> but you can customize it
+> but you can customize it.
 
 <!--toc:start-->
 
