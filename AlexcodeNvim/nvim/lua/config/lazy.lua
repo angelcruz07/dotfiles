@@ -1,9 +1,11 @@
 -- This file contains the configuration for setting up the lazy.nvim plugin manager in Neovim.
 -- Define the path to the lazy.nvim plugin
 
-vim.opt.smartindent = true
+-- Spell-checking
 vim.opt.spell = true -- activa spell checker
 vim.opt.spelllang = { "en" }
+
+-- vim.opt.smartindent = true
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -40,15 +42,18 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
+    { import = "lazyvim.plugins.extras.lang.angular" },
+    { import = "lazyvim.plugins.extras.lang.astro" },
+    -- { import = "lazyvim.plugins.extras.lang.go" },
+    { import = "lazyvim.plugins.extras.lang.toml" },
 
     --Coding plugins
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
 
     -- Utility plugins
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-
     -- AI plugins
-    { import = "lazyvim.plugins.extras.ai.copilot" },
+    -- { import = "lazyvim.plugins.extras.ai.copilot" },
     { import = "lazyvim.plugins.extras.ai.copilot-chat" },
 
     -- Import/override with your plugins

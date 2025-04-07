@@ -15,4 +15,8 @@ return {
     "yetone/avante.nvim",
     enabled = false,
   },
+  {
+    "nvim-java/nvim-java",
+    enabled = false,
+  },
 }
