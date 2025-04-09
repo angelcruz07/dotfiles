@@ -53,7 +53,7 @@ require("lazy").setup({
     -- Utility plugins
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
     -- AI plugins
-    -- { import = "lazyvim.plugins.extras.ai.copilot" },
+    { import = "lazyvim.plugins.extras.ai.copilot" },
     { import = "lazyvim.plugins.extras.ai.copilot-chat" },
 
     -- Import/override with your plugins
