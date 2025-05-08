@@ -1,0 +1,65 @@
+background-opacity = 0.985
+background-blur-radius = 20
+
+theme = catppuccin-mocha.conf
+
+#palette = 0=#27272a
+#palette = 1=#ea83a5
+#palette = 2=#90b99f
+#palette = 3=#e6b99d
+#palette = 4=#9ca2cf
+#palette = 5=#aca1cf
+#palette = 6=#85b5ba
+#palette = 7=#c9c7cd
+#palette = 8=#353539
+#palette = 9=#ED96B3
+#palette = 10=#a7c8b3
+#palette = =11=#eac5ae
+#palette = 12=#acb1d7
+#palette = 13=#b7aed5
+#palette = 14=#97c0c4
+#palette = 15=#d3d1d7
+#background = #161617
+#foreground = #c9c7cd
+#cursor-color = #c9c7cd
+#selection-background = #3C3B3E
+#selection-foreground = #c9c7cd
+
+font-family = IosevkaTerm NF
+font-size = 16
+window-padding-color = extend
+window-step-resize = true
+window-padding-balance = true
+
+
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+
+### KeyBindings
+# Toggle commands
+keybind = global:alt+f=toggle_quick_terminal
+keybind = alt+z=toggle_split_zoom
+
+# Split Management
+keybind = alt+v=new_split:right
+keybind = alt+d=new_split:down
+
+# Resize Split
+keybind = ctrl+shift+j=resize_split:up,10
+keybind = ctrl+shift+k=resize_split:down,10
+keybind = ctrl+shift+h=resize_split:left,10
+keybind = ctrl+shift+l=resize_split:right,10
+
+# Navigation
+keybind = alt+k=goto_split:up
+keybind = alt+j=goto_split:down
+keybind = alt+h=goto_split:left
+keybind = alt+l=goto_split:right
+
+# Miscellaneous
+keybind = cmd+k=clear_screen
+
+# Use it by writing 'nvim' first and then the keybinding to open the file with nvim
+keybind = alt+s=write_screen_file:paste
+
+gtk-titlebar = false

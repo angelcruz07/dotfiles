@@ -20,7 +20,7 @@ local config = {}
 -- 	},
 -- }
 
--- Sakura theme
+-- Sakura Theme
 -- config.colors = {
 -- 	foreground = "#786577", -- na: texto
 -- 	background = "#1c1a1c", -- bl: fondo
@@ -119,6 +119,8 @@ config.font = wezterm.font("IosevkaTerm NF")
 
 -- Hide the tab bar if only one tab is open
 config.hide_tab_bar_if_only_one_tab = true
+config.max_fps = 240 -- hack for smoothness
+config.enable_kitty_graphics = true
 
 -- Background with Transparency
 config.window_background_opacity = 0.85 -- Adjust this value as needed
@@ -136,5 +138,19 @@ config.enable_kitty_graphics = true
 
 -- Disable Scroll Bar
 config.enable_scroll_bar = false
+
+-- activate ONLY if windows --
+
+-- config.default_domain = 'WSL:Ubuntu'
+-- config.front_end = "OpenGL"
+-- local gpus = wezterm.gui.enumerate_gpus()
+-- if #gpus > 0 then
+--   config.webgpu_preferred_adapter = gpus[1] -- only set if there's at least one GPU
+-- else
+--   -- fallback to default behavior or log a message
+--   wezterm.log_info("No GPUs found, using default settings")
+-- end
+
+-- and finally, return the configuration to wezterm
 
 return config

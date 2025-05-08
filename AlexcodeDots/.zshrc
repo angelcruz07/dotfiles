@@ -1,15 +1,16 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.cargo/bin:$PATH"
 export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 export PATH="/opt/lampp/bin:$PATH"
+
 
 if [[ $- == *i* ]]; then
     # Commands to run in interactive sessions can go here
@@ -38,15 +39,46 @@ source $(dirname $BREW_BIN)/share/zsh-syntax-highlighting/zsh-syntax-highlightin
 source $(dirname $BREW_BIN)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 #source $(dirname $BREW_BIN)/share/powerlevel10k/powerlevel10k.zsh-theme
 
-
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_DEFAULT_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exlude .git"
 
-
 VM_VAR="$ZELLIJ"
 WM_CMd="zellij"
 
+function up_system(){
+  local updates count confirm
+
+  # Colores ANSI
+  GREEN='\033[1;32m'
+  RED='\033[1;31m'
+  YELLOW='\033[1;33m'
+  CYAN='\033[1;36m'
+  RESET='\033[0m'
+
+  updates=$(checkupdates | grep -v '^\s*$')
+  count=$(echo "$updates" | grep -c ".")
+
+  if [ "$count" -eq 0 ]; then
+    echo "${GREEN}  El sistema ya está actualizado.${RESET}"
+    return
+  fi
+
+  echo -e "${YELLOW}📦 Hay ${count} actualizaciones disponibles:${RESET}"
+  echo -e "${CYAN}$updates${RESET}"
+  echo
+
+
+  echo "$updates"
+  echo -n "¿Quieres continuar? (y/n):"
+
+  if [[ "$confirm" =~ ^[yY]$ ]]; then
+    echo -e "${GREEN}󱌢 Actualizando sistema...${RESET}"
+    sudo pacman -Syu --noconfirm
+  else
+    echo -e "${RED}❌ Actualización cancelada.${RESET}"
+  fi
+}
 
 function start_if_needed() {
     if [[ $- == *i* ]] && [[ -z "${WM_VAR#/}" ]] && [[ -t 1 ]]; then
@@ -76,6 +108,10 @@ alias ls='exa --group-directories-first'
 alias tree='exa -T'
 alias lg='lazygit'
 alias vim='nvim .'
+alias apache_start='sudo /opt/lampp/lampp start'
+alias apache_stop='sudo /opt/lampp/lampp stop'
+alias mysql_start='sudo /opt/lampp/lampp startmysql'
+alias mysql_stop='sudo /opt/lampp/lampp stopmysql'
 
 #plugins
 plugins=(

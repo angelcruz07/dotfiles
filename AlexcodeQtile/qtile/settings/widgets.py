@@ -106,6 +106,7 @@ primary_widgets = [
         **base(bg="color2"),
         configured_keyboards=[
             "us intl",
+            "us colemak",
             "us",
             "es",
         ],

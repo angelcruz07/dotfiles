@@ -90,7 +90,7 @@ keys = [
     Key([], "Print", lazy.spawn("flameshot"), desc="Take Screenshot"),
     Key([mod], "s", lazy.spawn("flameshot"), desc="Take Screenshot custom"),
     # Browser
-    Key([mod], "b", lazy.spawn("firefox"), desc="Open browser"),
+    Key([mod], "b", lazy.spawn("zen"), desc="Open browser"),
     # Audio
     Key(
         [],
