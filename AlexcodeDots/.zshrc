@@ -109,6 +109,7 @@ alias tree='exa -T'
 alias lg='lazygit'
 alias vim='nvim .'
 alias apache_start='sudo /opt/lampp/lampp start'
+alias apache_restart='sudo /opt/lampp/lampp reload'
 alias apache_stop='sudo /opt/lampp/lampp stop'
 alias mysql_start='sudo /opt/lampp/lampp startmysql'
 alias mysql_stop='sudo /opt/lampp/lampp stopmysql'
@@ -148,3 +149,4 @@ esac
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=$PATH:/opt/zen
