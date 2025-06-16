@@ -5,12 +5,21 @@
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
+# Zsh config
 export ZSH="$HOME/.oh-my-zsh"
+
+# Rust
 export PATH="$HOME/.cargo/bin:$PATH"
-export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
-export PATH=$JAVA_HOME/bin:$PATH
+
+# Java
+export JAVA_HOME="/usr/lib/jvm/java-23-openjdk"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+# XAMPP
 export PATH="/opt/lampp/bin:$PATH"
 
+# PyCharm
+export PATH="$PATH:$HOME/Aplicaciones/pycharm-2025.1.1/bin"
 
 if [[ $- == *i* ]]; then
     # Commands to run in interactive sessions can go here
@@ -150,3 +159,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH=$PATH:/opt/zen
+
+if [ -e /home/kingdev/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kingdev/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
