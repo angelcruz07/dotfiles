@@ -55,7 +55,6 @@ def workspaces():
         separator(),
     ]
 
-
 primary_widgets = [
     *workspaces(),
     separator(),
@@ -96,7 +95,7 @@ primary_widgets = [
     #     update_interval=1,
     # ),
     powerline("color2", "color4"),
-    widget.CurrentLayoutIcon(**base(bg="color2"), scale=0.55),
+    widget.CurrentLayout(**base(bg="color2"), scale=0.55),
     widget.CurrentLayout(**base(bg="color2"), padding=5),
     powerline("color1", "color2"),
     icon(bg="color1", fontsize=17, text=" "),  # Icon: nf-mdi-calendar_clock
@@ -119,7 +118,7 @@ secondary_widgets = [
     *workspaces(),
     separator(),
     powerline("color1", "dark"),
-    widget.CurrentLayoutIcon(**base(bg="color1"), scale=0.65),
+    widget.CurrentLayout(**base(bg="color1"), scale=0.65),
     widget.CurrentLayout(**base(bg="color1"), padding=5),
     powerline("color2", "color1"),
     widget.Clock(**base(bg="color2"), format="%d/%m/%Y - %H:%M "),
