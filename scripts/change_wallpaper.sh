@@ -1,10 +1,10 @@
 #!/bin/bash
 
-WALLPAPER_DIR="$HOME/Wallpapers"
+WALLPAPERS_DIR="$HOME/wallpapers"
 INTERVAL=10
 
 while true; do
-  WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
+  WALLPAPERS=$(find "$WALLPAPERS_DIR" -type f | shuf -n 1)
 
   feh --bg-scale "$WALLPAPER"
 
