@@ -1,5 +1,4 @@
 # Screens
-
 # Supported laptop + 1 Monitor
 hdmi=$(xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}')
 
@@ -16,25 +15,9 @@ xrandr --output DP-1 --off --output HDMI-1 --off --output HDMI-2 --mode 1920x120
 picom &
 
 # Wallpapers
-# feh --bg-scale wallpapers/minimal.png &
-# feh --bg-scale wallpapers/forestgood.jpg &
-# feh --bg-scale wallpapers/tokyo-night.jpg &
-# feh --bg-scale wallpapers/violet.png &
-# feh --bg-scale wallpapers/triangle.jpg &
-# feh --bg-scale wallpapers/forest-violet.jpg &
-# feh --bg-scale wallpapers/ocean.png &
-# feh --bg-scale wallpapers/asusrog.png &
-# feh --bg-scale wallpapers/rog.jpg &
-feh --bg-scale wallpapers/69.jpeg &
-# feh --bg-scale wallpapers/70.png &
-# feh --bg-scale wallpapers/asus.jpg &
-# feh --bg-scale wallpapers/dracula.png &
-# feh --bg-scale wallpapers/forest.jpg &
-# feh --bg-scale wallpapers/forestnight.png &
-# feh --bg-scale wallpapers/firewatch.jpg &
-# feh --bg-scale wallpapers/
+feh --bg-scale wallpapers/ <yourImage >.png &
 
-# Icon wifi
+# Network Icon
 nm-applet &
 
 #Baterry Icon
