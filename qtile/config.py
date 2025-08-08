@@ -4,7 +4,7 @@
 from libqtile import hook
 from libqtile.lazy import lazy
 
-# Configs
+#  Load configs
 from settings.groups import groups
 from settings.layouts import layouts, floating_layout
 from settings.widgets import widget_defaults, extension_defaults
@@ -12,8 +12,8 @@ from settings.screens import screens
 from settings.keys import mod, keys, terminal
 from settings.mouse import mouse
 from settings.path import qtile_path
-
 from os import path
+
 import subprocess
 
 

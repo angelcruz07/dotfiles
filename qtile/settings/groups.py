@@ -1,3 +1,5 @@
+# Angel Cruz 08-08-25
+
 from libqtile.config import Key, Group
 from libqtile.lazy import lazy
 from .keys import mod, keys
