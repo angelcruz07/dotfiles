@@ -58,54 +58,58 @@ local config = {}
 -- }
 
 -- OldWorld Theme
-config.colors = {
-	-- --- Base colors ---
-	foreground = "#C9C7CD", -- na: main text (light gray)
-	background = "#000000", -- bl: dark background (almost black)
+-- config.colors = {
+-- 	-- --- Base colors ---
+-- 	foreground = "#C9C7CD", -- na: main text (light gray)
+-- 	background = "#000000", -- bl: dark background (almost black)
+--
+-- 	-- --- Cursor colors ---
+-- 	cursor_bg = "#92A2D5", -- ca: blue lavender (cursor background)
+-- 	cursor_fg = "#C9C7CD", -- na: main text (cursor foreground)
+-- 	cursor_border = "#92A2D5", -- ca: blue lavender (cursor border)
+--
+-- 	-- --- Selection colors ---
+-- 	selection_fg = "#C9C7CD", -- na: main text (selection foreground)
+-- 	selection_bg = "#3B4252", -- gr: dark gray (selection background)
+--
+-- 	-- --- UI colors ---
+-- 	scrollbar_thumb = "#4C566A", -- nb: medium gray (scrollbar thumb)
+-- 	split = "#4C566A", -- nb: medium gray (split line)
+--
+-- 	-- --- ANSI colors ---
+-- 	ansi = {
+-- 		"#000000", -- Black: bl: dark background (almost black)
+-- 		"#EA83A5", -- Red: ia: intense pink (errors)
+-- 		"#90B99F", -- Green: va: soft green (success)
+-- 		"#E6B99D", -- Yellow: ca: beige (warnings)
+-- 		"#85B5BA", -- Blue: va: light blue-green (information)
+-- 		"#92A2D5", -- Magenta: ca: blue lavender (highlight)
+-- 		"#85B5BA", -- Cyan: va: light blue-green (links)
+-- 		"#C9C7CD", -- White: na: main text (light gray)
+-- 	},
+--
+-- 	-- --- Bright ANSI colors ---
+-- 	brights = {
+-- 		"#4C566A", -- Bright Black: nb: medium gray (bright black)
+-- 		"#EA83A5", -- Bright Red: ia: intense pink (bright red)
+-- 		"#90B99F", -- Bright Green: va: soft green (bright green)
+-- 		"#E6B99D", -- Bright Yellow: ca: beige (bright yellow)
+-- 		"#85B5BA", -- Bright Blue: va: light blue-green (bright blue)
+-- 		"#92A2D5", -- Bright Magenta: ca: blue lavender (bright magenta)
+-- 		"#85B5BA", -- Bright Cyan: va: light blue-green (bright cyan)
+-- 		"#C9C7CD", -- Bright White: na: main text (bright white)
+-- 	},
+--
+-- 	-- --- Indexed colors ---
+-- 	indexed = {
+-- 		[16] = "#F5A191", -- ca: light peach (orange)
+-- 		[17] = "#E29ECA", -- ia: soft pink (pink)
+-- 	},
+-- }
+--
+--
 
-	-- --- Cursor colors ---
-	cursor_bg = "#92A2D5", -- ca: blue lavender (cursor background)
-	cursor_fg = "#C9C7CD", -- na: main text (cursor foreground)
-	cursor_border = "#92A2D5", -- ca: blue lavender (cursor border)
-
-	-- --- Selection colors ---
-	selection_fg = "#C9C7CD", -- na: main text (selection foreground)
-	selection_bg = "#3B4252", -- gr: dark gray (selection background)
-
-	-- --- UI colors ---
-	scrollbar_thumb = "#4C566A", -- nb: medium gray (scrollbar thumb)
-	split = "#4C566A", -- nb: medium gray (split line)
-
-	-- --- ANSI colors ---
-	ansi = {
-		"#000000", -- Black: bl: dark background (almost black)
-		"#EA83A5", -- Red: ia: intense pink (errors)
-		"#90B99F", -- Green: va: soft green (success)
-		"#E6B99D", -- Yellow: ca: beige (warnings)
-		"#85B5BA", -- Blue: va: light blue-green (information)
-		"#92A2D5", -- Magenta: ca: blue lavender (highlight)
-		"#85B5BA", -- Cyan: va: light blue-green (links)
-		"#C9C7CD", -- White: na: main text (light gray)
-	},
-
-	-- --- Bright ANSI colors ---
-	brights = {
-		"#4C566A", -- Bright Black: nb: medium gray (bright black)
-		"#EA83A5", -- Bright Red: ia: intense pink (bright red)
-		"#90B99F", -- Bright Green: va: soft green (bright green)
-		"#E6B99D", -- Bright Yellow: ca: beige (bright yellow)
-		"#85B5BA", -- Bright Blue: va: light blue-green (bright blue)
-		"#92A2D5", -- Bright Magenta: ca: blue lavender (bright magenta)
-		"#85B5BA", -- Bright Cyan: va: light blue-green (bright cyan)
-		"#C9C7CD", -- Bright White: na: main text (bright white)
-	},
-
-	-- --- Indexed colors ---
-	indexed = {
-		[16] = "#F5A191", -- ca: light peach (orange)
-		[17] = "#E29ECA", -- ia: soft pink (pink)
-	},
-}
+config.color_scheme = "Catppuccin Mocha"
 
 -- This is where you actually apply your config choices
 config.window_padding = {
@@ -123,9 +127,9 @@ config.max_fps = 240 -- hack for smoothness
 config.enable_kitty_graphics = true
 
 -- Background with Transparency
-config.window_background_opacity = 0.85 -- Adjust this value as needed
+config.window_background_opacity = 0.95 -- Adjust this value as needed
 config.macos_window_background_blur = 20 -- Adjust this value as needed
-config.win32_system_backdrop = "Acrylic" -- Only Works in Windows
+--config.win32_system_backdrop = "Acrylic" -- Only Works in Windows
 
 -- Font Size
 config.font_size = 16.0

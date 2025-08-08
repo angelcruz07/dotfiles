@@ -4,7 +4,6 @@ from .theme import colors
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
-
 def base(fg="text", bg="dark"):
     return {"foreground": colors[fg], "background": colors[bg]}
 
@@ -15,7 +14,6 @@ def separator():
 
 def icon(fg="text", bg="dark", fontsize=16, text="?"):
     return widget.TextBox(**base(fg, bg), fontsize=fontsize, text=text, padding=3)
-
 
 def powerline(fg="light", bg="dark"):
     return widget.TextBox(
@@ -66,6 +64,7 @@ primary_widgets = [
         color_active=colors["text"],
         color_inactive=colors["inactive"],
     ),
+
     powerline("color4", "color1"),
     icon(bg="color4", text="  "),  # Icon: nf-fa-download
     widget.CheckUpdates(
@@ -77,6 +76,7 @@ primary_widgets = [
         update_interval=180,
         custom_command="checkupdates",
     ),
+
     # Uncomment if have graphic nvidia
     # powerline("color4", "color2"),
     # widget.GenPollText(
@@ -94,24 +94,29 @@ primary_widgets = [
     #     background=colors["color3"],
     #     update_interval=1,
     # ),
-    powerline("color2", "color4"),
-    widget.CurrentLayout(**base(bg="color2"), scale=0.55),
-    widget.CurrentLayout(**base(bg="color2"), padding=5),
+
+    powerline("color3", "color4"),
+    widget.CurrentLayout(**base(bg="color3"), scale=0.55),
+
     powerline("color1", "color2"),
-    icon(bg="color1", fontsize=17, text=" "),  # Icon: nf-mdi-calendar_clock
+    icon(bg="color1", fontsize=17, text="  "),  # Icon: nf-mdi-calendar_clock
     widget.Clock(**base(bg="color1"), format="%d/%m/%Y - %H:%M "),
+
     powerline("color2", "color1"),
     widget.KeyboardLayout(
         **base(bg="color2"),
         configured_keyboards=[
+            "us"
             "us intl",
-            "us colemak",
-            "us",
-            "es",
         ],
     ),
-    powerline("dark", "color2"),
-    widget.Systray(background=colors["dark"], padding=5),
+
+    powerline("text", "color2"),
+    widget.Systray(
+        background=colors["text"],
+        padding=20,
+        icon_size=20
+    ),
 ]
 
 secondary_widgets = [

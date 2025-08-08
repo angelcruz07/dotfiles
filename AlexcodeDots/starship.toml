@@ -24,39 +24,49 @@ add_newline = true
 command_timeout = 3600000
 
 # color and style settings
-palette = "oldWorld"
+palette = "catppuccin_mocha"
 
 [fill]
 symbol = ' '
 
-# [palettes.sakura]
-# arrow = "#c58ea7"      # ia: pink
-# os = "#878fb9"         # va: blue
-# directory = "#9e97d0"  # ca: purple
-# git = "#c58ea7"        # ia: pink
-# duration = "#9e97d0"   # ca: purple
-# text_color = "#c5a3a9" # na: text
-# text_light = "#1c1a1c" # bl: background
-
-[palettes.oldWorld]
-arrow = "#EA83A5"      # ia: intense pink
-os = "#85B5BA"         # va: light blue-green
-directory = "#92A2D5"  # ca: blue lavender
-git = "#EA83A5"        # ia: intense pink
-duration = "#92A2D5"   # ca: blue lavender
-text_color = "#C9C7CD" # na: light gray
-text_light = "#000000" # bl: dark gray
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
 
 # Pink mustache icon for the prompt
 [character]
-success_symbol = "[󱗞](fg:#85B5BA)" # Mustache in dark pink tone
-error_symbol = "[󱗞](fg:red)"       # Mustache in red if there is an error
+success_symbol = "[󱗞](fg:lavender)"
+error_symbol = "[󱗞](fg:red)"
 
 # User settings
 [username]
-style_user = 'bold os'
-style_root = 'bold os_admin'
-format = '[󱗞 $user](fg:$style) ' # Mustache before the username
+style_user = 'bold lavender'
+style_root = 'bold maroon'
+format = '[󱗞 $user](fg:$style) '
 disabled = false
 show_always = true
 
@@ -64,9 +74,9 @@ show_always = true
 [directory]
 format = "[$path](bold $style)[$read_only]($read_only_style) "
 truncation_length = 2
-style = "fg:directory"
-read_only_style = "fg:directory"
-before_repo_root_style = "fg:directory"
+style = "fg:mauve"
+read_only_style = "fg:mauve"
+before_repo_root_style = "fg:mauve"
 truncation_symbol = "…/"
 truncate_to_repo = true
 read_only = "  "
@@ -79,17 +89,17 @@ read_only = "  "
 
 [cmd_duration]
 format = " took [ $duration]($style) "
-style = "bold fg:duration"
+style = "bold fg:lavender"
 min_time = 500
 
 [git_branch]
 format = "-> [$symbol$branch]($style) "
-style = "bold fg:git"
-symbol = " "                           # Branch with oriental touch
+style = "bold fg:green"
+symbol = " "
 
 [git_status]
 format = '[$all_status$ahead_behind ]($style)'
-style = "fg:text_color bg:git"
+style = "fg:text bg:surface0"
 
 [docker_context]
 disabled = true
@@ -97,49 +107,49 @@ symbol = " "
 
 [python]
 disabled = false
-format = '[${symbol}${pyenv_prefix}(${version})( \($virtualenv\))](fg:#FF9E3B)($style)'
+format = '[${symbol}${pyenv_prefix}(${version})( \($virtualenv\))](fg:yellow)($style)'
 symbol = " "
 version_format = "${raw}"
 
 [java]
-format = '[[ $symbol ($version) ](fg:#FF5D62)]($style)'
+format = '[[ $symbol ($version) ](fg:red)]($style)'
 version_format = "${raw}"
 symbol = " "
 disabled = false
 
 [c]
-format = '[[ $symbol ($version) ](fg:#7FB4CA)]($style)'
+format = '[[ $symbol ($version) ](fg:sky)]($style)'
 symbol = " "
 version_format = "${raw}"
 disabled = false
 
 [zig]
-format = '[[ $symbol ($version) ](fg:#FFA066)]($style)'
+format = '[[ $symbol ($version) ](fg:peach)]($style)'
 version_format = "${raw}"
 disabled = false
 
 [bun]
 version_format = "${raw}"
-format = '[[ $symbol ($version) ](fg:#DCD7BA)]($style)'
+format = '[[ $symbol ($version) ](fg:subtext0)]($style)'
 disabled = false
 
 [nodejs]
 symbol = ""
-format = '[[ $symbol ($version) ](fg:#87a987)]($style)'
+format = '[[ $symbol ($version) ](fg:green)]($style)'
 
 [rust]
 symbol = ""
-format = '[[ $symbol ($version) ](fg:#FF5D62)]($style)'
+format = '[[ $symbol ($version) ](fg:red)]($style)'
 
 [golang]
 symbol = ""
-format = '[[ $symbol ($version) ](fg:#7FB4CA)]($style)'
+format = '[[ $symbol ($version) ](fg:sky)]($style)'
 
 [php]
 symbol = ""
-format = '[[ $symbol ($version) ](fg:#FF9E3B)]($style)'
+format = '[[ $symbol ($version) ](fg:yellow)]($style)'
 
 [time]
 disabled = false
-time_format = "%R"                            # Hour:Minute Format
-format = '[[   $time ](fg:#8BA4B0)]($style)'
+time_format = "%R"
+format = '[[  $time ](fg:overlay2)]($style)'
