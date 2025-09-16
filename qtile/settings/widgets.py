@@ -106,7 +106,7 @@ primary_widgets = [
     widget.KeyboardLayout(
         **base(bg="color2"),
         configured_keyboards=[
-            "us"
+            "us",
             "us intl",
         ],
     ),
