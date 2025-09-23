@@ -106,7 +106,7 @@ return {
     {
       "LazyVim/LazyVim",
       opts = {
-        colorscheme = "catppuccin",
+        colorscheme = "gentleman-kanagawa-blur",
       },
     },
   },

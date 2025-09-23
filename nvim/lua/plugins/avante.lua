@@ -172,7 +172,6 @@ return {
       return {
         -- add any opts here
         -- for example
-        provider = "copilot",
         providers = {
           copilot = {
             model = "claude-sonnet-4",
