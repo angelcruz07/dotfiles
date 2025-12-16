@@ -45,7 +45,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.astro" },
     { import = "lazyvim.plugins.extras.lang.toml" },
 
-    -- { import = "lazyvim.plugins.extras.lang.angular" },
+    { import = "lazyvim.plugins.extras.lang.angular" },
     -- { import = "lazyvim.plugins.extras.lang.go" },
 
     --Coding plugins
@@ -71,7 +71,7 @@ require("lazy").setup({
     version = false, -- Always use the latest git commit
     -- version = "*", -- Try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight" } }, -- Specify colorschemes to install
+  install = { colorscheme = { "tokyonight", "habamax" } }, -- Specify colorschemes to install
   checker = { enabled = true }, -- Automatically check for plugin updates
   performance = {
     rtp = {
