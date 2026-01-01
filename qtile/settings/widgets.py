@@ -74,7 +74,8 @@ primary_widgets = [
         no_update_string="0",
         display_format="{updates}",
         update_interval=180,
-        custom_command="checkupdates",
+        custom_command="checkupdates 2>/dev/null || echo '0'",
+        execute="sudo pacman -Syu",
     ),
 
     # Uncomment if have graphic nvidia
@@ -82,7 +83,7 @@ primary_widgets = [
     # widget.GenPollText(
     #     func=lambda: subprocess.check_output("~/scripts/nvidia_usage.sh", shell=True)
     #     .decode("utf-8")
-    #     .strip(),
+    #     .strip(),d
     #     update_interval=1,
     #     foreground=colors["text"],
     #     background=colors["color4"],

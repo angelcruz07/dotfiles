@@ -14,21 +14,26 @@ def status_bar(widgets):
 
 screens = [Screen(top=status_bar(primary_widgets))]
 
-xrandr = "xrandr | grep -w 'connected' | cut -d ' ' -f 2 | wc -l"
-
-command = subprocess.run(
-    xrandr,
-    shell=True,
-    stdout=subprocess.PIPE,
-    stderr=subprocess.PIPE,
-)
-if command.returncode != 0:
-    error = command.stderr.decode("UTF-8")
-    logger.error(f"Failed counting monitors using {xrandr}:\n{error}")
+# Detectar monitores conectados
+try:
+    command = subprocess.run(
+        ["xrandr", "--query"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+    )
+    if command.returncode == 0:
+        # Contar monitores conectados
+        connected_monitors = len([line for line in command.stdout.split('\n') 
+                                  if ' connected' in line])
+    else:
+        logger.warning("No se pudo ejecutar xrandr, usando 1 monitor por defecto")
+        connected_monitors = 1
+except Exception as e:
+    logger.error(f"Error detectando monitores: {e}")
     connected_monitors = 1
-else:
-    connected_monitors = int(command.stdout.decode("UTF-8"))
 
+# Agregar pantallas adicionales si hay más de un monitor
 if connected_monitors > 1:
     for _ in range(1, connected_monitors):
         screens.append(Screen(top=status_bar(secondary_widgets)))

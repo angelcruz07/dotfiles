@@ -1,12 +1,13 @@
 # Angel Cruz
 
 # Qtile  keybindings
+import os
 from libqtile.config import Key
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = "wezterm"
+terminal = "ghostty"
 
 keys = [
     # ------------ Window Configs ------------ #
@@ -30,8 +31,9 @@ keys = [
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
 
-    # Kill window
+    # Kill window (múltiples opciones)
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "q", lazy.window.kill(), desc="Kill focused window (alternativo)"),
 
     # Restart Qtile
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
@@ -61,25 +63,29 @@ keys = [
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window",),
 
     # Terminal
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "Return", lazy.spawn([terminal, "--gtk-titlebar=false"]), desc="Launch terminal"),
 
     # Menu (Rofi)
     Key(
         [mod],
         "m",
-        lazy.spawn("rofi -show drun"),
+        lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/launcher_t7")),
         desc="Spawn a command using a prompt widget",
     ),
-
     # Show apps running
     Key([mod, "shift"], "m", lazy.spawn("rofi -show"), desc="Window nav"),
+    # Rofi file browser
+    Key([mod, "shift"], "f", lazy.spawn("rofi -show filebrowser"), desc="File browser"),
+    # Rofi drun (aplicaciones)
+    Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Rofi applications"),
 
     # File explorer
     Key([mod], "e", lazy.spawn("thunar"), desc="Spawn file explorer"),
 
     # Screenshot
-    Key([], "Print", lazy.spawn("flameshot"), desc="Take Screenshot"),
-    Key([mod], "s", lazy.spawn("flameshot"), desc="Take Screenshot custom"),
+    Key([], "Print", lazy.spawn("flameshot gui"), desc="Take Screenshot"),
+    Key([mod], "s", lazy.spawn("flameshot gui"), desc="Take Screenshot GUI"),
+    Key([mod, "shift"], "s", lazy.spawn("flameshot full -p ~/Pictures/Screenshots"), desc="Screenshot fullscreen"),
 
     # Browser
     Key([mod], "b", lazy.spawn("zen"), desc="Open browser"),
@@ -103,7 +109,13 @@ keys = [
     ),
 
     # Editors
-    Key([mod], "n", lazy.spawn("nvim"), desc="Open Nvim"),
+    Key([mod], "n", lazy.spawn([terminal, "--gtk-titlebar=false", "-e", "nvim"]), desc="Open Nvim"),
+    Key([mod, "shift"], "n", lazy.spawn("code"), desc="Open VS Code"),
+
+    # Window management avanzado
+    Key([mod, "control"], "equal", lazy.layout.maximize(), desc="Maximize window"),
+    Key([mod, "control"], "minus", lazy.layout.normalize(), desc="Normalize window"),
+    Key([mod, "shift"], "q", lazy.spawn("xkill"), desc="Kill window with xkill"),
 
     # Brightness Control
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
