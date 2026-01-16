@@ -72,8 +72,10 @@ keys = [
         lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/launcher_t7")),
         desc="Spawn a command using a prompt widget",
     ),
+
     # Show apps running
     Key([mod, "shift"], "m", lazy.spawn("rofi -show"), desc="Window nav"),
+
     # Rofi file browser
     Key([mod, "shift"], "f", lazy.spawn("rofi -show filebrowser"), desc="File browser"),
     # Rofi drun (aplicaciones)
